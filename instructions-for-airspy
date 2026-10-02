@@ -1,0 +1,151 @@
+instractions-for-airspyHF
+
+For other SDRS you can install SoapySDR (https://github.com/pothosware/SoapySDR) 
+
+Then get the respective Driver for example for AirspyHF 
+https://github.com/pothosware/SoapyAirspyHF 
+
+And then get rx_tools https://github.com/rxseger/rx_tools And run these with 
+rx_sdr -f frequency -s sample_rate -d driver=airspy 
+You have to adjust the config yourself based on the format etc.
+
+
+#### Step No 1. install SoapySDR:
+
+sudo apt-get install cmake g++
+
+git clone https://github.com/pothosware/SoapySDR.git
+cd SoapySDR
+mkdir build
+cd build
+cmake ..
+make -j`nproc`
+sudo make install -j`nproc`
+sudo ldconfig
+SoapySDRUtil --info
+
+sould see something like this:
+
+######################################################
+##     Soapy SDR -- the SDR abstraction library     ##
+######################################################
+
+Lib Version: v0.8.1-g8c6cb7c5
+API Version: v0.8.200
+ABI Version: v0.8-3
+Install root: /usr/local
+Search path:  /usr/local/lib/SoapySDR/modules0.8-3 (missing)
+No modules found!
+Available factories... No factories found!
+Available converters...
+ -  CF32 -> [CF32, CS16, CS8, CU16, CU8]
+ -  CS16 -> [CF32, CS16, CS8, CU16, CU8]
+ -  CS32 -> [CS32]
+ -   CS8 -> [CF32, CS16, CS8, CU16, CU8]
+ -  CU16 -> [CF32, CS16, CS8]
+ -   CU8 -> [CF32, CS16, CS8]
+ -   F32 -> [F32, S16, S8, U16, U8]
+ -   S16 -> [F32, S16, S8, U16, U8]
+ -   S32 -> [S32]
+ -    S8 -> [F32, S16, S8, U16, U8]
+ -   U16 -> [F32, S16, S8]
+ -    U8 -> [F32, S16, S8]
+sv3yy@SV3YY:~/SoapySDR/build$
+
+#### step No 2. install airspyhf-master
+
+How to build the host software on Linux:
+Prerequisites for Linux (Debian/Ubuntu/Raspbian):
+
+sudo apt-get install build-essential cmake libusb-1.0-0-dev pkg-config
+Build host software on Linux:
+
+wget https://github.com/airspy/airspyhf/archive/master.zip
+
+unzip master.zip
+
+cd airspyhf-master
+
+mkdir build
+
+cd build
+
+cmake ../ -DINSTALL_UDEV_RULES=ON
+
+make
+
+sudo make install
+
+sudo ldconfig
+
+##########################
+PROAIRETIKA:
+Clean CMake temporary files/dirs:
+
+cd airspyhf-master/build
+
+rm -rf *
+##########################
+
+
+#### step No 3. install SoapyAirspyHF:
+
+git clone https://github.com/pothosware/SoapyAirspyHF.git
+cd SoapyAirspyHF
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+sudo reboot
+SoapySDRUtil --probe="driver=airspyhf"
+
+sould see something like this:
+
+sv3yy@SV3YY:~/SoapyAirspyHF/build$ SoapySDRUtil --probe="driver=airspyhf"
+######################################################
+##     Soapy SDR -- the SDR abstraction library     ##
+######################################################
+
+Probe device driver=airspyhf
+
+----------------------------------------------------
+-- Device identification
+----------------------------------------------------
+  driver=AirspyHF
+  hardware=AirspyHF
+  serial=3b524eaab74c34b2
+
+----------------------------------------------------
+-- Peripheral summary
+----------------------------------------------------
+  Channels: 1 Rx, 0 Tx
+  Timestamps: NO
+
+----------------------------------------------------
+-- RX Channel 0
+----------------------------------------------------
+  Full-duplex: NO
+  Supports AGC: YES
+  Stream formats: CF32, CS16, CS8, CU16, CU8
+  Native format: CF32 [full-scale=1]
+  Antennas: RX
+  Full gain range: [0, 54] dB
+    LNA gain range: [0, 6, 6] dB
+    RF gain range: [-48, 0, 6] dB
+  Full freq range: [0.009, 31], [60, 260] MHz
+    RF freq range: [0.009, 31], [60, 260] MHz
+  Sample rates: 0.912, 0.768, 0.456, 0.384, 0.256, 0.192 MSps
+
+
+#### step No 4. install rx_tools:
+
+git clone https://github.com/rxseger/rx_tools.git
+cd rx_tools/
+cmake .
+make
+sudo make install
+sudo ldconfig
+
+################################
+END GOOD LACK De SV2AMK

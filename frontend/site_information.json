@@ -1,0 +1,18 @@
+{
+	"siteSysop": "your name or callsign",
+	"siteSysopEmailAddress": "mail@mail.net",
+	"siteGridSquare": "QTH locator",
+	"siteCity": "City Country",
+	"siteInformation": "https://github.com/sv1btl/PhantomSDR-Plus",
+	"siteHardware": "Hardware you are using, ",
+	"siteSoftware": "Software you are using",
+	"siteReceiver": "Receiver model",
+	"siteAntenna": "Receiving Antenna.",
+	"siteNote": "This is a bright new open source WebSDR project, which is dynamicaly developing.",
+	"siteIP": "http://Your site IP:port",
+	"siteStats": "http://Your site IP:3001",
+	"siteSDRBaseFrequency": 0,
+	"siteSDRBandwidth": 30000000,
+	"siteRegion": 1,
+	"siteChatEnabled": true
+}

@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PhantomSDR-Plus | Statistics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@200;400;600;700&display=swap" rel="stylesheet">
+<!-- Twemoji: renders flag emojis correctly on Chrome/Edge/Opera/Windows -->
+<script src="https://cdn.jsdelivr.net/npm/@twemoji/api@15.1.0/dist/twemoji.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+/* Make Twemoji SVGs inline with text */
+img.emoji {
+  height: 1.1em;
+  width: 1.1em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.15em;
+  display: inline-block;
+}
+:root {
+  --bg:      #050a07;
+  --bg2:     #080f0a;
+  --bg3:     #0c1610;
+  --bg4:     #101e14;
+  --green:   #00ff6a;
+  --gdim:    #00c84e;
+  --gfaint:  #012b10;
+  --amber:   #ffb700;
+  --blue:    #00aeff;
+  --red:     #ff3b3b;
+  --text:    #c8e8d0;
+  --muted:   #7b9784;
+  --border:  #0c1e10;
+  --glow:    0 0 12px rgba(0,255,106,.3);
+  --glow-sm: 0 0 5px  rgba(0,255,106,.2);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Share Tech Mono', monospace;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* scanlines */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background: repeating-linear-gradient(0deg,
+    transparent, transparent 2px,
+    rgba(0,0,0,.06) 2px, rgba(0,0,0,.06) 4px);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ── HEADER ────────────────────────────────────────── */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 18px 32px 16px;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 100;
+}
+
+.logo { display: flex; flex-direction: column; gap: 2px; }
+
+.logo-main {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--blue);
+  letter-spacing: .1em;
+}
+
+.logo-sub {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 200;
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: .3em;
+  text-transform: uppercase;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+input[type=date] {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.8rem;
+  padding: 6px 10px;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+input[type=date]:focus { border-color: var(--gdim); }
+
+.btn {
+  background: transparent;
+  border: 1px solid var(--muted);
+  color: var(--muted);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: .8rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all .15s;
+}
+.btn:hover          { border-color: var(--green); color: var(--green); box-shadow: var(--glow-sm); }
+.btn.active         { border-color: var(--green); color: var(--green); background: rgba(0,255,106,.06); }
+
+#status-line {
+  font-size: .8rem;
+  color: var(--muted);
+  padding: 6px 32px;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  min-height: 28px;
+}
+#status-line span { color: var(--gdim); }
+
+/* ── MAIN GRID ─────────────────────────────────────── */
+main {
+  padding: 28px 32px 48px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ── KPI STRIP ─────────────────────────────────────── */
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 5px;
+  margin-bottom: 6px;
+}
+
+.kpi {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 1px;
+  padding: 15px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  animation: fadeUp .4s ease both;
+}
+.kpi:nth-child(1) { animation-delay: .05s }
+.kpi:nth-child(2) { animation-delay: .10s }
+.kpi:nth-child(3) { animation-delay: .15s }
+.kpi:nth-child(4) { animation-delay: .20s }
+.kpi:nth-child(5) { animation-delay: .25s }
+.kpi:nth-child(6) { animation-delay: .30s }
+.kpi:nth-child(7) { animation-delay: .35s }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.kpi-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .9rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.kpi-value {
+  font-size: 1.3rem;
+  color: var(--green);
+  text-shadow: var(--glow-sm);
+  letter-spacing: .02em;
+}
+.kpi-value.amber { color: var(--amber); text-shadow: 0 0 8px rgba(255,183,0,.25); }
+.kpi-value.blue  { color: var(--blue);  text-shadow: 0 0 8px rgba(0,174,255,.2); }
+
+/* ── SECTION GRID ──────────────────────────────────── */
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.grid3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+@media (max-width: 900px) {
+  .grid2, .grid3 { grid-template-columns: 1fr; }
+}
+
+/* ── PANEL ─────────────────────────────────────────── */
+.panel {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+  animation: fadeUp .5s ease both;
+}
+
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 16px;
+  background: var(--bg3);
+  border-bottom: 1px solid var(--border);
+}
+
+.panel-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: .9rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--green);
+  text-shadow: 0 0 6px rgba(0,255,106,.35);
+}
+
+.panel-body { padding: 14px 16px; }
+
+/* ── BAR CHART ─────────────────────────────────────── */
+.bar-row {
+  display: grid;
+  grid-template-columns: 160px 1fr 36px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 7px;
+  font-size: 1rem;
+}
+.bar-row:last-child { margin-bottom: 0; }
+
+.bar-label {
+  color: #d4fbe6;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: .9rem;
+  font-weight: 400;
+}
+.bar-track {
+  background: var(--bg4);
+  border-radius: 1px;
+  height: 7px;
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  border-radius: 1px;
+  background: var(--green);
+  transition: width .6s cubic-bezier(.4,0,.2,1);
+}
+.bar-fill.amber { background: var(--amber); }
+.bar-fill.blue  { background: var(--blue); }
+.bar-fill.red   { background: var(--red); }
+.bar-count { color: var(--muted); text-align: right; font-size: .7rem; }
+
+/* ── HOURLY CHART ──────────────────────────────────── */
+.hour-grid {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  gap: 3px;
+  align-items: end;
+  height: 80px;
+}
+.hour-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  height: 100%;
+}
+.hour-bar {
+  width: 100%;
+  background: var(--green);
+  border-radius: 1px 1px 0 0;
+  min-height: 2px;
+  opacity: .7;
+  transition: opacity .15s;
+}
+.hour-bar:hover { opacity: 1; }
+.hour-label {
+  font-size: .9rem;
+  color: var(--muted);
+  writing-mode: horizontal-rl;
+  transform: rotate(00deg);
+  line-height: 1;
+}
+
+/* ── SESSION TABLE ─────────────────────────────────── */
+.session-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+.session-table th {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .62rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 4px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.session-table td {
+  padding: 4px 10px;
+  border-bottom: 1px solid rgba(13,32,22,.6);
+  white-space: nowrap;
+}
+.session-table tbody tr:last-child td { border-bottom: none; }
+.session-table tbody tr:hover { background: rgba(0,255,106,.025); }
+.session-table td.td-geo {
+  font-size: .9rem;
+  color: #caffdf;
+  font-weight: 500;
+  letter-spacing: .01em;
+}
+.td-freq  { color: var(--green); font-size: .82rem; font-weight: 500; }
+.td-mode  { color: var(--blue);  font-size: .82rem; font-weight: 500; }
+.td-dur   { color: var(--amber); font-size: .82rem; font-weight: 400; }
+.td-tune  { text-align: right; }
+.tune-btn {
+  font-family: inherit;
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--green);
+  background: rgba(0,255,106,.06);
+  border: 1px solid rgba(0,255,106,.25);
+  border-radius: 2px;
+  padding: 1px 8px;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+.tune-btn:hover  { background: rgba(0,255,106,.14); border-color: rgba(0,255,106,.5); }
+.tune-btn:active { background: rgba(0,255,106,.22); }
+
+/* ── MAP PANEL ──────────────────────────────────── */
+#stats-map {
+  width: 100%;
+  height: 340px;
+  background: #050a07;
+}
+.stats-map-panel {
+  position: relative;
+  isolation: isolate;
+  margin-bottom: 8px;
+}
+
+/* Override Leaflet chrome */
+.leaflet-container { background: #050a07; font-family: 'Share Tech Mono', monospace; }
+.leaflet-control-zoom a {
+  background: var(--bg2) !important;
+  color: var(--muted) !important;
+  border-color: var(--border) !important;
+}
+.leaflet-control-zoom a:hover { color: var(--green) !important; }
+.leaflet-control-attribution {
+  background: rgba(5,10,7,.75) !important;
+  color: var(--muted) !important;
+  font-size: .55rem !important;
+}
+.leaflet-control-attribution a { color: var(--muted) !important; }
+.leaflet-tooltip.smap-tip {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  color: var(--green);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: .7rem;
+  box-shadow: none;
+  padding: 4px 8px;
+  white-space: nowrap;
+}
+.leaflet-tooltip.smap-tip::before { border-top-color: var(--border); }
+
+/* ── EMPTY / LOADING ───────────────────────────────── */
+#loading, #no-data {
+  text-align: center;
+  padding: 60px 0;
+  color: var(--muted);
+  font-size: .9rem;
+  letter-spacing: .1em;
+}
+.spinner {
+  display: inline-block;
+  width: 18px; height: 18px;
+  border: 2px solid var(--gfaint);
+  border-top-color: var(--green);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 12px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+footer {
+  margin-top: 32px;
+  padding: 14px 32px;
+  border-top: 1px solid var(--border);
+  font-size: 1rem;
+  color: var(--muted);
+  letter-spacing: .1em;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <span class="logo-main">PhantomSDR-Plus</span>
+    <span class="logo-sub">User Statistics Dashboard</span>
+  </div>
+  <div class="controls">
+    <input type="date" id="date-from" title="From date">
+    <input type="date" id="date-to"   title="To date (leave same for one day)">
+    <button class="btn" id="btn-today">Today</button>
+    <button class="btn" id="btn-week">7 Days</button>
+    <button class="btn" id="btn-month">30 Days</button>
+    <button class="btn" id="btn-all">All</button>
+    <button class="btn active" id="btn-load">&#9654; Load</button>
+  </div>
+</header>
+
+<div id="status-line">Ready — select a date range and press Load.</div>
+
+<main id="main-content">
+  <div id="loading" style="display:none">
+    <div class="spinner"></div><br>Loading log files…
+  </div>
+  <div id="no-data" style="display:none">No data found for the selected range.</div>
+  <div id="dashboard" style="display:none"></div>
+</main>
+
+<footer>
+  <span>PhantomSDR-Plus | Statistics Dashboard</span>
+  <span id="footer-range"></span>
+</footer>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+// CONFIGURATION
+// ---------------------------------------------------------------
+// LOGS_BASE is the URL path (relative or absolute) under which
+// the browser can fetch  users_YYYY-MM-DD.jsonl  files.
+//
+// Leave as null → the page probes common paths automatically.
+//
+// Override with a hardcoded string if auto-detect fails:
+//   let LOGS_BASE = 'logs';        // same dir as this HTML
+//   let LOGS_BASE = '../logs';     // one level up
+//   let LOGS_BASE = '/logs';       // absolute from server root
+// ═══════════════════════════════════════════════════════════════
+let LOGS_BASE = null;
+
+// ── QTH label for local/private connections ──────────────────────────────────
+function isLocalIp(ip) {
+  if (!ip) return false;
+  const raw = ip.startsWith('::ffff:') ? ip.slice(7) : ip;
+  if (raw === '::1' || raw === 'localhost') return true;
+  return /^127\./.test(raw)   ||
+         /^10\./.test(raw)    ||
+         /^192\.168\./.test(raw) ||
+         /^172\.(1[6-9]|2\d|3[01])\./.test(raw) ||
+         /^fc/i.test(raw)     || /^fd/i.test(raw);
+}
+
+// Candidate paths tried in order during auto-detection.
+const PROBE_CANDIDATES = [
+  'logs',       // HTML and logs/ are siblings (most common)
+  '../logs',    // HTML is one level deeper than logs/
+  '/logs',      // logs/ is at the web root
+  '../../logs', // HTML is two levels deeper
+];
+
+// ═══════════════════════════════════════════════════════════════
+// UTILITIES
+// ═══════════════════════════════════════════════════════════════
+
+function todayStr() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+// Probe candidate paths and return the first that serves a JSONL
+// file. Checks today, yesterday, and two days ago to handle
+// timezone edge-cases where today's log may not yet exist.
+const LOGS_BASE_LS_KEY = 'phantomsdr_stats_logsbase_v1';
+
+async function detectLogsBase() {
+  const probeDates = [];
+  for (let i = 0; i < 3; i++) {
+    const d = new Date();
+    d.setUTCDate(d.getUTCDate() - i);
+    probeDates.push(d.toISOString().slice(0, 10));
+  }
+
+  // PERF: try the previously-detected base first (remembered across loads), so
+  // the common case is a single HEAD request instead of walking every
+  // candidate × date serially. Still fully self-healing: if the remembered
+  // base no longer serves logs, we fall through to the normal probe order.
+  let candidates = PROBE_CANDIDATES;
+  try {
+    const cached = localStorage.getItem(LOGS_BASE_LS_KEY);
+    if (cached) candidates = [cached, ...PROBE_CANDIDATES.filter(c => c !== cached)];
+  } catch { /* localStorage unavailable — use default order */ }
+
+  for (const base of candidates) {
+    for (const date of probeDates) {
+      try {
+        const r = await fetch(`${base}/users_${date}.jsonl`,
+                              { method: 'HEAD', cache: 'no-store' });
+        if (r.ok) {
+          console.log(`[PhantomSDR stats] logs found at: ${base}`);
+          try { localStorage.setItem(LOGS_BASE_LS_KEY, base); } catch {}
+          return base;
+        }
+      } catch { /* network error or CORS — try next */ }
+    }
+  }
+
+  console.warn('[PhantomSDR stats] Could not auto-detect logs path. Falling back to "logs".');
+  return 'logs';
+}
+
+function dateRange(from, to) {
+  const dates = [];
+  let cur = new Date(from + 'T00:00:00Z');
+  const end = new Date(to   + 'T00:00:00Z');
+  while (cur <= end) {
+    dates.push(cur.toISOString().slice(0, 10));
+    cur.setUTCDate(cur.getUTCDate() + 1);
+  }
+  return dates;
+}
+
+function fmtDur(s) {
+  s = Math.floor(s);
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  const ss = s % 60;
+  if (h) return `${h}h ${String(m).padStart(2,'0')}m`;
+  if (m) return `${m}m ${String(ss).padStart(2,'0')}s`;
+  return `${ss}s`;
+}
+
+function fmtFreq(khz) {
+  if (khz >= 1000) return (khz/1000).toFixed(3) + ' MHz';
+  return khz.toFixed(1) + ' kHz';
+}
+
+function band(khz) {
+  if (khz <= 0)     return '?';
+  if (khz < 500)    return 'VLF/LF';
+  if (khz < 1700)   return 'MW';
+  if (khz < 2000)   return '160m';
+  if (khz < 3000)   return '90m';
+  if (khz < 4000)   return '80m';
+  if (khz < 5500)   return '60m';
+  if (khz < 8000)   return '40m';
+  if (khz < 11000)  return '30m';
+  if (khz < 15000)  return '20m';
+  if (khz < 19000)  return '17m';
+  if (khz < 22000)  return '15m';
+  if (khz < 25000)  return '12m';
+  if (khz < 30000)  return '10m';
+  return '6m+';
+}
+
+function escHtml(s) {
+  return String(s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// Tune — jump the receiver to a session's frequency + mode.
+//
+// Same plumbing as users.html. This page is served standalone and as an
+// <iframe> in the app's Statistics window; embedded we ask the parent to
+// tune (it owns the waterfall and the audio socket), standalone we navigate
+// to the app with the link parameters it already understands.
+//
+// The app embeds us as {siteIP}/stats.html, and siteIP is an absolute URL, so
+// our origin is not necessarily the parent's -- a visitor arriving by LAN IP,
+// an alternate hostname, or https gets a cross-origin iframe, and postMessage
+// silently drops a message whose targetOrigin does not match the receiver.
+// Take the parent's real origin from the referrer instead of assuming.
+//
+// Mode strings are what the backend logged (AudioClient::get_mode_str);
+// "iq" and unknown values tune the frequency and leave the mode alone.
+// ═══════════════════════════════════════════════════════════════
+const APP_MODE = { usb: 'USB', lsb: 'LSB', am: 'AM', 'am-s': 'QUAM', fm: 'FM' };
+
+function parentOrigin() {
+  try {
+    if (document.referrer) return new URL(document.referrer).origin;
+  } catch (e) { /* malformed referrer — fall through */ }
+  return '*';
+}
+
+function tuneTo(hz, serverMode) {
+  if (!isFinite(hz) || hz <= 0) return;
+  const mode = APP_MODE[String(serverMode || '').toLowerCase()] || null;
+
+  if (window.parent && window.parent !== window) {
+    window.parent.postMessage({ type: 'phantomsdr-tune', freq_hz: hz, mode }, parentOrigin());
+    return;
+  }
+
+  const q = new URLSearchParams({ frequency: String(Math.round(hz)) });
+  if (mode) q.set('modulation', mode);
+  // './' not '/': resolves next to this page, so installs served under a
+  // reverse-proxy subpath land on the app and not on the proxy root.
+  window.location.href = './?' + q.toString();
+}
+
+// Delegated: #dashboard is rebuilt from scratch on every date-range change,
+// so per-button listeners would be discarded with it.
+document.getElementById('dashboard').addEventListener('click', (e) => {
+  const btn = e.target.closest('.tune-btn');
+  if (!btn) return;
+  tuneTo(parseFloat(btn.dataset.hz), btn.dataset.mode);
+});
+
+// ═══════════════════════════════════════════════════════════════
+// LOG FETCHING
+// ═══════════════════════════════════════════════════════════════
+
+// ═══════════════════════════════════════════════════════════════
+// LOG FETCHING  —  two-layer cache
+//
+// Layer 1 (JS session): logCache keeps already-parsed events in
+//   memory for the lifetime of the page.  Re-loading a date range
+//   that overlaps a previous query costs zero network and zero parse.
+//
+// Layer 2 (HTTP):  historical files (any date < today) are immutable
+//   by design, so we pass cache:'force-cache' and let the browser
+//   serve them from disk on the next page load.  Today's file is
+//   still being written, so it always bypasses the cache.
+// ═══════════════════════════════════════════════════════════════
+
+// date-string → events[]   (historical dates only; today is never cached)
+const logCache = new Map();
+
+async function fetchLog(date) {
+  const isToday = (date === todayStr());
+
+  // Layer 1: return already-parsed events without any I/O
+  if (!isToday && logCache.has(date)) return logCache.get(date);
+
+  const url = `${LOGS_BASE}/users_${date}.jsonl`;
+  try {
+    const r = await fetch(url, {
+      cache: isToday ? 'no-store' : 'force-cache',
+    });
+    if (!r.ok) return [];
+
+    const text   = await r.text();
+    const events = [];
+    const seen   = new Set();                  // drop duplicate lines (matches py)
+    for (const line of text.split('\n')) {
+      const t = line.trim();
+      if (!t || seen.has(t)) continue;
+      seen.add(t);
+      try { events.push(JSON.parse(t)); } catch {}
+    }
+
+    // Layer 1 write: cache parsed events for historical dates
+    if (!isToday) logCache.set(date, events);
+    return events;
+  } catch { return []; }
+}
+
+async function fetchRange(from, to) {
+  const dates  = dateRange(from, to);
+  const chunks = await Promise.all(dates.map(fetchLog));
+  return chunks.flat();
+}
+
+// ═══════════════════════════════════════════════════════════════
+// ANALYSIS
+// ═══════════════════════════════════════════════════════════════
+
+function analyze(events) {
+  // ── Pre-stamp local IPs as 'Local' before any other processing ───────────
+  // This is the single source of truth: if the IP is private/loopback,
+  // geo becomes 'Local' immediately and nothing else can leak the raw address.
+  for (const ev of events) {
+    if (isLocalIp(ev.ip)) ev.geo = 'Local';
+  }
+
+  // ── Helper: detect raw IP fallback values ────────────────────────────────
+  // stats.html does not perform geo lookup itself; it reads whatever the
+  // backend wrote into logs/users_YYYY-MM-DD.jsonl.  Sometimes the first tune
+  // event is logged before async geo lookup has finished, so geo may contain
+  // the raw IP.  Never display that raw IP as a location.
+  function isIPLike(s) {
+    s = String(s || '').trim();
+
+    // IPv4
+    if (/^\d{1,3}(\.\d{1,3}){3}$/.test(s)) return true;
+
+    // IPv4-mapped IPv6  (::ffff:192.168.x.x — has dots, missed by IPv6 regex)
+    if (/^::ffff:/i.test(s)) return true;
+
+    // IPv6 / abbreviated IPv6
+    if (/^[0-9a-f:]+$/i.test(s) && s.includes(':')) return true;
+
+    return false;
+  }
+
+  function isRealGeo(geo, ip) {
+    geo = String(geo || '').trim();
+    ip  = String(ip  || '').trim();
+
+    return (
+      geo &&
+      geo !== '?' &&
+      geo !== ip &&
+      !isIPLike(geo)
+    );
+  }
+
+  function safeGeo(geo, ip, uid, bestGeoById, bestGeoByIP) {
+    if (uid && bestGeoById[uid]) return bestGeoById[uid];
+    if (ip && bestGeoByIP[ip]) return bestGeoByIP[ip];
+    if (isRealGeo(geo, ip)) return String(geo).trim();
+    return 'Unknown / resolving';
+  }
+
+  // ── Pre-pass: find the best geo seen per uid AND per IP ──────────────────
+  // Per-IP cache helps when the same visitor has multiple/new session IDs.
+  const bestGeoById = {};
+  const bestGeoByIP = {};
+
+  for (const ev of events) {
+    if (isRealGeo(ev.geo, ev.ip)) {
+      if (ev.id && !bestGeoById[ev.id]) bestGeoById[ev.id] = ev.geo;
+      if (ev.ip && !bestGeoByIP[ev.ip]) bestGeoByIP[ev.ip] = ev.geo;
+    }
+  }
+
+  // ── Main pass: pair tune → disconnect to build sessions ──────────────────
+  const open = {};   // uid → {start, geo, ip, mode, freq_khz, hour}
+  const sessions = [];
+
+  for (const ev of [...events].sort((a,b) => a.ts < b.ts ? -1 : 1)) {
+    const uid = ev.id;
+    if (ev.event === 'tune') {
+      if (!open[uid]) {
+        open[uid] = {
+          start:    ev.ts,
+          geo:      safeGeo(ev.geo, ev.ip, uid, bestGeoById, bestGeoByIP),
+          ip:       ev.ip   || '',
+          mode:     ev.mode || '?',
+          freq_khz: ev.freq_khz || 0,
+          hour:     new Date(ev.ts).getUTCHours(),
+        };
+      } else {
+        open[uid].mode     = ev.mode     || open[uid].mode;
+        open[uid].freq_khz = ev.freq_khz || open[uid].freq_khz;
+        open[uid].geo      = safeGeo(ev.geo, ev.ip, uid, bestGeoById, bestGeoByIP);
+      }
+    } else if (ev.event === 'disconnect') {
+      const s = open[uid] || {
+        start:    ev.ts,
+        geo:      safeGeo(ev.geo, ev.ip, uid, bestGeoById, bestGeoByIP),
+        ip:       ev.ip   || '',
+        mode:     ev.mode || '?',
+        freq_khz: ev.freq_khz || 0,
+        hour:     new Date(ev.ts).getUTCHours(),
+      };
+      // Always upgrade geo with best known value before closing the session.
+      s.geo = safeGeo(s.geo, s.ip, uid, bestGeoById, bestGeoByIP);
+      delete open[uid];
+      // duration_s is unreliable (always 0) because the client is erased from
+      // signal_slices before broadcast_signal_changes fires on disconnect.
+      // Compute duration from the event timestamps instead — this works for
+      // all existing and future logs regardless of backend version.
+      let dur = ev.duration_s || 0;
+      if (!dur && s.start && ev.ts) {
+        dur = Math.max(0, Math.round((new Date(ev.ts) - new Date(s.start)) / 1000));
+      }
+      sessions.push({ ...s, duration: dur });
+    }
+  }
+  // ── Detect server restart gaps ───────────────────────────────────────────
+  // Sort all event timestamps and find gaps > 2 minutes between consecutive
+  // events. Each such gap marks a server restart. Any still-open session that
+  // started before a restart gap was terminated at the start of that gap —
+  // it should not show ~ and its duration should be capped at the gap start.
+  const RESTART_GAP_MS = 2 * 60 * 1000; // 2 minutes
+
+  const allTs = events
+    .map(ev => new Date(ev.ts).getTime())
+    .filter(t => !isNaN(t))
+    .sort((a, b) => a - b);
+
+  // Build list of restart times: the timestamp just before each large gap
+  const restartTimes = []; // each entry: { gapStart, gapEnd }
+  for (let i = 1; i < allTs.length; i++) {
+    if (allTs[i] - allTs[i - 1] > RESTART_GAP_MS) {
+      restartTimes.push({ gapStart: allTs[i - 1], gapEnd: allTs[i] });
+    }
+  }
+
+  const lastEventMs = allTs.length ? allTs[allTs.length - 1] : Date.now();
+  const capMs       = lastEventMs || Date.now();
+
+  // Server is genuinely running if last event < 2 min ago AND no restart gap
+  // occurred after it (i.e. we haven't seen a new burst of events post-gap).
+  const serverLikelyRunning = (Date.now() - lastEventMs) < RESTART_GAP_MS;
+
+  for (const uid in open) {
+    open[uid].geo = safeGeo(open[uid].geo, open[uid].ip, uid, bestGeoById, bestGeoByIP);
+
+    const sessionStartMs = open[uid].start ? new Date(open[uid].start).getTime() : 0;
+
+    // Find the earliest restart gap that occurred AFTER this session started.
+    // If found, the session was killed at gapStart — cap duration there and
+    // don't mark it as still_open.
+    const killingGap = restartTimes.find(g => g.gapStart >= sessionStartMs);
+
+    let elapsedS, isStillOpen;
+    if (killingGap) {
+      // Session was terminated by a server restart
+      elapsedS    = Math.max(0, Math.round((killingGap.gapStart - sessionStartMs) / 1000));
+      isStillOpen = false;
+    } else {
+      // No restart gap found after session start — session may be genuinely open
+      elapsedS    = sessionStartMs
+        ? Math.max(0, Math.round((capMs - sessionStartMs) / 1000))
+        : 0;
+      isStillOpen = serverLikelyRunning;
+    }
+
+    sessions.push({ ...open[uid], duration: elapsedS, still_open: isStillOpen });
+  }
+
+  // counts
+  const counter = arr => {
+    const m = {};
+    for (const v of arr) m[v] = (m[v] || 0) + 1;
+    return Object.entries(m).sort((a,b) => b[1] - a[1]);
+  };
+
+  const uniqueIPs   = new Set(events.map(e => e.ip).filter(Boolean));
+  const uniqueGeos  = new Set(sessions.map(s => s.geo).filter(s => s && !s.match(/^\d/)));
+  const durations   = sessions.map(s => s.duration).filter(d => d > 0);
+  const totalSecs   = durations.reduce((a,b) => a+b, 0);
+  const avgDur      = durations.length ? totalSecs / durations.length : 0;
+  const maxDur      = durations.length ? Math.max(...durations) : 0;
+
+  const geoCount    = counter(sessions.map(s => s.geo).filter(Boolean));
+  const bandCount   = counter(sessions.map(s => band(s.freq_khz)));
+  const modeCount   = counter(sessions.map(s => (s.mode || '?').toUpperCase()));
+
+  // freq bucketed to nearest 5 kHz
+  const freqCount   = counter(sessions
+    .filter(s => s.freq_khz > 0)
+    .map(s => Math.round(s.freq_khz / 5) * 5));
+
+  const hourCount   = Array.from({length:24}, (_,h) =>
+    sessions.filter(s => s.hour === h).length);
+
+  // longest sessions for table
+  const topSessions = [...sessions]
+    .filter(s => s.duration > 0)
+    .sort((a,b) => b.duration - a.duration)
+    .slice(0, 15);
+
+  return {
+    totalEvents: events.length,
+    totalSessions: sessions.length,
+    uniqueIPs:    uniqueIPs.size,
+    uniqueGeos:   uniqueGeos.size,
+    totalSecs, avgDur, maxDur,
+    geoCount, bandCount, modeCount, freqCount, hourCount, topSessions,
+  };
+}
+
+// ═══════════════════════════════════════════════════════════════
+// RENDERING
+// ═══════════════════════════════════════════════════════════════
+
+function barChart(rows, maxVal, colorClass = '') {
+  return rows.slice(0, 12).map(([label, cnt]) => {
+    const pct = maxVal ? (cnt / maxVal * 100).toFixed(1) : 0;
+    return `<div class="bar-row">
+      <div class="bar-label" title="${escHtml(label)}">${escHtml(label)}</div>
+      <div class="bar-track"><div class="bar-fill ${colorClass}" style="width:${pct}%"></div></div>
+      <div class="bar-count">${cnt}</div>
+    </div>`;
+  }).join('');
+}
+
+function hourChart(hourCount) {
+  const max = Math.max(...hourCount, 1);
+  return hourCount.map((cnt, h) => {
+    const pct = (cnt / max * 100).toFixed(1);
+    const label = String(h).padStart(2,'0');
+    return `<div class="hour-col" title="${label}:00 UTC — ${cnt} session${cnt!==1?'s':''}">
+      <div class="hour-bar" style="height:${pct}%"></div>
+      <div class="hour-label">${label}</div>
+    </div>`;
+  }).join('');
+}
+
+function sessionTable(sessions) {
+  if (!sessions.length) return '<p style="color:var(--muted);font-size:.75rem;padding:8px 0">No completed sessions.</p>';
+  return `<table class="session-table">
+    <thead><tr>
+      <th>#</th><th>Location</th><th>Frequency</th><th>Mode</th><th>Duration</th><th></th>
+    </tr></thead>
+    <tbody>
+    ${sessions.map((s,i) => `<tr>
+      <td style="color:var(--muted)">${String(i+1).padStart(2,'0')}</td>
+      <td class="td-geo">${escHtml(s.geo||'?')}</td>
+      <td class="td-freq">${fmtFreq(s.freq_khz)}</td>
+      <td class="td-mode">${escHtml((s.mode||'?').toUpperCase())}</td>
+      <td class="td-dur">${s.still_open ? '~' : ''}${fmtDur(s.duration)}</td>
+      <td class="td-tune">${Number(s.freq_khz) > 0 ? `<button class="tune-btn"
+        data-hz="${Math.round(Number(s.freq_khz) * 1000)}" data-mode="${escHtml(s.mode || '')}"
+        title="Tune the receiver to this frequency">Tune</button>` : ''}</td>
+    </tr>`).join('')}
+    </tbody></table>`;
+}
+
+function render(stats, from, to) {
+  const dash  = document.getElementById('dashboard');
+  const maxGeo  = stats.geoCount[0]?.[1]  || 1;
+  const maxBand = stats.bandCount[0]?.[1] || 1;
+  const maxMode = stats.modeCount[0]?.[1] || 1;
+  const maxFreq = stats.freqCount[0]?.[1] || 1;
+
+  dash.innerHTML = `
+  <!-- KPI strip -->
+  <div class="kpi-strip">
+    <div class="kpi">
+      <div class="kpi-label">Total Events</div>
+      <div class="kpi-value">${stats.totalEvents.toLocaleString()}</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Sessions</div>
+      <div class="kpi-value">${stats.totalSessions.toLocaleString()}</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Unique IPs</div>
+      <div class="kpi-value blue">${stats.uniqueIPs}</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Locations</div>
+      <div class="kpi-value blue">${stats.uniqueGeos}</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Total Airtime</div>
+      <div class="kpi-value amber">${fmtDur(stats.totalSecs)}</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Avg Session</div>
+      <div class="kpi-value amber">${fmtDur(stats.avgDur)}</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Longest</div>
+      <div class="kpi-value amber">${fmtDur(stats.maxDur)}</div>
+    </div>
+  </div>
+
+  <!-- Hourly -->
+  <div class="panel" style="margin-bottom:8px">
+    <div class="panel-head">
+      <span class="panel-title">Hourly Distribution (UTC)</span>
+      <span style="font-size:.65rem;color:var(--muted)">${from === to ? from : from + ' → ' + to}</span>
+    </div>
+    <div class="panel-body">
+      <div class="hour-grid">${hourChart(stats.hourCount)}</div>
+    </div>
+  </div>
+
+  <!-- Geo + Freq -->
+  <div class="grid2">
+    <div class="panel">
+      <div class="panel-head"><span class="panel-title">Top Locations</span></div>
+      <div class="panel-body">${barChart(stats.geoCount, maxGeo)}</div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><span class="panel-title">Top Frequencies</span></div>
+      <div class="panel-body">${
+        barChart(stats.freqCount.slice(0,12).map(([k,v]) =>
+          [fmtFreq(Number(k)), v]), maxFreq, 'amber')
+      }</div>
+    </div>
+  </div>
+
+  <!-- Band + Mode -->
+  <div class="grid2">
+    <div class="panel">
+      <div class="panel-head"><span class="panel-title">Band Popularity</span></div>
+      <div class="panel-body">${barChart(stats.bandCount, maxBand, 'blue')}</div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><span class="panel-title">Mode Popularity</span></div>
+      <div class="panel-body">${barChart(stats.modeCount, maxMode)}</div>
+    </div>
+  </div>
+
+  <!-- Longest sessions table -->
+  <div class="panel">
+    <div class="panel-head">
+      <span class="panel-title">Longest Sessions</span>
+      <span style="font-size:.65rem;color:var(--muted)">Top 15</span>
+    </div>
+    <div class="panel-body">${sessionTable(stats.topSessions)}</div>
+  </div>
+
+  <!-- Map panel -->
+  <div class="panel stats-map-panel" style="margin-top:8px">
+    <div class="panel-head">
+      <span class="panel-title">Visitor Map</span>
+      <span style="font-size:.65rem;color:var(--muted)" id="map-status">Geocoding locations…</span>
+    </div>
+    <div id="stats-map"></div>
+  </div>
+  `;
+
+  document.getElementById('footer-range').textContent =
+    from === to ? `Date: ${from}` : `Range: ${from} → ${to}`;
+
+  // Re-parse emoji after DOM update so flags show on Chrome/Edge/Opera/Windows
+  if (typeof twemoji !== 'undefined') {
+    twemoji.parse(document.getElementById('dashboard'));
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// LOAD FLOW
+// ═══════════════════════════════════════════════════════════════
+
+function setStatus(msg) {
+  document.getElementById('status-line').innerHTML = msg;
+}
+
+async function loadStats() {
+  const from = document.getElementById('date-from').value || todayStr();
+  const to   = document.getElementById('date-to').value   || from;
+
+  document.getElementById('dashboard').style.display = 'none';
+  document.getElementById('no-data').style.display   = 'none';
+  document.getElementById('loading').style.display   = 'block';
+  setStatus(`Loading logs from <span>${from}</span> to <span>${to}</span> …`);
+
+  const events = await fetchRange(from, to);
+
+  document.getElementById('loading').style.display = 'none';
+
+  if (!events.length) {
+    document.getElementById('no-data').style.display = 'block';
+    setStatus(`No log data found for <span>${from}</span> → <span>${to}</span>.`);
+    return;
+  }
+
+  const stats = analyze(events);
+  render(stats, from, to);
+  renderStatsMap(stats.geoCount);
+
+  document.getElementById('dashboard').style.display = 'block';
+  setStatus(`Loaded <span>${events.length.toLocaleString()}</span> events · <span>${stats.totalSessions}</span> sessions · <span>${stats.uniqueIPs}</span> unique IPs · logs: <span>${LOGS_BASE}</span>`);
+}
+
+// ── Quick-range buttons ──
+function setRange(days) {
+  const to   = new Date();
+  const from = new Date();
+  from.setUTCDate(from.getUTCDate() - (days - 1));
+  document.getElementById('date-from').value = from.toISOString().slice(0,10);
+  document.getElementById('date-to').value   = to.toISOString().slice(0,10);
+}
+
+async function tryAllDates() {
+  // Probe from today backwards up to 365 days to find first available log
+  setStatus('Scanning available log files…');
+  const today = new Date();
+  let from = todayStr();
+  for (let i = 1; i <= 365; i++) {
+    const d = new Date(today);
+    d.setUTCDate(d.getUTCDate() - i);
+    const ds = d.toISOString().slice(0,10);
+    // Use the already-resolved LOGS_BASE instead of hardcoded 'logs'
+    const r  = await fetch(`${LOGS_BASE}/users_${ds}.jsonl`, { method: 'HEAD', cache: 'no-store' });
+    if (r.ok) { from = ds; } else if (i > 7 && from !== todayStr()) break;
+  }
+  document.getElementById('date-from').value = from;
+  document.getElementById('date-to').value   = todayStr();
+  await loadStats();
+}
+
+// ── Init ──
+// async so we can await detectLogsBase() before doing anything else.
+document.addEventListener('DOMContentLoaded', async () => {
+  const t = todayStr();
+  document.getElementById('date-from').value = t;
+  document.getElementById('date-to').value   = t;
+
+  document.getElementById('btn-load').addEventListener('click', loadStats);
+  document.getElementById('btn-today').addEventListener('click',  () => { setRange(1);  loadStats(); });
+  document.getElementById('btn-week').addEventListener('click',   () => { setRange(7);  loadStats(); });
+  document.getElementById('btn-month').addEventListener('click',  () => { setRange(30); loadStats(); });
+  document.getElementById('btn-all').addEventListener('click',    tryAllDates);
+
+  // Resolve logs location before doing anything else.
+  // If LOGS_BASE was already hardcoded above, this is skipped.
+  if (LOGS_BASE === null) {
+    setStatus('Detecting log file location…');
+    LOGS_BASE = await detectLogsBase();
+  }
+
+  // Auto-load today on open
+  loadStats();
+});
+</script>
+
+<!-- ── Leaflet map ─────────────────────────────────────────────── -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+// ── Geocoding ──────────────────────────────────────────────────────────────
+// ── Country centroids fallback ────────────────────────────────────────────
+// Used when Nominatim is unreachable (firewall, CSP, rate-limit).
+// Extracted from the trailing 2-letter ISO code in strings like "Athens, GR".
+const CENTROIDS = {
+  AD:[42.55,1.57],AE:[24.47,54.37],AF:[33.93,67.71],AG:[17.07,-61.80],
+  AL:[41.15,20.17],AM:[40.07,45.04],AO:[-11.20,17.87],AR:[-38.42,-63.62],
+  AT:[47.52,14.55],AU:[-25.27,133.78],AZ:[40.14,47.58],BA:[43.92,17.68],
+  BB:[13.19,-59.54],BD:[23.68,90.36],BE:[50.50,4.47],BF:[12.36,-1.56],
+  BG:[42.73,25.49],BH:[26.02,50.55],BI:[-3.37,29.92],BJ:[9.31,2.32],
+  BN:[4.94,114.73],BO:[-16.29,-63.59],BR:[-14.24,-51.93],BS:[25.03,-77.40],
+  BT:[27.51,90.43],BW:[-22.33,24.68],BY:[53.71,27.95],BZ:[17.19,-88.50],
+  CA:[56.13,-106.35],CD:[-4.04,21.76],CF:[6.61,20.94],CG:[-0.23,15.83],
+  CH:[46.82,8.23],CI:[7.54,-5.55],CL:[-35.68,-71.54],CM:[3.85,11.50],
+  CN:[35.86,104.20],CO:[4.57,-74.30],CR:[9.75,-83.75],CU:[21.52,-77.78],
+  CV:[16.54,-23.04],CY:[35.13,33.43],CZ:[49.82,15.47],DE:[51.17,10.45],
+  DJ:[11.83,42.59],DK:[56.26,9.50],DO:[18.74,-70.16],DZ:[28.03,1.66],
+  EC:[-1.83,-78.18],EE:[58.60,25.01],EG:[26.82,30.80],ER:[15.18,39.78],
+  ES:[40.46,-3.75],ET:[9.15,40.49],FI:[61.92,25.75],FJ:[-16.58,179.41],
+  FR:[46.23,2.21],GA:[-0.80,11.61],GB:[55.38,-3.44],GE:[42.32,43.36],
+  GH:[7.95,-1.02],GM:[13.44,-15.31],GN:[9.95,-11.24],GQ:[1.65,10.27],
+  GR:[39.07,21.82],GT:[15.78,-90.23],GW:[11.80,-15.18],GY:[4.86,-58.93],
+  HN:[15.20,-86.24],HR:[45.10,15.20],HT:[18.97,-72.29],HU:[47.16,19.50],
+  ID:[-0.79,113.92],IE:[53.41,-8.24],IL:[31.05,34.85],IN:[20.59,78.96],
+  IQ:[33.22,43.68],IR:[32.43,53.69],IS:[64.96,-19.02],IT:[41.87,12.57],
+  JM:[18.11,-77.30],JO:[30.59,36.24],JP:[36.20,138.25],KE:[-0.02,37.91],
+  KG:[41.20,74.77],KH:[12.57,104.99],KP:[40.34,127.51],KR:[35.91,127.77],
+  KW:[29.31,47.48],KZ:[48.02,66.92],LA:[19.86,102.50],LB:[33.85,35.86],
+  LI:[47.14,9.55],LK:[7.87,80.77],LR:[6.43,-9.43],LS:[-29.61,28.23],
+  LT:[55.17,23.88],LU:[49.82,6.13],LV:[56.88,24.60],LY:[26.34,17.23],
+  MA:[31.79,-7.09],MC:[43.75,7.41],MD:[47.41,28.37],ME:[42.71,19.37],
+  MG:[-18.77,46.87],MK:[41.61,21.74],ML:[17.57,-3.99],MM:[19.16,95.96],
+  MN:[46.86,103.85],MR:[21.01,-10.94],MT:[35.94,14.37],MU:[-20.35,57.55],
+  MV:[3.20,73.22],MW:[-13.25,34.30],MX:[23.63,-102.55],MY:[4.21,108.04],
+  MZ:[-18.67,35.53],NA:[-22.96,18.49],NE:[17.61,8.08],NG:[9.08,8.68],
+  NI:[12.87,-85.21],NL:[52.13,5.29],NO:[60.47,8.47],NP:[28.39,84.12],
+  NZ:[-40.90,174.89],OM:[21.51,55.92],PA:[8.54,-80.78],PE:[-9.19,-75.02],
+  PG:[-6.31,143.96],PH:[12.88,121.77],PK:[30.38,69.35],PL:[51.92,19.15],
+  PT:[39.40,-8.22],PY:[-23.44,-58.44],QA:[25.35,51.18],RO:[45.94,24.97],
+  RS:[44.02,21.01],RU:[61.52,105.32],RW:[-1.94,29.87],SA:[23.89,45.08],
+  SB:[-9.64,160.16],SD:[12.86,30.22],SE:[60.13,18.64],SG:[1.35,103.82],
+  SI:[46.15,14.99],SK:[48.67,19.70],SL:[8.46,-11.78],SN:[14.50,-14.45],
+  SO:[5.15,46.20],SR:[3.92,-56.03],SS:[4.86,31.57],SV:[13.79,-88.90],
+  SY:[34.80,38.99],SZ:[-26.52,31.47],TD:[15.45,18.73],TG:[8.62,0.82],
+  TH:[15.87,100.99],TJ:[38.86,71.28],TM:[38.97,59.56],TN:[33.89,9.54],
+  TR:[38.96,35.24],TT:[10.69,-61.22],TZ:[-6.37,34.89],UA:[48.38,31.17],
+  UG:[1.37,32.29],US:[37.09,-95.71],UY:[-32.52,-55.77],UZ:[41.38,64.59],
+  VA:[41.90,12.45],VE:[6.42,-66.59],VN:[14.06,108.28],YE:[15.55,48.52],
+  ZA:[-30.56,22.94],ZM:[-13.13,27.85],ZW:[-19.02,29.15]
+};
+
+// Extract the trailing ISO-2 country code from "City, GR" → "GR"
+function countryCode(geoStr) {
+  if (!geoStr) return null;
+  const last = geoStr.split(',').pop().trim().toUpperCase();
+  return /^[A-Z]{2}$/.test(last) ? last : null;
+}
+
+function centroidOf(geoStr) {
+  const cc = countryCode(geoStr);
+  if (!cc || !CENTROIDS[cc]) return null;
+  const [lat, lng] = CENTROIDS[cc];
+  return { lat, lng };
+}
+
+// ── The station's own position ─────────────────────────────────────────────
+// Sessions logged as "Local" (loopback or LAN — the sysop's own browser) have
+// no public location of their own: they are AT the receiver. The locator comes
+// from [websdr] grid_locator in the server config, carried in /users. It is
+// never geocoded — handing the word "Local" to Nominatim finds a village of
+// that name, which is why these used to land in the USA.
+let stationLatLng = null;
+
+// Maidenhead locator → centre of the square. Accepts 4 or 6 characters
+// (KM17 / KM17VX); anything else is refused rather than guessed.
+function gridToLatLng(grid) {
+  const g = String(grid || '').trim().toUpperCase();
+  if (!/^[A-R]{2}[0-9]{2}([A-X]{2})?$/.test(g)) return null;
+  let lng = (g.charCodeAt(0) - 65) * 20 - 180 + (+g[2]) * 2;
+  let lat = (g.charCodeAt(1) - 65) * 10 -  90 + (+g[3]);
+  if (g.length === 6) {
+    lng += (g.charCodeAt(4) - 65) * (2 / 24) + (1 / 24);   // + half a subsquare
+    lat += (g.charCodeAt(5) - 65) * (1 / 24) + (1 / 48);
+  } else {
+    lng += 1;    // centre of the 2° × 1° square
+    lat += 0.5;
+  }
+  return { lat: +lat.toFixed(4), lng: +lng.toFixed(4) };
+}
+
+// One-shot fetch of the locator. This page reads log files, not the live
+// server, so /users is queried purely for its grid_locator field. A failure is
+// not an error: the map simply leaves "Local" off, as it did before.
+async function loadStationLatLng() {
+  if (stationLatLng) return stationLatLng;
+  try {
+    const r = await fetch('/users', { cache: 'no-store' });
+    if (!r.ok) return null;
+    const d = await r.json();
+    stationLatLng = gridToLatLng(d.grid_locator);
+  } catch { /* offline / served from elsewhere — leave it null */ }
+  return stationLatLng;
+}
+
+// Geocoding ─ Nominatim with 5 s timeout; falls back to country centroid
+const geoCache  = new Map();  // name → {lat,lng} | null
+const geocodeQ  = [];         // {name, resolve}[]
+let   geocodeRunning = false;
+
+// PERF: persist resolved coordinates across page loads. Nominatim is rate-
+// limited to ~1 lookup/sec, so a fresh cache makes the map take (unique
+// cities × 1.1 s) to populate EVERY reload. Hydrating from localStorage means
+// each city is geocoded once, ever — subsequent loads resolve instantly.
+const GEO_LS_KEY = 'phantomsdr_geocache_v1';  // shared with users.html so the two pages warm each other
+try {
+  const stored = JSON.parse(localStorage.getItem(GEO_LS_KEY) || '{}');
+  // Drop the poisoned "Local" entry an older build could have cached (it had
+  // been geocoded to a town of that name, putting the station in the USA).
+  delete stored['Local'];
+  for (const k in stored) geoCache.set(k, stored[k]);
+} catch { /* corrupt/absent — start empty */ }
+
+function persistGeoCache() {
+  try {
+    const obj = {};
+    // Persist only successfully-resolved coordinates. Nulls (transient
+    // Nominatim failure with no country centroid) are kept in-memory only so a
+    // later reload retries them instead of caching the miss forever.
+    for (const [k, v] of geoCache) if (v) obj[k] = v;
+    localStorage.setItem(GEO_LS_KEY, JSON.stringify(obj));
+  } catch { /* quota/unavailable — cache stays in-memory for this session */ }
+}
+
+async function drainGeocodeQ() {
+  if (geocodeRunning) return;
+  geocodeRunning = true;
+  while (geocodeQ.length) {
+    const { name, resolve } = geocodeQ.shift();
+    if (geoCache.has(name)) { resolve(geoCache.get(name)); continue; }
+
+    let v = null;
+    try {
+      const ctrl = new AbortController();
+      const tid  = setTimeout(() => ctrl.abort(), 5000);
+      const r = await fetch(
+        `https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${encodeURIComponent(name)}`,
+        { signal: ctrl.signal }
+      );
+      clearTimeout(tid);
+      const j = await r.json();
+      v = j.length ? { lat: +j[0].lat, lng: +j[0].lon } : centroidOf(name);
+    } catch {
+      v = centroidOf(name); // Nominatim blocked/timeout → country centroid
+    }
+
+    geoCache.set(name, v);
+    if (v) persistGeoCache();   // remember resolved coordinates across reloads
+    resolve(v);
+    await new Promise(r => setTimeout(r, 1100)); // Nominatim rate limit
+  }
+  geocodeRunning = false;
+}
+
+function geocodeLoc(name) {
+  if (geoCache.has(name)) return Promise.resolve(geoCache.get(name));
+  return new Promise(resolve => {
+    const existing = geocodeQ.find(q => q.name === name);
+    if (existing) {
+      const orig = existing.resolve;
+      existing.resolve = v => { orig(v); resolve(v); };
+    } else {
+      geocodeQ.push({ name, resolve });
+      drainGeocodeQ();
+    }
+  });
+}
+
+// ── Stats map ──────────────────────────────────────────────────────────────
+let statsMap     = null;
+let statsMarkers = null;
+
+async function renderStatsMap(geoCount) {
+  // geoCount: [[name, count], ...] sorted by count desc — from analyze()
+
+  // "Local" is kept only once the station's own locator is known — it is
+  // plotted at the receiver (see stationLatLng), never geocoded. The other
+  // placeholders have no position at all and are dropped.
+  await loadStationLatLng();
+  const entries = geoCount.filter(([name]) =>
+    name && name !== 'Unknown / resolving' && name !== '?' &&
+    (name !== 'Local' || !!stationLatLng)
+  );
+
+  // Wait one tick so render()'s dash.innerHTML replacement is in the DOM.
+  // render() destroys the old #stats-map element and creates a fresh one;
+  // we must not touch Leaflet until the new element exists.
+  await new Promise(r => setTimeout(r, 0));
+
+  // Always destroy the old Leaflet instance — its container was just replaced
+  // by render() via dash.innerHTML and no longer exists in the DOM.
+  if (statsMap) {
+    try { statsMap.remove(); } catch (_) {}
+    statsMap     = null;
+    statsMarkers = null;
+  }
+
+  if (!entries.length) {
+    const el = document.getElementById('map-status');
+    if (el) el.textContent = 'No geocodable locations in this range';
+    return;
+  }
+
+  // Attach a fresh Leaflet instance to the newly created #stats-map element.
+  statsMap     = L.map('stats-map', { center: [20, 5], zoom: 2 });
+  statsMarkers = L.layerGroup().addTo(statsMap);
+  // CARTO's anonymous basemap tiles now come back stamped "API KEY REQUIRED",
+  // so we use Esri's keyless dark canvas instead (native tiles stop at z16).
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; Esri, HERE, Garmin',
+    maxZoom: 18,
+    maxNativeZoom: 16,
+  }).addTo(statsMap);
+
+  // ── Z-order panes ────────────────────────────────────────────────────────
+  // Geocoding resolves asynchronously in random order, so we can't rely on
+  // SVG DOM insertion order to place small markers on top of large ones.
+  // Capture a local reference so stale in-flight geocoding Promises from a
+  // previous render can't pollute this (new) map when they eventually resolve.
+  const localMap     = statsMap;
+  const localMarkers = statsMarkers;
+
+  let resolved = 0;
+  const total  = entries.length;
+
+  const updateStatus = () => {
+    const el = document.getElementById('map-status');
+    if (el) el.textContent = resolved < total
+      ? `Geocoding ${resolved}/${total}…`
+      : `${total} location${total !== 1 ? 's' : ''} plotted`;
+  };
+  updateStatus();
+
+  // Marker factory (shared by the immediate centroid seed and the precise
+  // Nominatim refinement below).
+  const makeMarker = (lat, lng, name, count) => {
+    const circle = L.circleMarker([lat, lng], {
+      radius:      6,
+      fillColor:   '#00aeff',
+      color:       '#005f8f',
+      weight:      1,
+      opacity:     0.85,
+      fillOpacity: 0.85,
+    });
+    const twName = (typeof twemoji !== 'undefined') ? twemoji.parse(name) : name;
+    circle.bindTooltip(
+      `${twName}<br/>${count} session${count !== 1 ? 's' : ''}`,
+      { className: 'smap-tip', direction: 'top' }
+    );
+    return circle;
+  };
+
+  // PERF: seed every entry at its country centroid IMMEDIATELY so the map is
+  // populated in one tick instead of blank for (unique cities × 1.1 s).
+  // Nominatim then refines each marker to its exact city in the background;
+  // cities already in the persisted geoCache refine effectively instantly.
+  const markerByName = new Map();
+  for (const [name, count] of entries) {
+    const seed = (name === 'Local') ? stationLatLng : centroidOf(name);
+    if (seed) {
+      const circle = makeMarker(seed.lat, seed.lng, name, count);
+      localMarkers.addLayer(circle);
+      markerByName.set(name, circle);
+    }
+  }
+
+  // Kick off geocoding for all entries; refine the seeded marker (or add one
+  // if the entry had no country centroid) as each resolves.
+  for (const [name, count] of entries) {
+    if (name === 'Local') {   // already placed on the station, nothing to resolve
+      resolved++;
+      updateStatus();
+      continue;
+    }
+    geocodeLoc(name).then(coords => {
+      resolved++;
+      updateStatus();
+      if (!coords) return;
+      // Guard: if a newer render has already replaced statsMarkers, discard.
+      if (localMarkers !== statsMarkers) return;
+
+      const existing = markerByName.get(name);
+      if (existing) {
+        existing.setLatLng([coords.lat, coords.lng]);  // refine seeded centroid
+      } else {
+        const circle = makeMarker(coords.lat, coords.lng, name, count);
+        localMarkers.addLayer(circle);
+        markerByName.set(name, circle);
+      }
+    });
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  PhantomSDR-Plus — phantomsdr-websdr-relay.service
+#
+#  Runs the WebSDR diversity relay under systemd: it comes back after a reboot
+#  and after a crash, on its own.
+#
+#  You do not have to edit this file by hand. ./setup_websdr_relay.sh asks for
+#  the port and the station details, writes websdr_relay.json, and installs a
+#  unit exactly like this one with your own user and paths already filled in.
+#  This copy is here for the case where you would rather do it yourself.
+#
+#  INSTALL BY HAND
+#    1. cp websdr_relay.json.example websdr_relay.json   # then edit site/operator
+#    2. Replace YOUR_USER below with the account that owns the checkout, and
+#       both /home/YOUR_USER/PhantomSDR-Plus paths with where it actually is.
+#    3. sudo cp phantomsdr-websdr-relay.service /etc/systemd/system/
+#    4. sudo systemctl daemon-reload
+#    5. sudo systemctl enable --now phantomsdr-websdr-relay
+#    6. curl -s localhost:9000/status        # should answer
+#
+#  The relay listens on the port in websdr_relay.json (9000 by default) and
+#  listeners' browsers reach it DIRECTLY — it is not proxied through the
+#  spectrumserver — so that port has to be forwarded and open in the firewall,
+#  and it must match DEFAULT_RELAY_PORT in frontend/src/webSdrSource.js.
+#
+#  Settings live in websdr_relay.json; edit that and restart the unit:
+#    sudo systemctl restart phantomsdr-websdr-relay
+#
+#  FULL MANUAL: docs/RECEIVE_DIVERSITY.md
+# ─────────────────────────────────────────────────────────────────────────────
+
+[Unit]
+Description=PhantomSDR-Plus WebSDR diversity relay
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=YOUR_USER
+WorkingDirectory=/home/YOUR_USER/PhantomSDR-Plus
+ExecStart=/usr/bin/python3 /home/YOUR_USER/PhantomSDR-Plus/websdr_relay.py
+Restart=on-failure
+RestartSec=5
+
+# It only makes outbound WebSocket connections and serves one port; it needs
+# nothing else on the machine. ProtectHome=read-only stops it writing anywhere
+# under /home, which is where the checkout usually lives — it only ever reads
+# its own config, so that is right, but a future change that needs to write
+# would fail here in a way that looks like a permissions bug.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_INET AF_INET6
+
+[Install]
+WantedBy=multi-user.target

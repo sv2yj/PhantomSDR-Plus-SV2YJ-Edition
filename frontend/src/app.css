@@ -1,0 +1,109 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── JS8 decoder panel ─────────────────────────────────────────────────────
+   A JS8 message is a sentence, not an FT8-style fixed-field spot, so the row
+   is three columns with the text free to run — not the seven-column ftx-grid.
+   Long messages wrap rather than truncate: the whole point of JS8 is the text.
+*/
+.js8-row {
+  display: grid;
+  /* mode, Hz, dB, message.
+     The numeric columns are sized to their content and left-aligned so they sit
+     up against the mode label rather than floating at the right-hand edge of an
+     over-wide column — right alignment left a visible hole after "JS8". The
+     separation that matters is before the message, which gets its own padding
+     below. */
+  grid-template-columns: 2.4rem 2.7rem 3.4rem 1fr;
+  column-gap: 0.45rem;
+  align-items: baseline;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  padding: 0.1rem 0.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.js8-head {
+  color: #9ca3af;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  margin-bottom: 0.15rem;
+}
+
+.js8-mode {
+  color: #34d399;
+  font-weight: 600;
+}
+
+/* Every row is its own grid, so the tracks are fixed rather than content-sized
+   -- otherwise columns would not line up from one row to the next. Fixed tracks
+   do not clip, so a value wider than its track would overflow into the message.
+   nowrap keeps numbers on one line and the widths above have room for the
+   widest real value ("-28", "2999"). */
+.js8-hz {
+  text-align: left;
+  color: #d1d5db;
+  white-space: nowrap;
+}
+
+.js8-snr {
+  text-align: left;
+  color: #9ca3af;
+  white-space: nowrap;
+}
+
+.js8-text {
+  color: #e5e7eb;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+  /* The one gap worth having: dB and the first word of the message must not
+     read as a single run of characters. */
+  padding-left: 0.8rem;
+}
+
+/* Callsigns inside a message, so the station stands out from the command and
+   the free text around it. */
+.js8-call {
+  color: #4ade80;
+  font-weight: 600;
+}
+
+/* Closed by a timeout rather than by a last-frame marker: the text is real but
+   may be cut short, so it is dimmed rather than hidden. */
+.js8-incomplete .js8-text {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.js8-pending {
+  margin-bottom: 0.4rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px dashed rgba(52, 211, 153, 0.35);
+}
+
+.js8-row-pending {
+  border-bottom: none;
+}
+
+.js8-row-pending .js8-text {
+  color: #6ee7b7;
+}
+
+.js8-caret {
+  animation: js8-blink 1s steps(2, start) infinite;
+  color: #34d399;
+}
+
+@keyframes js8-blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js8-caret {
+    animation: none;
+  }
+}

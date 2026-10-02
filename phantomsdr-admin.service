@@ -1,0 +1,85 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  PhantomSDR-Plus — phantomsdr-admin.service
+#
+#  Runs the admin panel under systemd instead of manage_admin.sh: it comes back
+#  after a reboot and after a crash, on its own. Optional — manage_admin.sh is
+#  perfectly fine if you are happy starting things by hand.
+#
+#  Install this one together with phantomsdr-proxy.service. The panel alone is
+#  reachable only on localhost; the proxy is what puts it on your public port.
+#
+#  Why this matters for the thermal guard: the CPU over-temperature guard runs
+#  INSIDE this process. No panel, no protection — which is exactly the situation
+#  Restart=always and the boot-time start are here to prevent.
+#
+#  INSTALL
+#    1. Edit User= and the two paths below to match your installation.
+#    2. sudo cp phantomsdr-admin.service phantomsdr-proxy.service \
+#              /etc/systemd/system/
+#    3. sudo systemctl daemon-reload
+#    4. ./manage_admin.sh stop        # free the ports first
+#    5. sudo systemctl enable --now phantomsdr-admin
+#       sudo systemctl enable --now phantomsdr-proxy
+#    6. systemctl status phantomsdr-admin    # should say "active (running)"
+#
+#  AFTERWARDS, use systemctl — not manage_admin.sh — to stop or restart:
+#
+#    sudo systemctl restart phantomsdr-admin
+#
+#  'manage_admin.sh stop' is undone by systemd five seconds later, and
+#  'manage_admin.sh restart' starts a second panel that races the one systemd
+#  is about to start for the same port. 'manage_admin.sh status' stays useful.
+#
+#  To go back to the manual workflow:
+#    sudo systemctl disable --now phantomsdr-admin
+#    sudo systemctl disable --now phantomsdr-proxy
+#
+#
+#  LOG OWNERSHIP — needed for the panel's "Clear Logs" button
+#  systemd opens the StandardOutput=append: path from PID 1, before it drops to
+#  User=, so a log that does not exist yet is created root:root 0644. The panel
+#  runs as User= and then cannot truncate it: Clear Logs reports
+#  "Permission denied: .../admin.log". Install tmpfiles/phantomsdr-logs.conf (edit
+#  the paths and user first) so the log is re-created with the right owner at
+#  every boot, and repair an existing one with
+#  'sudo chown YOUR_USER:YOUR_GROUP admin.log' — chown, never rm: it is held open
+#  O_APPEND. setup_admin.sh does both for you.
+#
+#  SupplementaryGroups=cpufreq gives the guard's throttle stage write access to
+#  the CPU frequency ceiling without running the panel — and every start/stop
+#  script it launches — as root. Create that group with ./setup-cpufreq-perms.sh
+#  first, or systemd refuses to start the unit. Drop the line if you do not use
+#  the throttle stage. systemd builds the group list fresh at every start, so
+#  unlike an already-open login shell it needs no logout to pick the group up.
+#
+#  KillMode=process is load-bearing. The panel's Start button launches the
+#  receiver as a child of this process, and a child inherits the unit's cgroup —
+#  Python's start_new_session detaches the terminal and process group, but not
+#  the cgroup. Under systemd's default KillMode=control-group, stopping the panel
+#  would therefore SIGTERM and then SIGKILL spectrumserver, its watchdog and the
+#  autorun daemon along with it, and stall the restart for the full 90 s stop
+#  timeout. With =process systemd signals only the panel and leaves the rest of
+#  the cgroup running, so restarting the panel no longer takes a busy receiver
+#  off air. Do not remove the line without reading that paragraph twice.
+#
+#  FULL MANUAL: docs/THERMAL_GUARD.md · docs/ADMIN_PANEL_SETUP.md
+# ─────────────────────────────────────────────────────────────────────────────
+
+[Unit]
+Description=PhantomSDR Admin Panel
+After=network.target
+
+[Service]
+Type=simple
+User=YOUR_USER
+SupplementaryGroups=cpufreq
+WorkingDirectory=/home/YOUR_USER/PhantomSDR-Plus
+ExecStart=/usr/bin/python3 -u /home/YOUR_USER/PhantomSDR-Plus/admin_server.py
+StandardOutput=append:/home/YOUR_USER/PhantomSDR-Plus/admin.log
+StandardError=append:/home/YOUR_USER/PhantomSDR-Plus/admin.log
+KillMode=process
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

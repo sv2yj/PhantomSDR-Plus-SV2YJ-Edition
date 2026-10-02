@@ -1,0 +1,3 @@
+# placeholder: logrotate writes rotated proxy.log/admin.log archives here
+*
+!.gitignore

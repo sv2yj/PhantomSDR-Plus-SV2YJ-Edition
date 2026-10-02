@@ -1,0 +1,139 @@
+==============================================================================
+ PhantomSDR-Plus 4.1.0 — update
+ SV1BTL — https://github.com/sv1btl/PhantomSDR-Plus
+ 17 September 2026
+==============================================================================
+
+WHAT THIS ARCHIVE IS
+
+A file drop over an existing PhantomSDR-Plus installation. Everything in update/ keeps the path it has in the repository, so unpacking it on top of your tree puts each file where it belongs.
+
+Nothing here touches your configuration: no .toml, no site_information.json, no admin_config.json and no frequency list is included, so none of them can be overwritten. **That matters more than usual this time** — the main feature of this drop is switched on by keys in your .toml, and you have to add them by hand. Section 2 gives the block to paste.
+
+This drop is about one thing: surviving a connection flood. On 16 September a single address opened 134 listener sessions inside one minute and held 181 of them at once, while the station's real audience was about a dozen. Everything here follows from that.
+
+It carries BACKEND SOURCE, FRONTEND SOURCE, the ADMIN PANEL, the proxy, a new firewall script and a new chapter of documentation in all seven languages. It needs a backend rebuild, a frontend rebuild, a receiver restart and an admin panel restart. The version number does not move: this is still 4.1.0.
+
+It is meant for a tree that already has the update of 15 September 2026. On an older tree, apply that one first.
+
+A warning worth reading before you start: this drop changes what happens when a listener's connection drops. There is no automatic reconnection any more. Section 2 explains why, and it is deliberate.
+
+
+------------------------------------------------------------------------------
+ 1. HOW TO APPLY
+------------------------------------------------------------------------------
+
+  cd ~
+  unzip -o update.zip
+  cp -a update/. PhantomSDR-Plus/
+  cd PhantomSDR-Plus
+  ./recompile.sh          # choose [3] Both backend and frontend
+
+Then add the limits block from section 2 to your .toml, restart the receiver the way you normally do, and restart the admin panel — for a panel installed as systemd units:
+
+  sudo systemctl restart phantomsdr-admin
+
+Listeners get the new page when they reload it. A phone may need a hard reload to get past its cache.
+
+[3] Both is required, not a preference: the per-IP limits live in the backend, the refusal handling lives in the frontend, and a page from the old build will not understand a refusal from the new server.
+
+NEW FILES in this drop — frontend/src/refused.js, frontend/src/clientVersion.js and setup-firewall.sh. The first two are imported by files that are also in this archive, so copy the whole tree or the frontend build fails. Nothing was deleted; you do not have to remove anything.
+
+
+------------------------------------------------------------------------------
+ 2. PER-IP LIMITS — THE PART YOU MUST CONFIGURE
+------------------------------------------------------------------------------
+
+Nothing in this archive limits anything until you say so. The keys default to off, so a tree updated and left alone behaves exactly as it did before.
+
+Paste this into the [limits] section of your .toml, next to the audio/waterfall/events lines you already have:
+
+  per_ip=3
+  per_ip_rate=40
+
+That is the whole configuration. Three simultaneous listeners from one address, and forty new connections a minute from one address.
+
+WHY THOSE TWO NUMBERS. Measured over a week of this station's own logs: of 758 distinct addresses, 682 never had more than one session at a time, 54 reached two, 13 reached three, and 8 went above. A limit of three would have touched eight addresses in seven days. The flood sat at 181. Your own figures may differ — docs/CONNECTION_LIMITS.md section 9 shows how to measure them from logs/users_*.jsonl.
+
+WHAT COUNTS AS A LISTENER. One /audio connection, or one Kiwi sound connection where [kiwi_emulation] is on. The same unit your user count already uses. A desktop tab also opens /waterfall, /events and /chat — four sockets in all — and those are covered by a separate socket ceiling that derives itself from per_ip, so you do not set it.
+
+FIVE MORE KEYS EXIST and all of them default to something sensible: a socket ceiling of per_ip * 4 + 4, a ten-minute refusal after breaking per_ip_rate, and ceilings of 8 idle connections per address and 512 overall. Set them only if you want to change them. They are listed with their values in the shipped config examples and explained in the manual.
+
+REMEMBER NAT. A club, a school, an office or a mobile carrier appears as one address, and everyone behind it shares one allowance of three. This is inherent to any limit keyed on an address. If a listener ever reports being unable to connect, look there first:
+
+  grep Refused spectrumserver.log
+
+
+------------------------------------------------------------------------------
+ 3. WHAT ELSE CHANGED
+------------------------------------------------------------------------------
+
+A DROPPED CONNECTION NOW ENDS THE SESSION. The /audio socket used to reconnect by itself after a drop. On a receiver that was the wrong behaviour: /waterfall and /events never came back with it, so a retried session was live audio bolted to a frozen waterfall — and stopping the server no longer cleared it, because every listener was back seconds later, filling the user list with sessions nobody was in. The page now goes quiet and the listener reloads it, which is what this receiver did before a reconnect was ever added. It also removes a trap: against a rate limit, an automatic retry extends the very refusal it is trying to get around.
+
+The desktop page explains a refusal when it happens at page load and simply stops when it happens mid-session. /mobile shows one line asking the listener to reload.
+
+THE KICK ACTUALLY WORKS NOW. Kicking a listener from the admin panel used to close the socket in a way indistinguishable from a network drop, so the browser reconnected a second later with sound while its waterfall stayed frozen — the kicked listener was still on air. The kick now happens inside spectrumserver with a close code the page understands as final. It disconnects; it does not ban. Whoever wants back in reloads the page and is an ordinary listener.
+
+OUTDATED PAGES CAN BE TURNED AWAY. A browser tab keeps the JavaScript it loaded until someone reloads it, so a change to the page reaches only listeners who happen to reload. Pages now announce their build, and an optional [server] min_client_version refuses anything older with "this page is out of date — please reload it". It is off by default and should stay off unless you have just made a change that old pages must not keep ignoring — it also turns away other stations' diversity clients, which do not send the marker. Set it back to 0 once the old pages are gone.
+
+A KERNEL-LEVEL FLOOD GUARD, setup-firewall.sh, is included and does nothing until you run it. It is the layer below the per-IP limits: an nftables table that sheds volume before the server reads a byte, with a per-source connection ceiling and rate on the receiver ports, an SSH brute-force brake, and Windows file sharing closed to everything outside private address ranges.
+
+  ./setup-firewall.sh --show          read the rules, change nothing
+  sudo ./setup-firewall.sh --check    validate against your kernel
+  sudo ./setup-firewall.sh --apply    load, with a 60-second auto-rollback
+  sudo ./setup-firewall.sh --persist  reload at boot
+
+It cannot lock you out: the table's policy is accept and it only drops named patterns, established connections are accepted in the first rule so your current SSH session is never touched, and --apply removes the ruleset again unless you confirm within sixty seconds. Use that minute to check, from another device and off your own network, that the receiver still loads and that a NEW ssh session still opens. If you reach your SMB shares from outside your LAN, delete the two 139/445 lines before applying.
+
+A BUG THAT LOCKED ADDRESSES OUT is fixed. A connection that died before it ever made a request — an aborted page load, a port scan, a bare TCP probe — never gave back the internal slot it held. After enough of them, that address could not connect at all until the receiver was restarted. This one was silent and is worth having even if you never set a single limit.
+
+CLEAR LOGS NOW CLEARS EVERY LOG. The panel's Clear Logs button used to keep autorun.log back while emptying everything else, and it blanked the autorun pane anyway, so the log looked cleared and then reappeared at the next refresh — a fault, as far as anyone using it could tell. The exception is gone: every log in the viewer is emptied now, autorun.log included. Be aware of what that costs on that one file, because nothing else in the station records it — the decode history is the only account of what was heard and when, and a clear discards everything decoded since logrotate last rotated a copy into logproxy/. Pressing the button under a running decoder is safe in itself; the daemon keeps writing to the same file. The toast names the logs it emptied, and a log it could not write is named with its error and keeps its lines on screen instead of being blanked.
+
+
+------------------------------------------------------------------------------
+ 4. DOCUMENTATION
+------------------------------------------------------------------------------
+
+A new chapter, Connection Limits, in all seven languages and in the offline PDFs:
+
+  docs/CONNECTION_LIMITS.md      and  docs/<lang>/CONNECTION_LIMITS.md
+
+It covers what you are actually defending against — and says plainly that a genuine distributed attack cannot be answered on your own machine, only single-source flooding can — what counts as one listener, every key and why it exists, the firewall script, what a refused listener sees, how to read the logs and counters, how to measure your own traffic to pick the numbers, and the traps. One of those traps cost this station its directory registration for a few minutes, so it is written down rather than left to be rediscovered: never put a deadline on an idle connection, and never shorten websocketpp's open_handshake_timeout. websdr.org's callback host connects back and then sits silent for well over thirty seconds before it speaks.
+
+The seven PDFs are rebuilt and now carry fifteen chapters.
+
+
+------------------------------------------------------------------------------
+ 5. FILES IN THIS ARCHIVE
+------------------------------------------------------------------------------
+
+Everything that changed on 17 September 2026. Nothing was deleted.
+
+NEW
+  setup-firewall.sh                       the nftables flood guard
+  frontend/src/refused.js                 shared refusal handling
+  frontend/src/clientVersion.js           the build marker a page announces
+  docs/CONNECTION_LIMITS.md               the new chapter, and its six
+  docs/<lang>/CONNECTION_LIMITS.md        translations
+
+BACKEND
+  src/websocket.cpp  src/spectrumserver.cpp  src/spectrumserver.h
+  src/http.cpp  src/events.cpp  src/signal.cpp  src/utils.cpp  src/utils.h
+
+FRONTEND
+  frontend/src/App.svelte  frontend/src/audio.js  frontend/src/waterfall.js
+  frontend/src/events.js  frontend/src/lib/backend.js
+  frontend/src/mobile/Mobile.svelte  frontend/src/mobile/backend.js
+
+ADMIN PANEL AND PROXY
+  admin_server.py  proxy.py
+
+DOCUMENTATION
+  README.md  docs/README.md and its six translations
+  docs/ADMIN_PANEL_SETUP.md and its six translations
+  the seven PDFs
+
+NOT INCLUDED, as always: your .toml files, site_information.json,
+admin_config.json, the frequency list, and this receiver's own launcher.
+
+==============================================================================

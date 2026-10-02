@@ -1,0 +1,65 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  PhantomSDR-Plus — thermal-guard.service
+#
+#  Runs the CPU over-temperature guard as a system service, for installations
+#  that do NOT use the admin panel. If you run the admin panel you do not need
+#  this file at all — the panel already runs the guard.
+#
+#  INSTALL
+#    1. Edit User= and the two paths below to match your installation.
+#    2. sudo cp thermal-guard.service /etc/systemd/system/
+#    3. sudo systemctl daemon-reload
+#    4. sudo systemctl enable --now thermal-guard
+#    5. systemctl status thermal-guard      # should say "active (running)"
+#
+#  BEFORE YOU ENABLE IT, check what the guard sees on this machine:
+#    python3 thermal_guard.py --once
+#  If it reports no sensor, this machine cannot be protected — see the docs.
+#
+#  FULL MANUAL: docs/THERMAL_GUARD.md
+#
+#  CONFIGURATION lives in admin_config.json next to thermal_guard.py. The guard
+#  starts in log-only mode, so until you arm it the guard records what it WOULD
+#  have done in crash.log and touches nothing. Minimum useful file:
+#
+#    {
+#      "sdr_process_name": "spectrumserver",
+#      "stop_script":  "stop-websdr.sh",
+#      "start_script": "start-rx888mk2.sh",
+#      "thermal_mode": "stop+restart"
+#    }
+#
+#  You can arm it from this file instead, without writing any JSON, by adding
+#  --mode to ExecStart below:
+#
+#    ExecStart=/usr/bin/python3 -u /home/sysop/PhantomSDR-Plus/thermal_guard.py --mode stop+restart
+#
+#  --mode wins over thermal_mode in the config file. Leave it off (or use
+#  --mode log) while you are still watching what the guard reports.
+#
+#  User= MUST be an account allowed to run those start/stop scripts — normally
+#  the same user that runs the SDR server. Running the guard as a user that
+#  cannot stop the server leaves you unprotected while looking protected.
+# ─────────────────────────────────────────────────────────────────────────────
+
+[Unit]
+Description=PhantomSDR-Plus CPU thermal guard
+Documentation=https://github.com/sv1btl/PhantomSDR-Plus
+After=network.target
+
+[Service]
+Type=simple
+User=sysop
+WorkingDirectory=/home/sysop/PhantomSDR-Plus
+ExecStart=/usr/bin/python3 -u /home/sysop/PhantomSDR-Plus/thermal_guard.py
+
+# Keep the guard alive: a protection service that dies quietly is worse than
+# none, because nothing tells you it is gone.
+Restart=always
+RestartSec=10
+
+# The guard is a watcher, not a worker — keep it out of the way of the SDR.
+Nice=10
+
+[Install]
+WantedBy=multi-user.target

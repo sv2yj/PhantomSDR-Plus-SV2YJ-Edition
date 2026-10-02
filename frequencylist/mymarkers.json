@@ -1,0 +1,872 @@
+[
+    {
+      "frequency": 77500,
+      "name": "DCF77",
+      "mode": "CW"
+    },
+    {
+      "frequency": 100000,
+      "name": "LORAN",
+      "mode": "AM"
+    },
+    {
+      "frequency": 129100,
+      "name": "DCF42 (DE)",
+      "mode": "CW"
+    },
+    {
+      "frequency": 135800,
+      "name": "SXV",
+      "mode": "CW"
+    },
+    {
+      "frequency": 136000,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 139000,
+      "name": "DCF42 (DE)",
+      "mode": "CW"
+    },
+    {
+      "frequency": 472000,
+      "name": "Ham LF>",
+      "mode": "USB"
+    },
+    {
+      "frequency": 474200,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 479000,
+      "name": "<Ham LF",
+      "mode": "USB"
+    },
+    {
+      "frequency": 490000,
+      "name": "NAVTEXT",
+      "mode": "USB"
+    },
+    {
+      "frequency": 518000,
+      "name": "NAVTEXT",
+      "mode": "USB"
+    },
+    {
+      "frequency": 531000,
+      "name": "R.Yavne (ISR)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 1820000,
+      "name": "SKCC",
+      "mode": "CW"
+    },   
+    {
+      "frequency": 1836600,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 1840000,
+      "name": "FT8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 1846000,
+      "name": "JS8",
+      "mode": "USB"
+    },    
+    {
+      "frequency": 1843000,
+      "name": "FT2",
+      "mode": "USB"
+    },    
+    {
+      "frequency": 1850000,
+      "name": "1850",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 1854000,
+      "name": "1854",
+      "mode": "CW"
+    },
+    {
+      "frequency": 1870000,
+      "name": "FreeDV",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 1876000,
+      "name": "Volmet",
+      "mode": "USB"
+    },
+    {
+      "frequency": 2182000,
+      "name": "Int Rescue",
+      "mode": "USB"
+    },
+    {
+      "frequency": 2680000,
+      "name": "4XZ (ISR)",
+      "mode": "CW"
+    },
+    {
+      "frequency": 2730000,
+      "name": "Olympia Radio",
+      "mode": "USB"
+    },
+    {
+      "frequency": 2789000,
+      "name": "Messina (IT)",
+      "mode": "USB"
+    },
+    {
+      "frequency": 2789000,
+      "name": "Hellas Radio",
+      "mode": "USB"
+    },
+    {
+      "frequency": 2799000,
+      "name": "Hellas Radio",
+      "mode": "USB"
+    },
+    {
+      "frequency": 2830000,
+      "name": "Olympia Radio",
+      "mode": "USB"
+    },
+    {
+      "frequency": 2941000,
+      "name": "Rostov VOLMET (RU)",
+      "mode": "USB"
+    },
+    {
+      "frequency": 3550000,
+      "name": "SKCC",
+      "mode": "CW"
+    },
+    {
+      "frequency": 3568600,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 3578000,
+      "name": "JS8",
+      "mode": "USB"
+    },    
+    {
+      "frequency": 3573000,
+      "name": "FT8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 3578000,
+      "name": "FT2",
+      "mode": "USB"
+    },    
+    {
+      "frequency": 3575000,
+      "name": "FT4",
+      "mode": "USB"
+    },
+    {
+      "frequency": 3625000,
+      "name": "FreeDV",
+      "mode": "LSB"
+    },        
+    {
+      "frequency": 4209500,
+      "name": "NAVTEX Heraklion",
+      "mode": "CW"
+    },
+    {
+      "frequency": 4280000,
+      "name": "PBB RTTY (Holland)",
+      "mode": "USB"
+    },
+    {
+      "frequency": 4310000,
+      "name": "The Goose",
+      "mode": "USB"
+    },
+    {
+      "frequency": 4331000,
+      "name": "4XZ (ISR)",
+      "mode": "CW"
+    },
+    {
+      "frequency": 4361500,
+      "name": "(TU)",
+      "mode": "USB"
+    },
+    {
+      "frequency": 4405000,
+      "name": "Instambul Marine Weather",
+      "mode": "USB"
+    },
+    {
+      "frequency": 4557700,
+      "name": "D beacon Rostov",
+      "mode": "CW"
+    },
+    {
+      "frequency": 4582000,
+      "name": "DDK2",
+      "mode": "USB"
+    },
+    {
+      "frequency": 4625000,
+      "name": "The Buzzer",
+      "mode": "USB"
+    },   
+    {
+      "frequency": 5357000,
+      "name": "JS8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5360000,
+      "name": "FT2",
+      "mode": "USB"
+    },   
+    {
+      "frequency": 5364700,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5366500,
+      "name": "FreeDV",
+      "mode": "USB"
+    },        
+    {
+      "frequency": 5450000,
+      "name": "RAF Volmet (UK)",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5505000,
+      "name": "RAF Volmet (UK)",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5583000,
+      "name": "HFDL/HFACARS",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5616000,
+      "name": "Int. Air Traffic ctr.",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5649000,
+      "name": "Int. Air Traffic ctr.",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5670000,
+      "name": "Int. Air Traffic ctr.",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5680500,
+      "name": "Int. Air Traffic ctr.",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5680000,
+      "name": "Int Rescue",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5715000,
+      "name": "NATO RTTY",
+      "mode": "USB"
+    },
+    {
+      "frequency": 6250000,
+      "name": "Japanese Slot Machine",
+      "mode": "USB"
+    },
+    {
+      "frequency": 6417000,
+      "name": "Japanese Slot Machine",
+      "mode": "USB"
+    },
+    {
+      "frequency": 6445000,
+      "name": "Japanese Slot Machine",
+      "mode": "USB"
+    },
+    {
+      "frequency": 6607000,
+      "name": "4XZ (ISR)",
+      "mode": "CW"
+    },
+    {
+      "frequency": 6617000,
+      "name": "Rostov Volmet",
+      "mode": "USB"
+    },
+    {
+      "frequency": 6832000,
+      "name": "SINPO",
+      "mode": "USB"
+    },
+    {
+      "frequency": 6911000,
+      "name": "Russian Ticking Clock",
+      "mode": "USB"
+    },
+    {
+      "frequency": 7038600,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 7047500,
+      "name": "FT4",
+      "mode": "USB"
+    },
+    {
+      "frequency": 7055000,
+      "name": "SKCC",
+      "mode": "CW"
+    },
+    {
+      "frequency": 7062000,
+      "name": "FT2",
+      "mode": "USB"
+    },        
+    {
+      "frequency": 7074000,
+      "name": "FT8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 7078000,
+      "name": "JS8",
+      "mode": "USB"
+    },    
+    {
+      "frequency": 7087000,
+      "name": "FreeDV",
+      "mode": "LSB"
+    },    
+    {
+      "frequency": 7177000,
+      "name": "FreeDV",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 8039000,
+      "name": "MeteoFax Northwood, U.K GYA",
+      "mode": "USB"
+    },
+    {
+      "frequency": 8888000,
+      "name": "Volmet",
+      "mode": "USB"
+    },
+    {
+      "frequency": 9996000,
+      "name": "RWM",
+      "mode": "CW"
+    },
+    {
+      "frequency": 10000000,
+      "name": "WWV",
+      "mode": "CW"
+    },
+    {
+      "frequency": 8424000,
+      "name": "De SV0 (Pirgos, GR)",
+      "mode": "CW"
+    },
+    {
+      "frequency": 8430000,
+      "name": "TAH Instambul",
+      "mode": "USB"
+    },
+    {
+      "frequency": 8566600,
+      "name": "Weather RTTY (FR)",
+      "mode": "USB"
+    },
+    {
+      "frequency": 8588000,
+      "name": "Japanese Slot Machine",
+      "mode": "USB"
+    },
+    {
+      "frequency": 8812000,
+      "name": "Marine Ch. 832",
+      "mode": "USB"
+    },
+    {
+      "frequency": 10130000,
+      "name": "JS8",
+      "mode": "USB"
+    },    
+    {
+      "frequency": 10136000,
+      "name": "FT8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 10140000,
+      "name": "FT4",
+      "mode": "USB"
+    },    
+    {
+      "frequency": 10138700,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 10144000,
+      "name": "FT2",
+      "mode": "USB"
+    },   
+    {
+      "frequency": 12654000,
+      "name": "TAH (TR)",
+      "mode": "CW"
+    },
+    {
+      "frequency": 13128000,
+      "name": "Marine Ch. 1218",
+      "mode": "USB"
+    },
+    {
+      "frequency": 13264000,
+      "name": "Shannon Volmet (IRL)",
+      "mode": "USB"
+    },
+    {
+      "frequency": 13419000,
+      "name": "Russian RTTY Mazielka (X06)",
+      "mode": "USB"
+    },
+    {
+      "frequency": 14050000,
+      "name": "SKCC",
+      "mode": "CW"
+    },
+    {
+      "frequency": 14074000,
+      "name": "FT8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 14078000,
+      "name": "JS8",
+      "mode": "USB"
+    },    
+    {
+      "frequency": 14080000,
+      "name": "FT4",
+      "mode": "USB"
+    },
+    {
+      "frequency": 14084000,
+      "name": "FT2",
+      "mode": "USB"
+    },       
+    {
+      "frequency": 14095600,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 14114000,
+      "name": "SKCC",
+      "mode": "CW"
+    },    
+    {
+      "frequency": 14230000,
+      "name": "SSTV",
+      "mode": "USB"
+    },
+    {
+      "frequency": 14236000,
+      "name": "FreeDV",
+      "mode": "USB"
+    },    
+    {
+      "frequency": 15777000,
+      "name": "Russian RTTY Mazielka (X06)",
+      "mode": "USB"
+    },
+    {
+      "frequency": 18100000,
+      "name": "FT8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 18104000,
+      "name": "FT4",
+      "mode": "USB"
+    },
+    {
+      "frequency": 18104000,
+      "name": "JS8",
+      "mode": "USB"
+    },       
+    {
+      "frequency": 18104600,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 10108000,
+      "name": "FT2",
+      "mode": "USB"
+    },   
+    {
+      "frequency": 18118000,
+      "name": "FreeDV",
+      "mode": "USB"
+    },
+    {
+      "frequency": 21050000,
+      "name": "SKCC",
+      "mode": "CW"
+    },       
+    {
+      "frequency": 21074000,
+      "name": "FT8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 21078000,
+      "name": "JS8",
+      "mode": "USB"
+    },        
+    {
+      "frequency": 21094600,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 21114000,
+      "name": "SKCC",
+      "mode": "CW"
+    },
+    {
+      "frequency": 21140000,
+      "name": "FT4",
+      "mode": "USB"
+    },
+    {
+      "frequency": 21144000,
+      "name": "FT2",
+      "mode": "USB"
+    },    
+    {
+      "frequency": 21313000,
+      "name": "FreeDV",
+      "mode": "USB"
+    },        
+    {
+      "frequency": 24915000,
+      "name": "FT8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 24919000,
+      "name": "FT4",
+      "mode": "USB"
+    },
+    {
+      "frequency": 24922000,
+      "name": "JS8",
+      "mode": "USB"
+    },   
+    {
+      "frequency": 24923000,
+      "name": "FT2",
+      "mode": "USB"
+    },           
+    {
+      "frequency": 24924600,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 24933000,
+      "name": "FreeDV",
+      "mode": "USB"
+    },   
+    {
+      "frequency": 26965000,
+      "name": "1",
+      "mode": "FM"
+    },
+    {
+      "frequency": 26975000,
+      "name": "2",
+      "mode": "FM"
+    },
+    {
+      "frequency": 26985000,
+      "name": "3",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27005000,
+      "name": "4",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27015000,
+      "name": "5",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27025000,
+      "name": "6",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27035000,
+      "name": "7",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27055000,
+      "name": "8",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27065000,
+      "name": "9",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27075000,
+      "name": "10",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27085000,
+      "name": "11",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27105000,
+      "name": "12",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27115000,
+      "name": "13",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27125000,
+      "name": "14",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27135000,
+      "name": "15",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27155000,
+      "name": "16",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27165000,
+      "name": "17",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27175000,
+      "name": "18",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27185000,
+      "name": "19",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27205000,
+      "name": "20",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27215000,
+      "name": "21",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27225000,
+      "name": "22",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27235000,
+      "name": "23",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27245000,
+      "name": "24",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27255000,
+      "name": "25",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27265000,
+      "name": "26",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27275000,
+      "name": "27",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27285000,
+      "name": "28",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27295000,
+      "name": "29",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27305000,
+      "name": "30",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27315000,
+      "name": "31",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27325000,
+      "name": "32",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27335000,
+      "name": "33",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27345000,
+      "name": "34",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27355000,
+      "name": "35",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27365000,
+      "name": "36",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27375000,
+      "name": "37",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27385000,
+      "name": "38",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27395000,
+      "name": "39",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27405000,
+      "name": "40",
+      "mode": "FM"
+    },
+    {
+      "frequency": 28050000,
+      "name": "SKCC",
+      "mode": "CW"
+    },
+    {
+      "frequency": 28074000,
+      "name": "FT8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 28078000,
+      "name": "JS8",
+      "mode": "USB"
+    },   
+    {
+      "frequency": 28114000,
+      "name": "SKCC",
+      "mode": "CW"
+    },
+    {
+      "frequency": 28124600,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 28180000,
+      "name": "FT4",
+      "mode": "USB"
+    },
+    {
+      "frequency": 28184000,
+      "name": "FT2",
+      "mode": "USB"
+    },    
+    {
+      "frequency": 28330000,
+      "name": "FreeDV",
+      "mode": "USB"
+    },    
+    {
+      "frequency": 28585000,
+      "name": "28585",
+      "mode": "USB"
+    },
+    {
+      "frequency": 29620000,
+      "name": "Repeater",
+      "mode": "FM"
+    },
+     {
+      "frequency": 29640000,
+      "name": "Repeater",
+      "mode": "FM"
+    },       
+    {
+      "frequency": 29650000,
+      "name": "Repeater",
+      "mode": "FM"
+    },
+    {
+      "frequency": 29660000,
+      "name": "Repeater",
+      "mode": "FM"
+    }    
+]

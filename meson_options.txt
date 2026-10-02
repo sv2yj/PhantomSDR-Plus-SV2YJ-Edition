@@ -1,0 +1,10 @@
+option('opus',
+  type: 'feature',
+  value: 'auto',
+  description: 'Enable libopus support for Opus audio encoding')
+
+option('liquid',
+  type: 'feature',
+  value: 'auto',
+  description: 'Enable liquid-dsp support for SDR signal processing')
+

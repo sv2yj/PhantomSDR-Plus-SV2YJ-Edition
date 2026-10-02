@@ -1,0 +1,289 @@
+================================================================================
+ PhantomSDR-Plus — HOW TO EDIT THE FRONTEND VARIANTS
+ (after the four App__*_smeter_.svelte files were merged into one App.svelte)
+================================================================================
+ Last updated: 2026-07-30
+
+--------------------------------------------------------------------------------
+ 0. THE SHORT VERSION
+--------------------------------------------------------------------------------
+
+There used to be four copies of the whole application:
+
+    src/App__analog_smeter_.svelte        ~14400 lines
+    src/App__digital_smeter_.svelte       ~13700 lines
+    src/App__v2_analog_smeter_.svelte     ~14400 lines
+    src/App__v2_digital_smeter_.svelte    ~13700 lines
+
+They are GONE. There is now ONE file, src/App.svelte (~16300 lines), which
+behaves as any of the four depending on two props it is given at startup.
+
+    Old way:  edit the variant file you cared about.
+    New way:  edit App.svelte once. All four variants change together.
+
+If a change must apply to only ONE variant, you wrap it in a conditional —
+see section 3.
+
+
+--------------------------------------------------------------------------------
+ 1. WHAT THE VARIANTS ARE
+--------------------------------------------------------------------------------
+
+Two independent choices, giving four combinations:
+
+    smeter = "analog"     the moving-needle meter face
+           = "digital"    the segmented bar-graph meter
+
+    layout = "v1"         Modes selector above,  Band selector below
+           = "v2"         Band  selector above,  Modes selector below
+                          (also moves the mobile fine-tuning button row)
+
+    URL              smeter     layout
+    ---------------  ---------  -------
+    /                (whichever you picked as default in recompile.sh)
+    /analog/         analog     v1
+    /digital/        digital    v1
+    /v2-analog/      analog     v2
+    /v2-digital/     digital    v2
+    /mobile/         separate page, built by build-mobile.sh — not a variant
+
+The props are set in src/main.js:
+
+    const app = new App({
+      target: document.getElementById('app'),
+      props: { smeter: 'analog', layout: 'v1' }
+    })
+
+Inside App.svelte the props are turned into two flags at lines 20-21:
+
+    $: isAnalog = smeter !== "digital";
+    $: isV2     = layout === "v2";
+
+Use those two flags — never `smeter`/`layout` directly — so the whole file
+reads the same way.
+
+
+--------------------------------------------------------------------------------
+ 2. WHICH FILE DOES WHAT
+--------------------------------------------------------------------------------
+
+  frontend/src/main.js                      11 lines
+      The entry point. Nothing but the App instantiation and its two props.
+      recompile.sh REWRITES this file when you choose the default variant.
+      The build scripts also rewrite it (and restore it) while they build.
+      >>> Do not put application code here. It gets overwritten. <<<
+
+  frontend/src/App.svelte                ~16300 lines
+      The whole application: waterfall, tuning, decoders, bookmarks, panels,
+      desktop layout AND the responsive phone layout. Almost every edit you
+      will ever make goes here.
+
+  frontend/src/lib/SMeterAnalog.svelte      824 lines
+      The moving-needle meter, complete: face drawing, needle, the light/dark
+      face toggle and its localStorage key, and the needle smoothing.
+      Input prop:  dbm    — the CALIBRATED power in dBm.
+      Also takes:  mobile — smaller canvas attributes for the phone layout.
+      Tuning knob: SMOOTH_TIME_MS at line 55. Lower = faster needle, higher =
+      smoother. Currently 16 (one frame at 60 fps, effectively the floor).
+
+  frontend/src/lib/SMeterDigital.svelte     184 lines
+      The segmented bar meter, complete.
+      Input props: rawDb        — the RAW audio.getPowerDb()
+                   smeterOffset — audio.smeter_offset
+                   mobile       — smaller canvas attributes
+      NOTE: this meter is deliberately driven from the RAW power plus the
+      offset, NOT from the calibrated dBm the analog face uses. It has always
+      done its own mapping. Feeding it the calibrated value would shift every
+      reading on every digital site. Do not "unify" these two inputs.
+
+  frontend/src/lib/BandSelector.svelte       69 lines
+      The band buttons grid. Rendered twice in App.svelte (once per layout).
+
+  frontend/src/lib/ModesSelector.svelte      52 lines
+      The mode buttons grid. Rendered twice in App.svelte.
+
+  frontend/src/lib/StatusIndicators.svelte  122 lines
+      The status lamps (mute, squelch, NR, NB, NS, AN, CTCSS).
+      Takes a `wide` prop: the digital layout uses wider lamps than the
+      analog one. Both Tailwind classes (w-8 and w-10) are written out in
+      full inside the component — Tailwind's scanner only sees literal class
+      names, so never build them by string concatenation.
+
+  All other files in frontend/src/lib/ (Spectrogram, PassbandTuner,
+  FrequencyInput, VersionSelector, ...) predate this work and are unchanged.
+
+
+--------------------------------------------------------------------------------
+ 3. MAKING A CHANGE THAT AFFECTS ONLY SOME VARIANTS
+--------------------------------------------------------------------------------
+
+Wrap it in the flag. In markup:
+
+    {#if isAnalog}
+      ...only the analog sites see this...
+    {:else}
+      ...only the digital sites see this...
+    {/if}
+
+    {#if isV2} ... {/if}          {#if !isV2} ... {/if}
+
+In a class attribute:
+
+    class="p-4 {isAnalog ? 'text-xs' : 'text-sm'} rounded-md"
+
+Write both alternatives out as whole literals, as above. Tailwind scans the
+source for complete class names; `text-{size}` or a concatenated name is
+purged from the CSS and the style silently vanishes.
+
+In the <script> block: try NOT to branch at all. The script deliberately
+computes the inputs of BOTH meters on every tick —
+
+    smeterDbm    = powerDb;                    // analog face
+    smeterRawDb  = audio.getPowerDb();         // digital face
+    smeterOffset = audio.smeter_offset;        // digital face
+
+— so only the markup has to choose. That is why there are just 15 variant
+switches in a 16000-line file. Keep it that way; script-level branching is
+what made the four old files drift apart.
+
+
+--------------------------------------------------------------------------------
+ 4. WHERE THE VARIANT SWITCHES ARE
+--------------------------------------------------------------------------------
+
+Fifteen places in App.svelte. Line numbers drift when you edit — the reliable
+way to find them all is:
+
+    cd frontend/src && grep -n 'isAnalog\|isV2' App.svelte
+
+As of this writing:
+
+    line    20  isAnalog declared
+    line    21  isV2 declared
+
+    line  7784  isV2   — desktop: Band selector first (v2 ordering)
+    line  7810  isV2   — desktop: panel heading size
+    line  8406  isV2   — desktop: Modes selector first (v1 ordering)
+    line  8435  isAnalog — meter panel min-width (needle is narrower)
+    line  8448  isAnalog — analog-only date/time line above the meter
+    line  8537  isAnalog — analog-only status lamps + divider
+    line  8552  isAnalog — digital-only time line, wide lamps, and the
+                           <SMeterDigital> / <SMeterAnalog> choice itself
+    line  8579  isAnalog — vertical spacing of the frequency block
+    line  8582  isAnalog — top margin of the fine-tuning block
+    line 11719  isV2   — phone: fine-tuning row above (v2 ordering)
+    line 11778  isAnalog — phone: which meter to render
+    line 11864  isV2   — phone: fine-tuning row below (v1 ordering)
+    line 12602  isAnalog — noise-gate button text size
+
+Everything else in the file is shared by all four variants.
+
+
+--------------------------------------------------------------------------------
+ 5. OTHER KNOBS WORTH KNOWING
+--------------------------------------------------------------------------------
+
+  App.svelte line 4528       const visualGain = 1.1;
+      Analog meter calibration. Each 0.10 is roughly 5 dBm on the reading.
+
+  SMeterAnalog.svelte line 55   const SMOOTH_TIME_MS = 16;
+      Needle smoothing time constant, in milliseconds.
+
+  SMeterDigital.svelte line 149  const DIGITAL_BAR_TRIM = 0;
+      Shifts the bar by whole segments.
+
+  SMeterDigital.svelte line 31   const numberOfDots = 35;
+      Segment count of the bar.
+
+
+--------------------------------------------------------------------------------
+ 6. AFTER YOU EDIT — REBUILDING
+--------------------------------------------------------------------------------
+
+Easiest, from the repository root:
+
+    ./recompile.sh
+
+  Menu [2] rebuilds the frontend and asks which variant the site root (/)
+  should serve. Choosing it no longer copies any file — it writes the props
+  into src/main.js. Menu [1] is backend only, [3] is both.
+
+Or directly, from frontend/ :
+
+    ./build-all.sh          builds /, /analog/, /digital/, /v2-analog/,
+                            /v2-digital/ AND /mobile/  <-- normally use this
+    ./build-default.sh      just the site root
+    ./build-analog.sh       just /analog/
+    ./build-digital.sh      just /digital/
+    ./build-v2-analog.sh    just /v2-analog/
+    ./build-v2-digital.sh   just /v2-digital/
+    ./build-mobile.sh       just /mobile/
+
+  build-all.sh does NOT call the five per-variant scripts — it has its own
+  copy of the same logic (build_version SMETER LAYOUT NAME OUTDIR BASE, lines
+  115-127). If you change how a variant is built, change it in BOTH places or
+  the two paths will disagree.
+
+  Every one of these scripts temporarily rewrites src/main.js and restores it
+  through a `trap ... EXIT INT TERM`, so an interrupted or failed build no
+  longer leaves your entry point pointing at the wrong variant.
+
+  Executable bits: recompile.sh runs `chmod +x` on a script before running it,
+  so a missing bit does not matter there. build-mobile.sh is the exception —
+  build-all.sh calls it directly, so if it is not executable, /mobile silently
+  does not get built while everything else succeeds. Uploading a script through
+  the GitHub web interface always resets it to 644, so re-check after upload:
+
+      chmod +x frontend/build-*.sh
+
+
+--------------------------------------------------------------------------------
+ 7. HOW TO CHECK YOUR EDIT BEFORE TRUSTING IT
+--------------------------------------------------------------------------------
+
+A green `vite build` is NOT enough. The build cannot see an identifier that
+went missing when code moved between files — that is a runtime ReferenceError,
+and the page simply does not load. It has happened twice.
+
+  1) Undefined-identifier check (catches exactly that failure):
+
+         cd frontend
+         npx eslint --no-eslintrc \
+             --parser svelte-eslint-parser \
+             --rule '{"no-undef":"error"}' \
+             --env browser,es2022 \
+             src/App.svelte src/lib/SMeter*.svelte
+
+     One known-benign hit is expected:
+         'dBmCalOffset' is not defined
+     `typeof x === 'number'` on an undeclared name never throws, so that
+     expression already evaluates to 0. Anything else is a real problem.
+
+  2) Build, then LOAD ALL FIVE PAGES IN A BROWSER. Not just the one you
+     changed — a variant switch can break the other three while yours works.
+
+         /   /analog/   /digital/   /v2-analog/   /v2-digital/   /mobile/
+
+     Open the browser console on each. A blank or half-drawn page with a
+     ReferenceError in the console is the signature of the bug above.
+
+  3) Never leave frontend/dist/ in a partial state. `vite build` empties the
+     output directory first, so a build that is interrupted or aimed at the
+     wrong --outDir takes the live site down (404 on everything) until the
+     next successful build. If in doubt, just run ./build-all.sh again.
+
+
+--------------------------------------------------------------------------------
+ 8. IF YOU REALLY WANT THE OLD FILES BACK
+--------------------------------------------------------------------------------
+
+They are in git history, not on disk:
+
+    git show 0427d3d:frontend/src/App__analog_smeter_.svelte > /tmp/old_analog.svelte
+
+Useful for comparing behaviour if you suspect the merge changed something.
+Note that ten genuine bugs were FIXED during the merge (they had drifted into
+some variants and not others), so a difference from an old file is not
+automatically a regression.
+
+================================================================================

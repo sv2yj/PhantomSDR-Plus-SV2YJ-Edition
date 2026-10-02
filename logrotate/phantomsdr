@@ -1,0 +1,52 @@
+# logrotate config for the PhantomSDR-Plus admin stack (proxy.log + admin.log)
+#
+# ── EDIT ME BEFORE INSTALLING ────────────────────────────────────────────────
+# This file is site-specific. Three things below refer to the machine it was
+# written on and must be changed to match yours:
+#
+#   1. the two log paths  — replace /home/sv1btl/PhantomSDR-Plus with your own
+#      and the `olddir`      install dir (the `sdr_base_dir` in admin_config.json)
+#   2. `su sv1btl sv1btl` — replace with the user:group that owns those logs,
+#                           i.e. whoever runs manage_admin.sh (usually $USER)
+#
+# Get the right values with:
+#   echo "$PWD"            # run from your PhantomSDR-Plus dir → the log paths
+#   id -un; id -gn         # → the two names for the `su` line
+#
+# Skipping step 1 makes logrotate silently do nothing (the paths don't exist,
+# and `missingok` suppresses the warning). Skipping step 2 makes it refuse the
+# logs entirely, because their parent directory is not owned by root.
+# ─────────────────────────────────────────────────────────────────────────────
+#
+# This file is NOT what logrotate reads. It is the repo master copy; logrotate
+# reads /etc/logrotate.d/phantomsdr. The two are independent — after editing
+# this file, re-run the install command below or your change has no effect.
+#
+# Install (system-wide, runs from the daily logrotate timer):
+#   sudo cp logrotate/phantomsdr /etc/logrotate.d/phantomsdr
+#   sudo chown root:root /etc/logrotate.d/phantomsdr
+#   sudo chmod 644 /etc/logrotate.d/phantomsdr
+#
+# Dry-run check:
+#   sudo logrotate -d /etc/logrotate.d/phantomsdr
+#
+# copytruncate is required: manage_admin.sh starts both processes with
+# `>> <log>` and neither reopens its stdout, so a plain rename would leave
+# them writing into the rotated file forever.
+#
+# olddir keeps the compressed archives out of the project root; createolddir
+# makes logrotate create the directory itself if it is missing.
+
+/home/sv1btl/PhantomSDR-Plus/proxy.log
+/home/sv1btl/PhantomSDR-Plus/admin.log {
+    su sv1btl sv1btl
+    daily
+    maxsize 10M
+    rotate 7
+    compress
+    missingok
+    notifempty
+    copytruncate
+    olddir /home/sv1btl/PhantomSDR-Plus/logproxy
+    createolddir 0755 sv1btl sv1btl
+}

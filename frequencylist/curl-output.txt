@@ -1,0 +1,379 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+  <HEAD>
+    <TITLE>Public Data Files</TITLE>
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+    <LINK REL="stylesheet" TYPE="text/css" HREF="../include/mainstyle.css">  </HEAD>
+	<BODY>
+    <DIV CLASS="topdiv">
+      <A HREF="../index.phtml"><IMG CLASS="titlelogo" SRC="../images/hfcclog.gif" ALT="HFCC Logo" WIDTH="121" HEIGHT="79" BORDER="0"></A><H1 CLASS="titletext">Public Data Files</H1>    </DIV>
+    <DIV CLASS="menutabs">
+<UL>
+<LI><A HREF="../index.phtml">Home</A></LI><LI CLASS="curr"><A HREF="../data/guidepost.phtml">Public Data Files</A></LI><LI><A HREF="../about/HFCC-IBD_Basic_Information.phtml">About HFCC</A></LI><LI><A HREF="../delivery/HFCC-IBD_Content_Delivery_Developments.phtml">Content Delivery</A></LI><LI><A HREF="../humanitarian/">Emergency Radio</A></LI><LI><A HREF="../coord.phtml">Shortwave</A></LI><LI><A HREF="../A26/">A26 Conference</A></LI><LI><A HREF="../B26/">B26 Conference</A></LI><LI STYLE="float: right;"><A HREF="../global/select.phtml">Members Area</A></LI></UL>
+</DIV>
+<DIV CLASS="menutabs"><UL><LI><A HREF="../schedule/">Interactive Schedule</A></LI><LI><A HREF="../data/a25/index.phtml">A25 by Org.</A></LI><LI><A HREF="../data/b25/index.phtml">B25 by Org.</A></LI><LI><A HREF="../data/public_access_HFCC_database.phtml">Availability</A></LI><LI CLASS="curr"><A HREF="../data/index.phtml">Standard Format</A></LI><!--<LI STYLE="float: right;"><A HREF="../global/b23/">B23 Data</A></LI><LI STYLE="float: right;"><A HREF="../global/b23/meeting/">B23 Conference</A></LI>-->
+</UL></DIV>    <DIV CLASS="maincontentdiv">
+      <DIV CLASS="maindivwide">
+                <H3 class="lrpaddedtext">
+                  Public Data Files 
+							  </H3>
+            <TABLE CELLSPACING=0 CELLPADDING=13 BGCOLOR="#FFFFF0" BORDER="0">
+               <TR><TD>
+
+                <UL>
+                  <LI> <A HREF="b98/b98allx2.txt"> B98allx2.txt </A> - B98 Operational Schedule
+                </UL>
+                
+                <UL>
+                  <LI> <A HREF="a99/a99allx2.exe"> A99allx2.exe </A> - A99 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="b99/b99allx2.exe"> B99allx2.exe </A> - B99 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="a00/a00allx2.zip"> A00allx2.zip </A> - A00 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="b00/b00allx2.zip"> B00allx2.zip </A> - B00 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="a01/a01allx2.zip"> A01allx2.zip </A> - A01 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="b01/b01allx2.zip"> B01allx2.zip </A> - B01 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="a02/a02allx2.zip"> A02allx2.zip </A> - A02 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="b02/b02allx2.zip"> B02allx2.zip </A> - B02 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="a03/a03allx2.zip"> A03allx2.zip </A> - A03 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="b03/b03allx2.zip"> B03allx2.zip </A> - B03 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="a04/a04allx2.zip"> A04allx2.zip </A> - A04 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="b04/b04allx2.zip"> B04allx2.zip </A> - B04 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="a05/a05allx2.zip"> A05allx2.zip </A> - A05 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="b05/b05allx2.zip"> B05allx2.zip </A> - B05 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="a06/a06allx2.zip"> A06allx2.zip </A> - A06 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="b06/b06allx2.zip"> B06allx2.zip </A> - B06 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="a07/a07allx2.zip"> A07allx2.zip </A> - A07 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="b07/b07allx2.zip"> B07allx2.zip </A> - B07 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="a08/a08allx2.zip"> A08allx2.zip </A> - A08 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="b08/b08allx2.zip"> B08allx2.zip </A> - B08 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="a09/a09allx2.zip"> A09allx2.zip </A> - A09 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="b09/b09allx2.zip"> B09allx2.zip </A> - B09 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="a10/a10allx2.zip"> A10allx2.zip </A> - A10 Operational Schedule
+                </UL>
+
+                <UL>
+                  <LI> <A HREF="b10/b10allx2.zip"> B10allx2.zip </A> - B10 Operational Schedule - Last updated on 23-May-2011                </UL>
+
+                <UL>
+                  <LI> <A HREF="a11/a11allx2.zip"> A11allx2.zip </A> - A11 Operational Schedule - Last updated on 24-Nov-2011                </UL>
+
+                <UL>
+                  <LI> <A HREF="b11/b11allx2.zip"> B11allx2.zip </A> - B11 Operational Schedule - Last updated on 21-May-2012                </UL>
+
+                <UL>
+                  <LI> <A HREF="a12/a12allx2.zip"> A12allx2.zip </A> - A12 Operational Schedule - Last updated on 27-Oct-2012                </UL>
+
+                <UL>
+                  <LI> <A HREF="b12/b12allx2.zip"> B12allx2.zip </A> - B12 Operational Schedule - Last updated on 25-Apr-2013                </UL>
+
+                <UL>
+                  <LI> <A HREF="a13/a13allx2.zip"> A13allx2.zip </A> - A13 Operational Schedule - Last updated on 20-Nov-2013                </UL>
+
+                <UL>
+                  <LI> <A HREF="b13/b13allx2.zip"> B13allx2.zip </A> - B13 Operational Schedule - Last updated on 28-Mar-2014                </UL>
+
+                <UL>
+                  <LI> <A HREF="a14/a14allx2.zip"> A14allx2.zip </A> - A14 Operational Schedule - Last updated on 17-Oct-2014                </UL>
+
+                <UL>
+                  <LI> <A HREF="b14/b14allx2.zip"> B14allx2.zip </A> - B14 Operational Schedule - Last updated on 25-Mar-2015                </UL>
+
+                <UL>
+                  <LI> <A HREF="a15/a15allx2.zip"> A15allx2.zip </A> - A15 Operational Schedule - Last updated on 23-Oct-2015                </UL>
+
+                <UL>
+                  <LI> <A HREF="b15/b15allx2.zip"> B15allx2.zip </A> - B15 Operational Schedule - Last updated on 09-Mar-2016                </UL>
+
+                <UL>
+                  <LI> <A HREF="a16/a16allx2.zip"> A16allx2.zip </A> - A16 Operational Schedule - Last updated on 13-Oct-2016                </UL>
+
+                <UL>
+                  <LI> <A HREF="b16/b16allx2.zip"> B16allx2.zip </A> - B16 Operational Schedule - Last updated on 17-Mar-2017                </UL>
+
+                <UL>
+                  <LI> <A HREF="a17/a17allx2.zip"> A17allx2.zip </A> - A17 Operational Schedule - Last updated on 27-Oct-2017                </UL>
+
+                <UL>
+                  <LI> <A HREF="b17/b17allx2.zip"> B17allx2.zip </A> - B17 Operational Schedule - Last updated on 13-Mar-2018                </UL>
+
+                <UL>
+                  <LI> <A HREF="a18/a18allx2.zip"> A18allx2.zip </A> - A18 Operational Schedule - Last updated on 27-Oct-2018                </UL>
+
+                <UL>
+                  <LI> <A HREF="b18/b18allx2.zip"> B18allx2.zip </A> - B18 Operational Schedule - Last updated on 29-Mar-2019                </UL>
+
+                <UL>
+                  <LI> <A HREF="a19/a19allx2.zip"> A19allx2.zip </A> - A19 Operational Schedule - Last updated on 25-Oct-2019                </UL>
+
+                <UL>
+                  <LI> <A HREF="b19/b19allx2.zip"> B19allx2.zip </A> - B19 Operational Schedule - Last updated on 07-Apr-2020                </UL>
+
+                <UL>
+                  <LI> <A HREF="a20/a20allx2.zip"> A20allx2.zip </A> - A20 Operational Schedule - Last updated on 12-Nov-2020                </UL>
+
+                <UL>
+                  <LI> <A HREF="b20/b20allx2.zip"> B20allx2.zip </A> - B20 Operational Schedule - Last updated on 23-Mar-2021                </UL>
+
+                <UL>
+                  <LI> <A HREF="a21/a21allx2.zip"> A21allx2.zip </A> - A21 Operational Schedule - Last updated on 28-Oct-2021                </UL>
+
+                <UL>
+                  <LI> <A HREF="b21/b21allx2.zip"> B21allx2.zip </A> - B21 Operational Schedule - Last updated on 16-Mar-2022                </UL>
+
+                <UL>
+                  <LI> <A HREF="a22/a22allx2.zip"> A22allx2.zip </A> - A22 Operational Schedule - Last updated on 17-Oct-2022                </UL>
+
+                <UL>
+                  <LI> <A HREF="b22/b22allx2.zip"> B22allx2.zip </A> - B22 Operational Schedule - Last updated on 18-Mar-2023                </UL>
+
+                <UL>
+                  <LI> <A HREF="a23/a23allx2.zip"> A23allx2.zip </A> - A23 Operational Schedule - Last updated on 26-Oct-2023                </UL>
+
+                <UL>
+                  <LI> <A HREF="b23/b23allx2.zip"> B23allx2.zip </A> - B23 Operational Schedule - Last updated on 24-Mar-2024                </UL>
+
+                <UL>
+                  <LI> <A HREF="a24/a24allx2.zip"> A24allx2.zip </A> - A24 Operational Schedule - Last updated on 24-Oct-2024                </UL>
+
+                <UL>
+                  <LI> <A HREF="b24/b24allx2.zip"> B24allx2.zip </A> - B24 Operational Schedule - Last updated on 24-Mar-2025                </UL>
+
+                <UL>
+                  <LI> <A HREF="a25/a25allx2.zip"> A25allx2.zip </A> - A25 Operational Schedule - Last updated on 23-Oct-2025                </UL>
+
+                <UL>
+                  <LI> <A HREF="b25/b25allx2.zip"> B25allx2.zip </A> - B25 Operational Schedule - Last updated on 23-Mar-2026                </UL>
+
+                <UL>
+                  <LI> <A HREF="a26/a26allx2.zip"> A26allx2.zip </A> - A26 Operational Schedule - Last updated on 19-Aug-2026                </UL>
+
+                <P>Note: Starting from B10, the data has been updated during the season.</P>
+              </TD></TR>
+              <TR><TD>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              </TD></TR>
+            </TABLE>
+			</DIV>
+      <DIV CLASS="whatsnewdiv">
+        <H3>What's New</H3>
+                            <P>[17-Aug-2026] - <A HREF="../doc/HFCC_RAD_2026-001-Shortwave_in_International_Broadcasting.pdf">HFCC Report on Shortwave International Broadcasting 2026</A>
+                    </P>
+
+                    <P>[24-Jun-2026] - B26 upload opened.
+                    </P>
+
+                    <P>[23-Jun-2026] - Please <A HREF="https://new.hfcc.org/global/upload/regform.php">review and confirm your contact details</A> prior to uploading the initial version of your B26 data. B26 upload will be opened in the next two days.
+                    </P>
+
+                    <P>[4-May-2026] - Document <A HREF="http://www.itu.int/en/ITU-R/terrestrial/broadcast/HFBC/Documents/antcode.pdf">Transmitting Antennas for HF Broadcasting</A> has been updated by the ITU
+                    </P>
+
+                    <P>[17-Mar-2026] - A26 plenary minutes
+                    </P>
+
+                    <P>[9-Feb-2026] - <A HREF="../global/doc/HFCC_GOE_2026-001-GoE_Report_A26.pdf">A26 GoE Report</A>
+                    </P>
+
+                    <P>[30-Jan-2026] - Deadline for A26 Operational Schedule: 9 March 2026
+                    </P>
+
+                    <P>[30-Jan-2026] - ITU <A HREF="https://www.itu.int/itu-r/eterrestrial/ebroadcasting/ehfbc#/reftables/tables/RefTableOverview">Reference Tables</A> updated
+                    </P>
+
+                    <P>[16-Dec-2025] - The ITU-BR has published the <A HREF="https://www.itu.int/md/R00-CR-CIR-0525/en">Circular Letter CR/525</A> in application of Article 12 of the Radio Regulations
+                    </P>
+
+                    <P>[8-Dec-2025] - A26 upload opened. Please <A HREF="https://new.hfcc.org/global/upload/regform.php">review and confirm your contact details</A> prior to uploading the initial version of your A26 data.
+                    </P>
+
+                    <P>[7-Nov-2025] - A26 registration and hotel booking opened on the <A HREF="../members/a26/meeting/">A26 Conference Webpage in the Member's Area</A>
+                    </P>
+
+                    <P>[9-Sep-2025] - Radio Prague International news coverage of B25 Global Conference in <A HREF="https://english.radio.cz/jeff-white-why-shortwave-radio-still-matters-hfcc-conference-prague-8861105">English</A>, 
+                                                                                                           <A HREF="https://deutsch.radio.cz/kurzwellen-experten-aus-der-ganzen-welt-bei-radio-prag-international-8861112">German</A>, 
+                                                                                                           <A HREF="https://francais.radio.cz/les-ondes-courtes-continuent-de-relier-le-monde-la-hfcc-est-de-retour-a-prague-8861066">French</A>, 
+                                                                                                           <A HREF="https://ruski.radio.cz/korotkie-volny-po-prezhnemu-obedinyayut-mir-konferenciya-hfcc-vernulas-v-pragu-8861089">Russian</A>, 
+                                                                                                           <A HREF="https://ukraina.radio.cz/cheske-radio-pryvitalo-fahivciv-iz-korotkyh-radiohvyl-iz-usogo-svitu-8861144">Ukrainian</A> and 
+                                                                                                           <A HREF="https://cesky.radio.cz/cesky-rozhlas-privital-odborniky-na-kratke-vlny-z-celeho-sveta-8861036">Czech</A> 
+                    </P>
+
+                    <P>[8-Sep-2025] - Two posts were recently added to the Equipment Supply &amp; Demand section of the <A HREF="../global/bb/">Forum</A> in Members' Area
+                    </P>
+
+                    <P>[3-Sep-2025] - Presentations and other documents added to the <A HREF="../members/b25/meeting/">B25 Prague Conference Webpage</A> in Member's Area
+                    </P>
+
+                    <P>[26-Aug-2025] - <A HREF="../global/doc/HF_ResandRec-UpdateProposalsAugust2025.pdf">Document containing proposed revisions to the WRC Resolutions and Recommendations.</A> This will be an EBU input to the CEPT (European administrations) preparatory process for WRC-27 (to be introduced in the September 2025 meeting of CEPT, Project Team C). The proposals would be reviewed at WRC-27. Please provide feedback to Oliver Ings (BBC)
+                    </P>
+
+                    <P>[16-Jun-2025] - B25 upload opened. Please <A HREF="https://new.hfcc.org/global/upload/regform.php">review and confirm your contact details</A> prior to uploading the initial version of your B25 data.
+                    </P>
+
+                    <P>[24-Apr-2025] - Encompass Digital Media Ltd are adding additional IRDR broadcasts for Democratic Voice of Burma (DVB) 0100-0130 UTC on 9430 kHz & 1300-1330 UTC on 17500 kHz. All transmissions are operating daily from Dhabayya transmitting from 24th April for approximately 10-14 days, providing special programming to Myanmar in response to the earthquake.
+                    </P>
+
+                    <P>[8-Apr-2025] - B25 registration and hotel booking opened on the <A HREF="../members/b25/meeting/">B25 Conference Webpage in the Member's Area</A>
+                    </P>
+
+                    <P>[2-Apr-2025] - Encompass Digital Media Ltd are broadcasting Mizzima Media 0030-0100 UTC on 9430 kHz (daily) &amp; 1230-1300 UTC on 17500 kHz (daily) from Dhabayya transmitting from 1st April for approximately 10 days, providing special programming to Myanmar in response to the earthquake.
+                    </P>
+
+                    <P>[19-Feb-2025] - A25 GoE Report, A25 Coordinated Data snapshot. Deadline for A25 Operational Data upload: 10 March 2025
+                    </P>
+
+                    <P>[20-Dec-2024] - The ITU-BR has published the <A HREF="https://www.itu.int/md/R00-CR-CIR-0513/en">Circular Letter CR/513</A> in the application of Article 12 of the Radio Regulations
+                    </P>
+
+                    <P>[27-Nov-2024] - A25 upload opened. Please <A HREF="https://new.hfcc.org/global/upload/regform.php">review and confirm your contact details</A> prior to uploading the initial version of your A25 data.
+                    </P>
+
+                    <P>[15-Oct-2024] - B24 plenary minutes
+                    </P>
+
+                    <P>[26-Jun-2024] - Minutes of the May 2024 SB meeting
+                    </P>
+
+                    <P>[7-Jun-2024] - B24 upload opened. Please <A HREF="https://new.hfcc.org/global/upload/regform.php">review and confirm your contact details</A> prior to uploading the initial version of your B24 data.
+                    </P>
+
+                    <P>[29-May-2024] - <A HREF="https://forms.gle/rQD8FzJWhJYpuDa79">Questionnaire on Capacitors</A> - please respond by 15 July 2024. Please, kindly submit the simple form repeatedly for every capacitor type you use.
+                    </P>
+
+                    <P>[26-Feb-2024] - <A HREF="../global/doc/HFCC_ADM_2024-003-A24_KL_Minutes.pdf">A24 plenary minutes</A>
+                    </P>
+
+                    <P>[5-Feb-2024] -  <A HREF="https://www.itu.int/md/R00-CR-CIR-0501/en">ITU-BR Circular Letter CR/501</A> containing closing dates for receipt of ITU HFBC A24 and B24 schedules, info on coordination meetings in 2024/2025, IRDR and the new eHFBC platform 
+                    </P>
+
+                    <P>[28-Dec-2023] - IMPORTANT: <A HREF="https://imigresen-online.imi.gov.my/mdac/main">New requirement for foreign citizens entering Malaysia effective January 1, 2024</A>
+                    </P>
+
+                    <P>[11-Dec-2023] - A24 upload opened. Please <A HREF="https://new.hfcc.org/global/upload/regform.php">review and confirm your contact details</A> prior to uploading the initial version of your A24 data.
+                    </P>
+
+                    <P>[13-Nov-2023] - A24 registration and hotel booking opened on the <A HREF="../global/a24/meeting/">A24 Conference Webpage in the Member's Area</A>
+                    </P>
+
+                    <P>[13-Nov-2023] - <A HREF="https://www.itu.int/ITU-R/eTerrestrial/eBroadcasting/eHFBC#/">eHFBC - new ITU online platform for HF broadcasting</A>
+                    </P>
+
+                    <P>[30-Oct-2023] - <A HREF="../global/doc/HFCC_GOE_2023-005-GoE_Report_B23.pdf">B23 GOE report</A>
+                    </P>
+
+                    <P>[20-Oct-2023] - B23 plenary minutes
+                    </P>
+
+                    <P>[9-Oct-2023] - B23 operational data snapshot
+                    </P>
+
+                    <P>[10-Aug-2023] - <A HREF="../global/doc/HFCC_GOE_2023-002-Follow-up_questionnaire_tx_tubes.pdf">Follow up on the questionnaire on transmitter tubes</A> and <A HREF="../global/doc/HFCC_GOE_2023-003-Follow-up_questionnaire_tx_tubes_CPI_list.pdf">table by CPI</A> 
+                    </P>
+
+                    <P>[8-Aug-2023] - B23 initial tentative data snapshot
+                    </P>
+
+                    <P>[26-May-2023] - Encompass Digital Media Ltd are broadcasting Democratic Voice of Burma (DVOB) 1230-1300 UTC (daily) from Dhabayya utilising IRDR frequency 21840kHz transmitting from 29th May for approximately 1 month, providing special programming to Myanmar in response to the recent cyclone
+                    </P>
+
+                    <P>[20-May-2023] - <A HREF="../doc/HFCC_Announces_the_Passing_of_Tom_Lucey.pdf">Sad news about Tom Lucey</A>
+                    </P>
+
+                    <P>[5-May-2023] - <A HREF="../global/doc/HFCC_REP_2023-003-Summary_of_the_HFCC_questionnaire_on_tubes.xlsx">Summary of the questionnaire on transmitter tubes</A>. The <A HREF="https://forms.zohopublic.eu/hfcc/form/HFCCQuestionnaireonTransmitterTubes/formperma/YJq5VapGoWF7Ffr9SlWJoZvd3nLCw03p7ASi6DLubrw">Questionnaire</A> remains open for further responses 
+                    </P>
+
+                    <P>[5-May-2023] - <A HREF="../global/b23/meeting/B23_AUS_Visa_Steps.pdf">Steps to apply for standard (non-ETA) visa</A> added to the <A HREF="../global/b23/meeting/">B23 webpage</A>   
+                    </P>
+
+                    <P>[1-May-2023] - Encompass Digital Media Ltd are broadcasting Agricultural Voices Syria 0300-0330 UTC (weekdays) from Dhabayya utilising IRDR frequency 11840kHz transmitting from 24th April for <A HREF=" https://agricultural-voices.sussex.ac.uk/">2 weeks of special programming</A> educating farmers on how to grow and manage crops within the disaster zone
+                    </P>
+
+                    <P>[9-Mar-2023] - Deadline for answering the <A HREF="https://forms.zohopublic.eu/hfcc/form/HFCCQuestionnaireonTransmitterTubes/formperma/YJq5VapGoWF7Ffr9SlWJoZvd3nLCw03p7ASi6DLubrw">Questionnaire on Transmitter Tubes</A> has been extended
+                    </P>
+
+                    <P>[1-Mar-2023] - <A HREF="../global/doc/HFCC_GOE_2023-001-GoE_Report_A23.pdf">A23 GOE report</A>
+                    </P>
+
+                    <P>[28-Feb-2023] - <A HREF="../global/doc/HFCC_ADM_2023-004-A23_Tunis_Minutes.pdf">A23 plenary minutes</A>
+                    </P>
+
+
+                  <P><B><A HREF="../whatsnewold.phtml">Archive of Earlier News Items</A></B>
+                  </P> 
+
+      </DIV>
+    </DIV>
+		<div style="clear:both;"></div>
+    <DIV CLASS="bottomdiv">
+      <P CLASS="bottomtext">
+        &copy; HFCC 1999-2026 All Rights Reserved      </P>
+    </DIV>
+  </BODY>
+</HTML>
+

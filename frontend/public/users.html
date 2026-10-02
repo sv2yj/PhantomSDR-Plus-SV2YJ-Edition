@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PhantomSDR-Plus | Live Users</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@300;600&display=swap" rel="stylesheet">
+<!-- Twemoji: renders flag emojis on Chrome/Edge/Opera/Windows -->
+<script src="https://cdn.jsdelivr.net/npm/@twemoji/api@15.1.0/dist/twemoji.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+img.emoji {
+  height: 1.1em;
+  width: 1.1em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.15em;
+  display: inline-block;
+}
+  :root {
+    --bg:        #050a07;
+    --bg2:       #0a110c;
+    --bg3:       #0f1a12;
+    --blue:      #00aeff;
+    --green:     #00ff6a;
+    --green-dim: #00c84e;
+    --green-faint:#003d18;
+    --amber:     #ffb700;
+    --red:       #ff3b3b;
+    --text:      #c8e8d0;
+    --muted:     #4a7058;
+    --border:    #0d2016;
+    --glow:      0 0 8px rgba(0,255,106,.35);
+    --glow-sm:   0 0 4px rgba(0,255,106,.2);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Share Tech Mono', monospace;
+    min-height: 100vh;
+  }
+
+  /* --- scanline overlay --- */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,.08) 2px,
+      rgba(0,0,0,.08) 4px
+    );
+    pointer-events: none;
+    z-index: 999;
+  }
+
+  /* --- header --- */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 32px 14px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg2);
+    position: sticky; top: 0; z-index: 10;
+  }
+
+  .logo-block { display: flex; flex-direction: column; gap: 2px; }
+
+  .callsign {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: var(--blue);
+    letter-spacing: .12em;
+    text-shadow: var(--glow);
+  }
+
+  .subtitle {
+	font-family: 'Barlow Condensed', sans-serif;
+	font-weight: bold;
+  font-size: 0.8rem;
+	color: var(--muted);
+	letter-spacing: .18em;
+	text-transform: uppercase;
+  }
+
+  .status-bar {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .pulse {
+    display: inline-block;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: var(--glow);
+    animation: pulse 1.4s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  .pulse.dead { background: var(--red); box-shadow: 0 0 6px rgba(255,59,59,.5); animation: none; }
+
+  @keyframes pulse {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: .45; transform: scale(.8); }
+  }
+
+  #last-update { color: var(--green-dim); }
+  #user-count  { color: var(--green); font-size: .9rem; }
+  .count-label { color: var(--muted); font-size: .8rem; }
+
+  /* --- main area --- */
+  main { padding: 28px 32px; }
+
+  /* --- empty state --- */
+  #empty {
+    display: none;
+    text-align: center;
+    padding: 80px 0;
+    color: var(--muted);
+    font-size: 0.8rem;
+    letter-spacing: .1em;
+  }
+  #empty .big { font-size: 2.5rem; opacity: .2; margin-bottom: 16px; }
+
+  /* --- table --- */
+  .table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+  }
+
+  thead tr {
+    background: var(--bg3);
+    border-bottom: 1px solid var(--border);
+  }
+
+  th {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 300;
+    font-size: 0.8rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--glow);
+    padding: 4px 10px;
+    text-align: left;
+    white-space: nowrap;
+  }
+  th:first-child { padding-left: 20px; }
+
+  tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background .15s;
+  }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: rgba(0,255,106,.03); }
+  tbody tr.new-row { animation: rowIn .4s ease; }
+
+  @keyframes rowIn {
+    from { opacity: 0; transform: translateX(-6px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  td {
+    padding: 4px 10px;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  td:first-child { padding-left: 20px; }
+
+  /* ID */
+  .td-id { color: var(--muted); font-size: 1.0rem; }
+
+  /* Location (geo) */
+  .td-geo { color: var(--text); font-size: 1.2em; }
+  .td-geo .pending { color: var(--muted); font-size: 1.1rem; font-style: italic; }
+  .td-geo .me {
+    font-style: normal;
+    font-size: .7rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--blue);
+    border: 1px solid rgba(0,174,255,.35);
+    border-radius: 2px;
+    padding: 1px 5px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  tbody tr.is-me { background: rgba(0,174,255,.05); }
+  tbody tr.is-me:hover { background: rgba(0,174,255,.09); }
+
+  /* Frequency — biggest visual focus */
+  .td-freq {
+    color: var(--green);
+    font-size: 1.2rem;
+    letter-spacing: .04em;
+    text-shadow: var(--glow-sm);
+  }
+  .freq-unit { font-size: 1.0rem; color: var(--muted); margin-left: 2px; }
+
+  /* Mode badge */
+  .mode-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-size: .9rem;
+    font-weight: bold;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .mode-usb  { background: rgba(0,150,255,.15);  color: #4ab6ff; }
+  .mode-lsb  { background: rgba(255,120,0,.12);  color: #ffaa44; }
+  .mode-am   { background: rgba(200,0,255,.12);  color: #d966ff; }
+  .mode-am-s { background: rgba(200,0,255,.18);  color: #e680ff; }
+  .mode-fm   { background: rgba(0,255,180,.1);   color: #00ffb3; }
+  .mode-iq   { background: rgba(255,220,0,.1);   color: #ffd800; }
+  .mode-other{ background: rgba(255,255,255,.05); color: var(--muted); }
+
+  /* Connected at:*/
+  .td-conn { color: var(--glow); font-size: .9rem; }
+
+  /* Duration — live ticking */
+  .td-dur { color: var(--amber); font-size: .9rem; font-variant-numeric: tabular-nums; }
+
+  /* Tune action */
+  .td-tune { text-align: right; }
+  .tune-btn {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: .8rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--green);
+    background: rgba(0,255,106,.06);
+    border: 1px solid var(--green-faint);
+    border-radius: 2px;
+    padding: 2px 10px;
+    cursor: pointer;
+    transition: background .15s, box-shadow .15s, border-color .15s;
+  }
+  .tune-btn:hover {
+    background: rgba(0,255,106,.14);
+    border-color: var(--green-dim);
+    box-shadow: var(--glow-sm);
+  }
+  .tune-btn:active { background: rgba(0,255,106,.22); }
+
+  /* footer */
+  footer {
+    margin-top: 10px;
+    padding: 16px 32px;
+    border-top: 1px solid var(--border);
+    font-size: .9rem;
+    color: var(--muted);
+    letter-spacing: .1em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* ── MAP ─────────────────────────────────────────────── */
+  #map-section {
+    position: relative;
+    isolation: isolate;   /* contain Leaflet z-indices */
+    margin-top: 20px;
+  }
+  #users-map {
+    width: 100%;
+    height: 320px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    background: #050a07;
+  }
+
+  /* Override Leaflet chrome to match dark theme */
+  .leaflet-container { background: #050a07; font-family: 'Share Tech Mono', monospace; }
+  .leaflet-control-zoom a {
+    background: var(--bg2) !important;
+    color: var(--muted) !important;
+    border-color: var(--border) !important;
+  }
+  .leaflet-control-zoom a:hover { color: var(--green) !important; }
+  .leaflet-control-attribution {
+    background: rgba(5,10,7,.7) !important;
+    color: var(--muted) !important;
+    font-size: .55rem !important;
+  }
+  .leaflet-control-attribution a { color: var(--muted) !important; }
+
+  /* Pulse marker */
+  .map-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: rgba(0,255,106,.18);
+    border: 1px solid rgba(0,255,106,.45);
+    display: flex; align-items: center; justify-content: center;
+    animation: mapPulse 2s ease-in-out infinite;
+  }
+  .map-dot-inner {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: #00ff6a;
+    box-shadow: 0 0 7px rgba(0,255,106,.9);
+  }
+  @keyframes mapPulse {
+    0%,100% { transform: scale(1);   opacity: 1;  }
+    50%      { transform: scale(1.4); opacity: .65; }
+  }
+
+  /* Tooltip */
+  .leaflet-tooltip.map-tip {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: var(--green);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: .7rem;
+    box-shadow: none;
+    padding: 4px 8px;
+    white-space: nowrap;
+  }
+  .leaflet-tooltip.map-tip::before { border-top-color: var(--border); }
+
+  .error-banner {
+    background: rgba(255,59,59,.08);
+    border: 1px solid rgba(255,59,59,.25);
+    border-radius: 3px;
+    color: var(--red);
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    font-size: 1.0rem;
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-block">
+    <span class="callsign">PhantomSDR-Plus</span>
+    <span class="subtitle">Live Users</span>
+  </div>
+  <div class="status-bar">
+    <span id="pulse" class="pulse"></span>
+    <span>POLLING&nbsp;<span id="last-update">—</span></span>
+    <span><span id="user-count" class="user-count">0</span>&nbsp;<span class="count-label">CONNECTED</span></span>
+  </div>
+</header>
+
+<main>
+  <div id="error-banner" class="error-banner">⚠ Cannot reach /users — server may be down</div>
+
+  <div id="empty">
+    <div class="big">◇</div>
+    NO ACTIVE LISTENERS
+  </div>
+
+  <div id="table-wrap" class="table-wrap" style="display:none">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Location</th>
+          <th>Frequency</th>
+          <th>Mode</th>
+          <th>Connected</th>
+          <th>Duration</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+
+  <div id="map-section">
+    <div id="users-map"></div>
+  </div>
+</main>
+
+<footer>
+  <span><b>PhantomSDR-Plus | Real time users list</b></span></footer>
+
+<script>
+// -----------------------------------------------------------------------
+// State: map of id → { connected_at_iso, connected_at_ms (local epoch) }
+// We track local connect time so the duration ticker is smooth between polls.
+// -----------------------------------------------------------------------
+const tracked = new Map(); // id → { connectedAtMs }
+let lastUsers  = [];
+let errorShown = false;
+
+// Our own signal-protocol UUID, so the list can mark our row "you" the way the
+// mobile page does. This page has no receiver of its own, so the id comes from
+// whichever app tab does: over postMessage when we are the modal's iframe, and
+// over a BroadcastChannel when we were opened on our own (see askWhoAmI).
+// It stays null only when no app tab of this origin is open — nothing is
+// listening then, so there is nothing to be "you".
+let myId = null;
+
+function isLocalIp(ip) {
+  if (!ip) return false;
+  const raw = ip.startsWith('::ffff:') ? ip.slice(7) : ip;
+  if (raw === '::1' || raw === 'localhost') return true;
+  return /^127\./.test(raw)   ||
+         /^10\./.test(raw)    ||
+         /^192\.168\./.test(raw) ||
+         /^172\.(1[6-9]|2\d|3[01])\./.test(raw) ||
+         /^fc/i.test(raw)     || /^fd/i.test(raw);
+}
+
+// Escape a value for safe interpolation into a double-quoted HTML attribute.
+function attr(v) {
+  return String(v == null ? '' : v)
+    .replace(/&/g, '&amp;').replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+// -----------------------------------------------------------------------
+// Mode badge HTML
+// -----------------------------------------------------------------------
+function modeBadge(mode) {
+  const m = (mode || 'iq').toLowerCase();
+  const cls = ['usb','lsb','am','am-s','fm','iq'].includes(m)
+    ? 'mode-' + m.replace('-','s').replace('am-s','am-s')
+    : 'mode-other';
+  return `<span class="mode-badge ${cls}">${m.toUpperCase()}</span>`;
+}
+
+// -----------------------------------------------------------------------
+// Format duration from seconds
+// -----------------------------------------------------------------------
+function fmtDur(s) {
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  const ss = s % 60;
+  if (h > 0) return `${h}:${String(m).padStart(2,'0')}:${String(ss).padStart(2,'0')}`;
+  return `${m}:${String(ss).padStart(2,'0')}`;
+}
+
+// -----------------------------------------------------------------------
+// Format frequency
+// -----------------------------------------------------------------------
+function fmtFreq(khz) {
+  if (khz >= 50) {
+    return (khz / 1000).toFixed(3) + '<span class="freq-unit">&nbsp;MHz</span>';
+  }
+  return khz.toFixed(3) + '<span class="freq-unit">&nbsp;kHz</span>';
+}
+
+// -----------------------------------------------------------------------
+// Format connected_at ISO → local HH:MM:SS
+// -----------------------------------------------------------------------
+function fmtConnTime(iso) {
+  try {
+    const d = new Date(iso);
+    return d.toLocaleTimeString([], { hour12: false });
+  } catch { return '—'; }
+}
+
+// -----------------------------------------------------------------------
+// Fetch loop
+// -----------------------------------------------------------------------
+async function fetchUsers() {
+  try {
+    const r = await fetch('/users', { cache: 'no-store' });
+    if (!r.ok) throw new Error(r.status);
+    const data = await r.json();
+
+    // The station's own locator travels with every /users poll; it is what
+    // places "Local" sessions on the map (see stationLatLng).
+    if (data.grid_locator) setStationGrid(data.grid_locator);
+
+    errorShown = false;
+    document.getElementById('error-banner').style.display = 'none';
+    document.getElementById('pulse').classList.remove('dead');
+
+    // Update tracked map: add new, keep existing (preserve local connect time)
+    const incoming = data.users || [];
+    const incomingIds = new Set(incoming.map(u => u.id));
+
+    // Remove stale
+    for (const [id] of tracked) {
+      if (!incomingIds.has(id)) tracked.delete(id);
+    }
+
+    // Add new entries (record local ms for smooth ticking)
+    for (const u of incoming) {
+      if (!tracked.has(u.id)) {
+        tracked.set(u.id, {
+          connectedAtMs: Date.now() - u.duration_s * 1000
+        });
+      }
+    }
+
+    lastUsers = incoming;
+    askWhoAmI();          // no-op once the parent has answered
+    renderTable(incoming);
+    updateUsersMap(incoming);
+
+    // Timestamp
+    const now = new Date();
+    document.getElementById('last-update').textContent =
+      now.toLocaleTimeString([], { hour12: false });
+    document.getElementById('user-count').textContent = incoming.length;
+
+  } catch (e) {
+    document.getElementById('pulse').classList.add('dead');
+    if (!errorShown) {
+      document.getElementById('error-banner').style.display = 'block';
+      errorShown = true;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------
+// Render table (called from fetch + ticker)
+// -----------------------------------------------------------------------
+let prevIds = new Set();
+
+function renderTable(users) {
+  const tbody   = document.getElementById('tbody');
+  const wrap    = document.getElementById('table-wrap');
+  const empty   = document.getElementById('empty');
+  const now     = Date.now();
+
+  if (!users.length) {
+    wrap.style.display  = 'none';
+    empty.style.display = 'block';
+    prevIds = new Set();
+    return;
+  }
+
+  wrap.style.display  = '';
+  empty.style.display = 'none';
+
+  const newIds   = new Set(users.map(u => u.id));
+  const freshIds = new Set([...newIds].filter(id => !prevIds.has(id)));
+  prevIds = newIds;
+
+  // Build rows HTML
+  const rows = users.map((u, i) => {
+    const t = tracked.get(u.id);
+    const elapsedS = t ? Math.floor((now - t.connectedAtMs) / 1000) : u.duration_s;
+    const isFresh  = freshIds.has(u.id);
+
+    // tw(): convert any emoji characters (flag unicode) to <img> tags at
+    // generation time so flags render correctly on Edge/Chrome/Windows.
+    const tw = s => (s && typeof twemoji !== 'undefined') ? twemoji.parse(s) : (s || '');
+
+    const geoDisplay = isLocalIp(u.ip)
+      ? `<span>Local</span>`
+      : u.geo && u.geo !== u.ip
+        ? `<span>${tw(u.geo)}</span>`
+        : `<span class="pending">resolving&nbsp;…</span>`;
+
+    const isMe    = myId && u.id === myId;
+    const meLabel = isMe ? `<em class="me">you</em>` : '';
+
+    return `<tr data-id="${u.id}" class="${isFresh ? 'new-row' : ''}${isMe ? ' is-me' : ''}">
+      <td class="td-id">${String(i + 1).padStart(2, '0')}</td>
+      <td class="td-geo">${geoDisplay}${meLabel}</td>
+      <td class="td-freq">
+        ${fmtFreq(u.freq_khz)}
+      </td>
+      <td>${modeBadge(u.mode)}</td>
+      <td class="td-conn">${fmtConnTime(u.connected_at)}</td>
+      <td class="td-dur" data-id="${u.id}" data-start="${t ? t.connectedAtMs : (now - u.duration_s * 1000)}">${fmtDur(elapsedS)}</td>
+      <td class="td-tune">${isMe ? '' : `<button class="tune-btn" data-hz="${Number(u.freq_hz) || 0}" data-mode="${attr(u.mode)}"
+                title="Tune the receiver to this listener's frequency">Tune</button>`}</td>
+    </tr>`;
+  });
+
+  tbody.innerHTML = rows.join('');
+}
+
+// -----------------------------------------------------------------------
+// Smooth duration ticker — runs every second independently of fetch
+// -----------------------------------------------------------------------
+function tickDurations() {
+  const now = Date.now();
+  document.querySelectorAll('td.td-dur[data-start]').forEach(td => {
+    const start = parseInt(td.dataset.start, 10);
+    if (!isNaN(start)) {
+      td.textContent = fmtDur(Math.floor((now - start) / 1000));
+    }
+  });
+}
+
+// -----------------------------------------------------------------------
+// Tune — jump the receiver to a listener's frequency + mode.
+//
+// This page is served two ways: standalone, and inside an <iframe> in the
+// main app's "Connected Users" window. Embedded, we ask the parent to tune
+// (it owns the waterfall and the audio socket); standalone there is no
+// receiver to talk to, so we navigate to the app with the link parameters
+// it already understands (?frequency=<Hz>&modulation=<MODE>).
+//
+// Server mode strings come from AudioClient::get_mode_str() in signal.cpp.
+// "iq" has no demodulation to select — those rows still tune, they just
+// leave the current mode alone, same as the mobile page does.
+// -----------------------------------------------------------------------
+const APP_MODE = { usb: 'USB', lsb: 'LSB', am: 'AM', 'am-s': 'QUAM', fm: 'FM' };
+
+// The app embeds us as <iframe src="{siteIP}/users.html">, and siteIP is an
+// absolute URL from site_information.json. So our origin is NOT necessarily
+// the parent's: a visitor who arrived by LAN IP, an alternate hostname, or
+// https while siteIP is http gets a cross-origin iframe. postMessage silently
+// drops the message when targetOrigin doesn't match the receiver, so take the
+// parent's real origin from the referrer rather than assuming it equals ours.
+// Falling back to '*' is acceptable here — the payload is a frequency that
+// /users already publishes to anyone who asks.
+function parentOrigin() {
+  try {
+    if (document.referrer) return new URL(document.referrer).origin;
+  } catch (e) { /* malformed referrer — fall through */ }
+  return '*';
+}
+
+function tuneTo(hz, serverMode) {
+  if (!isFinite(hz) || hz <= 0) return;
+  const mode = APP_MODE[String(serverMode || '').toLowerCase()] || null;
+
+  if (window.parent && window.parent !== window) {
+    window.parent.postMessage({ type: 'phantomsdr-tune', freq_hz: hz, mode }, parentOrigin());
+    return;
+  }
+
+  const q = new URLSearchParams({ frequency: String(Math.round(hz)) });
+  if (mode) q.set('modulation', mode);
+  // './' not '/': resolves next to this page, so installs served under a
+  // reverse-proxy subpath (/websdr/users.html) land on /websdr/ and not on
+  // the proxy root.
+  window.location.href = './?' + q.toString();
+}
+
+// -----------------------------------------------------------------------
+// "you" label — ask the parent app for our own client id.
+//
+// The id is the signal-protocol UUID the C++ server assigns (websocket.cpp)
+// and puts in every /users row, so matching it is exact rather than a guess
+// by frequency. Only the app knows it — it owns the audio socket that was
+// given the id in the initial settings frame.
+//
+// Asked once per poll until answered: when the modal opens, the app may not
+// have its settings yet, and a single question at load could go unanswered
+// forever. Stops as soon as an id arrives.
+//
+// Two transports, because this page is served two ways. As the modal's iframe
+// we ask our parent. Opened on our own there is no parent, so we ask over a
+// BroadcastChannel and any app tab on this origin answers — which is why the
+// standalone page marks "you" exactly as the modal does. Cross-origin (the app
+// on a hostname, this page on the LAN IP) neither transport reaches, and no
+// row is marked; that is the browser's rule, not a setting.
+// -----------------------------------------------------------------------
+let whoChannel = null;
+try {
+  if (typeof BroadcastChannel !== 'undefined') {
+    whoChannel = new BroadcastChannel('phantomsdr');
+    whoChannel.addEventListener('message', (e) => {
+      const d = e.data;
+      if (!d || d.type !== 'phantomsdr-me' || !d.id) return;
+      myId = String(d.id);
+      renderTable(lastUsers);  // paint the label without waiting for the next poll
+    });
+  }
+} catch (e) {
+  whoChannel = null;  // no channel — the page just never marks a row
+}
+
+function askWhoAmI() {
+  if (myId !== null) return;
+  if (window.parent && window.parent !== window) {
+    window.parent.postMessage({ type: 'phantomsdr-hello' }, parentOrigin());
+    return;
+  }
+  if (whoChannel) {
+    try {
+      whoChannel.postMessage({ type: 'phantomsdr-hello' });
+    } catch (e) {
+      /* channel closed — retried next poll */
+    }
+  }
+}
+
+window.addEventListener('message', (e) => {
+  const want = parentOrigin();
+  if (want !== '*' && e.origin !== want) return;
+  const d = e.data;
+  if (!d || d.type !== 'phantomsdr-me' || !d.id) return;
+  myId = String(d.id);
+  renderTable(lastUsers);   // paint the label without waiting for the next poll
+});
+
+// Delegated: #tbody is rebuilt on every poll (once a second), so per-button
+// listeners would be discarded and re-created continuously.
+document.getElementById('tbody').addEventListener('click', (e) => {
+  const btn = e.target.closest('.tune-btn');
+  if (!btn) return;
+  tuneTo(parseFloat(btn.dataset.hz), btn.dataset.mode);
+});
+
+// -----------------------------------------------------------------------
+// Start
+// -----------------------------------------------------------------------
+fetchUsers();
+setInterval(fetchUsers, 1000);
+setInterval(tickDurations, 1000);
+
+// -----------------------------------------------------------------------
+// Auto-zoom: scale the whole page to fit whatever window width we get.
+// Design reference width is 900px (comfortable for all table columns).
+// -----------------------------------------------------------------------
+const DESIGN_W = 900;
+
+function applyZoom() {
+  const scale = Math.min(1, window.innerWidth / DESIGN_W);
+  document.documentElement.style.zoom = scale;
+}
+
+applyZoom();
+window.addEventListener('resize', applyZoom);
+</script>
+
+<!-- ── Leaflet map ─────────────────────────────────────────────── -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+// -----------------------------------------------------------------------
+// Map – live user markers
+// -----------------------------------------------------------------------
+let usersMap = null;
+const markersByUid = new Map();   // uid → Leaflet marker
+
+// ── Country centroids fallback ────────────────────────────────────────────
+// Used when Nominatim is unreachable (firewall, CSP, rate-limit).
+// Extracted from the trailing 2-letter ISO code in strings like "Athens, GR".
+const CENTROIDS = {
+  AD:[42.55,1.57],AE:[24.47,54.37],AF:[33.93,67.71],AG:[17.07,-61.80],
+  AL:[41.15,20.17],AM:[40.07,45.04],AO:[-11.20,17.87],AR:[-38.42,-63.62],
+  AT:[47.52,14.55],AU:[-25.27,133.78],AZ:[40.14,47.58],BA:[43.92,17.68],
+  BB:[13.19,-59.54],BD:[23.68,90.36],BE:[50.50,4.47],BF:[12.36,-1.56],
+  BG:[42.73,25.49],BH:[26.02,50.55],BI:[-3.37,29.92],BJ:[9.31,2.32],
+  BN:[4.94,114.73],BO:[-16.29,-63.59],BR:[-14.24,-51.93],BS:[25.03,-77.40],
+  BT:[27.51,90.43],BW:[-22.33,24.68],BY:[53.71,27.95],BZ:[17.19,-88.50],
+  CA:[56.13,-106.35],CD:[-4.04,21.76],CF:[6.61,20.94],CG:[-0.23,15.83],
+  CH:[46.82,8.23],CI:[7.54,-5.55],CL:[-35.68,-71.54],CM:[3.85,11.50],
+  CN:[35.86,104.20],CO:[4.57,-74.30],CR:[9.75,-83.75],CU:[21.52,-77.78],
+  CV:[16.54,-23.04],CY:[35.13,33.43],CZ:[49.82,15.47],DE:[51.17,10.45],
+  DJ:[11.83,42.59],DK:[56.26,9.50],DO:[18.74,-70.16],DZ:[28.03,1.66],
+  EC:[-1.83,-78.18],EE:[58.60,25.01],EG:[26.82,30.80],ER:[15.18,39.78],
+  ES:[40.46,-3.75],ET:[9.15,40.49],FI:[61.92,25.75],FJ:[-16.58,179.41],
+  FR:[46.23,2.21],GA:[-0.80,11.61],GB:[55.38,-3.44],GE:[42.32,43.36],
+  GH:[7.95,-1.02],GM:[13.44,-15.31],GN:[9.95,-11.24],GQ:[1.65,10.27],
+  GR:[39.07,21.82],GT:[15.78,-90.23],GW:[11.80,-15.18],GY:[4.86,-58.93],
+  HN:[15.20,-86.24],HR:[45.10,15.20],HT:[18.97,-72.29],HU:[47.16,19.50],
+  ID:[-0.79,113.92],IE:[53.41,-8.24],IL:[31.05,34.85],IN:[20.59,78.96],
+  IQ:[33.22,43.68],IR:[32.43,53.69],IS:[64.96,-19.02],IT:[41.87,12.57],
+  JM:[18.11,-77.30],JO:[30.59,36.24],JP:[36.20,138.25],KE:[-0.02,37.91],
+  KG:[41.20,74.77],KH:[12.57,104.99],KP:[40.34,127.51],KR:[35.91,127.77],
+  KW:[29.31,47.48],KZ:[48.02,66.92],LA:[19.86,102.50],LB:[33.85,35.86],
+  LI:[47.14,9.55],LK:[7.87,80.77],LR:[6.43,-9.43],LS:[-29.61,28.23],
+  LT:[55.17,23.88],LU:[49.82,6.13],LV:[56.88,24.60],LY:[26.34,17.23],
+  MA:[31.79,-7.09],MC:[43.75,7.41],MD:[47.41,28.37],ME:[42.71,19.37],
+  MG:[-18.77,46.87],MK:[41.61,21.74],ML:[17.57,-3.99],MM:[19.16,95.96],
+  MN:[46.86,103.85],MR:[21.01,-10.94],MT:[35.94,14.37],MU:[-20.35,57.55],
+  MV:[3.20,73.22],MW:[-13.25,34.30],MX:[23.63,-102.55],MY:[4.21,108.04],
+  MZ:[-18.67,35.53],NA:[-22.96,18.49],NE:[17.61,8.08],NG:[9.08,8.68],
+  NI:[12.87,-85.21],NL:[52.13,5.29],NO:[60.47,8.47],NP:[28.39,84.12],
+  NZ:[-40.90,174.89],OM:[21.51,55.92],PA:[8.54,-80.78],PE:[-9.19,-75.02],
+  PG:[-6.31,143.96],PH:[12.88,121.77],PK:[30.38,69.35],PL:[51.92,19.15],
+  PT:[39.40,-8.22],PY:[-23.44,-58.44],QA:[25.35,51.18],RO:[45.94,24.97],
+  RS:[44.02,21.01],RU:[61.52,105.32],RW:[-1.94,29.87],SA:[23.89,45.08],
+  SB:[-9.64,160.16],SD:[12.86,30.22],SE:[60.13,18.64],SG:[1.35,103.82],
+  SI:[46.15,14.99],SK:[48.67,19.70],SL:[8.46,-11.78],SN:[14.50,-14.45],
+  SO:[5.15,46.20],SR:[3.92,-56.03],SS:[4.86,31.57],SV:[13.79,-88.90],
+  SY:[34.80,38.99],SZ:[-26.52,31.47],TD:[15.45,18.73],TG:[8.62,0.82],
+  TH:[15.87,100.99],TJ:[38.86,71.28],TM:[38.97,59.56],TN:[33.89,9.54],
+  TR:[38.96,35.24],TT:[10.69,-61.22],TZ:[-6.37,34.89],UA:[48.38,31.17],
+  UG:[1.37,32.29],US:[37.09,-95.71],UY:[-32.52,-55.77],UZ:[41.38,64.59],
+  VA:[41.90,12.45],VE:[6.42,-66.59],VN:[14.06,108.28],YE:[15.55,48.52],
+  ZA:[-30.56,22.94],ZM:[-13.13,27.85],ZW:[-19.02,29.15]
+};
+
+// Extract the trailing ISO-2 country code from "City, GR" → "GR"
+function countryCode(geoStr) {
+  if (!geoStr) return null;
+  const last = geoStr.split(',').pop().trim().toUpperCase();
+  return /^[A-Z]{2}$/.test(last) ? last : null;
+}
+
+function centroidOf(geoStr) {
+  const cc = countryCode(geoStr);
+  if (!cc || !CENTROIDS[cc]) return null;
+  const [lat, lng] = CENTROIDS[cc];
+  return { lat, lng };
+}
+
+// The receiver's own coordinates, from the [websdr] grid_locator in the server
+// config (carried in every /users response). Null until the first poll, or if
+// the locator is unset/malformed.
+let stationLatLng = null;
+
+function setStationGrid(grid) {
+  const next = gridToLatLng(grid);
+  if (!next) return;
+  if (stationLatLng &&
+      next.lat === stationLatLng.lat && next.lng === stationLatLng.lng) return;
+  stationLatLng = next;
+}
+
+// Maidenhead locator → centre of the square. Accepts 4 or 6 characters
+// (KM17 / KM17VX); anything else is refused rather than guessed.
+function gridToLatLng(grid) {
+  const g = String(grid || '').trim().toUpperCase();
+  if (!/^[A-R]{2}[0-9]{2}([A-X]{2})?$/.test(g)) return null;
+  let lng = (g.charCodeAt(0) - 65) * 20 - 180 + (+g[2]) * 2;
+  let lat = (g.charCodeAt(1) - 65) * 10 -  90 + (+g[3]);
+  if (g.length === 6) {
+    lng += (g.charCodeAt(4) - 65) * (2 / 24) + (1 / 24);   // + half a subsquare
+    lat += (g.charCodeAt(5) - 65) * (1 / 24) + (1 / 48);
+  } else {
+    lng += 1;    // centre of the 2° × 1° square
+    lat += 0.5;
+  }
+  return { lat: +lat.toFixed(4), lng: +lng.toFixed(4) };
+}
+
+// Is this session one with no public location of its own — loopback or LAN,
+// shown as "Local" in the table?
+function isLocalUser(u) {
+  return u.geo === 'Local' || isLocalIp(u.ip);
+}
+
+// Geo string that can honestly be put on the map, or null.
+// "Local" is not a place, and handing that word to Nominatim finds a village of
+// that name — which is why the station used to appear in the USA. A local
+// listener is at the receiver by definition, so it is plotted on the station's
+// own locator instead (resolveUserLatLng), with no geocoding at all.
+function mappableGeo(u) {
+  if (isLocalUser(u)) return stationLatLng ? 'Local' : null;
+  if (!u.geo || u.geo === u.ip) return null;
+  return u.geo;
+}
+
+// Coordinates for a user: the station itself for a local session, otherwise the
+// geocoded city.
+function resolveUserLatLng(u, geoStr) {
+  if (isLocalUser(u)) return Promise.resolve(stationLatLng);
+  return geocodeUser(geoStr);
+}
+
+// Geocoding ─ Nominatim with 5 s timeout; falls back to country centroid
+const geoCache    = new Map();  // name → {lat,lng} | null (resolved)
+const geocodeQ    = [];         // {name, resolve}[]
+let   geocodeRunning = false;
+
+// PERF: persist resolved coordinates across page loads, sharing one cache with
+// stats.html. Nominatim is rate-limited to ~1 lookup/sec, so a fresh cache
+// makes every new listener's marker wait in a 1.1 s-per-city queue. Hydrating
+// from localStorage means each city is geocoded once, ever — and because the
+// key is shared, a city resolved on the stats page shows up here instantly too.
+const GEO_LS_KEY = 'phantomsdr_geocache_v1';  // shared with stats.html
+try {
+  const stored = JSON.parse(localStorage.getItem(GEO_LS_KEY) || '{}');
+  // Drop the poisoned "Local" entry an older build could have cached (it had
+  // been geocoded to a town of that name, putting the station in the USA).
+  delete stored['Local'];
+  for (const k in stored) geoCache.set(k, stored[k]);
+} catch { /* corrupt/absent — start empty */ }
+
+function persistGeoCache() {
+  try {
+    const obj = {};
+    // Persist only successfully-resolved coordinates. Nulls (transient
+    // Nominatim failure with no country centroid) are kept in-memory only so a
+    // later reload retries them instead of caching the miss forever.
+    for (const [k, v] of geoCache) if (v) obj[k] = v;
+    localStorage.setItem(GEO_LS_KEY, JSON.stringify(obj));
+  } catch { /* quota/unavailable — cache stays in-memory for this session */ }
+}
+
+async function drainGeocodeQ() {
+  if (geocodeRunning) return;
+  geocodeRunning = true;
+  while (geocodeQ.length) {
+    const { name, resolve } = geocodeQ.shift();
+    if (geoCache.has(name)) { resolve(geoCache.get(name)); continue; }
+
+    let v = null;
+    try {
+      const ctrl = new AbortController();
+      const tid  = setTimeout(() => ctrl.abort(), 5000);
+      const r = await fetch(
+        `https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${encodeURIComponent(name)}`,
+        { signal: ctrl.signal }
+      );
+      clearTimeout(tid);
+      const j = await r.json();
+      v = j.length ? { lat: +j[0].lat, lng: +j[0].lon } : centroidOf(name);
+    } catch {
+      v = centroidOf(name); // Nominatim blocked/timeout → country centroid
+    }
+
+    geoCache.set(name, v);
+    if (v) persistGeoCache();   // remember resolved coordinates across reloads (shared with stats.html)
+    resolve(v);
+    await new Promise(r => setTimeout(r, 1100)); // Nominatim rate limit
+  }
+  geocodeRunning = false;
+}
+
+function geocodeUser(name) {
+  if (geoCache.has(name)) return Promise.resolve(geoCache.get(name));
+  return new Promise(resolve => {
+    // Merge duplicate requests for the same name
+    const existing = geocodeQ.find(q => q.name === name);
+    if (existing) {
+      const orig = existing.resolve;
+      existing.resolve = v => { orig(v); resolve(v); };
+    } else {
+      geocodeQ.push({ name, resolve });
+      drainGeocodeQ();
+    }
+  });
+}
+
+// Deterministic jitter so two users in same city don't stack exactly
+function jitter(val, uid, axis) {
+  let h = axis === 'lat' ? 0x811c9dc5 : 0xcbf29ce4;
+  for (let i = 0; i < uid.length; i++) h = Math.imul(h ^ uid.charCodeAt(i), 0x01000193) >>> 0;
+  return val + ((h & 0xff) / 255 - 0.5) * 0.12;
+}
+
+function pulseIcon() {
+  return L.divIcon({
+    className: '',
+    html: '<div class="map-dot"><div class="map-dot-inner"></div></div>',
+    iconSize:    [16, 16],
+    iconAnchor:  [8, 8],
+    tooltipAnchor: [8, -4],
+  });
+}
+
+function initUsersMap() {
+  if (usersMap) return;
+  usersMap = L.map('users-map', { center: [20, 5], zoom: 2, zoomControl: true });
+  // CARTO's anonymous basemap tiles now come back stamped "API KEY REQUIRED",
+  // so we use Esri's keyless dark canvas instead (native tiles stop at z16).
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; Esri, HERE, Garmin',
+    maxZoom: 18,
+    maxNativeZoom: 16,
+  }).addTo(usersMap);
+}
+
+async function updateUsersMap(users) {
+  initUsersMap();
+
+  const activeIds = new Set(users.map(u => u.id));
+
+  // Remove departed users
+  for (const [uid, marker] of markersByUid) {
+    if (!activeIds.has(uid)) {
+      usersMap.removeLayer(marker);
+      markersByUid.delete(uid);
+    }
+  }
+
+  // Add new users (fire-and-forget geocoding per user)
+  for (const u of users) {
+    if (markersByUid.has(u.id)) continue;
+    const geoStr = mappableGeo(u);
+    if (!geoStr) continue;
+
+    const uid = u.id;
+    resolveUserLatLng(u, geoStr).then(coords => {
+      if (!coords || markersByUid.has(uid)) return;
+      if (!activeIds.has(uid)) return;  // user left while we were geocoding
+
+      const lat = jitter(coords.lat, uid, 'lat');
+      const lng = jitter(coords.lng, uid, 'lng');
+      const marker = L.marker([lat, lng], { icon: pulseIcon() })
+        .addTo(usersMap);
+
+      const twGeo = s => (typeof twemoji !== 'undefined') ? twemoji.parse(s) : s;
+      marker.bindTooltip(
+        `${twGeo(geoStr)}<br/>${fmtFreq(u.freq_khz).replace(/<[^>]+>/g, ' ')} · ${(u.mode||'').toUpperCase()}`,
+        { className: 'map-tip', direction: 'top' }
+      );
+      markersByUid.set(uid, marker);
+    });
+  }
+
+  // Update tooltip text for existing markers (frequency/mode may change)
+  for (const u of users) {
+    const marker = markersByUid.get(u.id);
+    const geoStr = mappableGeo(u);
+    if (marker && geoStr) {
+      const twGeo = s => (typeof twemoji !== 'undefined') ? twemoji.parse(s) : s;
+      marker.setTooltipContent(
+        `${twGeo(geoStr)}<br/>${fmtFreq(u.freq_khz).replace(/<[^>]+>/g, ' ')} · ${(u.mode||'').toUpperCase()}`
+      );
+    }
+  }
+}
+</script>
+</body>
+</html>

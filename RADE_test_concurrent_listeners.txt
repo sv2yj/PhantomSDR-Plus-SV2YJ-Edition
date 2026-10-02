@@ -1,0 +1,10 @@
+first step : 
+sudo apt install python3-websockets python3-psutil
+
+second step : 
+cd PhantomSDR-Plus 
+python3 rade_loadtest.py
+
+
+line 84 in rade_helper.py :
+Change the "2" to "3" to test. 

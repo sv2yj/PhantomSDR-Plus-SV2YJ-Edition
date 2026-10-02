@@ -1,0 +1,56 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  PhantomSDR-Plus — phantomsdr-proxy.service
+#
+#  Runs the reverse proxy under systemd. The proxy puts the admin panel and
+#  spectrumserver on one public port, so this is what listeners actually reach.
+#  Install it together with phantomsdr-admin.service — see that file for the
+#  full install steps and for why 'manage_admin.sh stop/restart' should not be
+#  used once these units are enabled.
+#
+#  Ports are read from admin_config.json (proxy_port, port, public_port,
+#  sdr_host). Nothing to configure here beyond User= and the two paths.
+#
+#  It is started after the panel so /admin answers straight away, but it is not
+#  bound to it: the proxy also fronts spectrumserver, which must keep working
+#  while the panel restarts. Restart=always covers the brief window during
+#  which the panel is still coming up.
+#
+#  INSTALL
+#    1. Edit User= and the two paths below to match your installation.
+#    2. sudo cp phantomsdr-proxy.service /etc/systemd/system/
+#    3. sudo systemctl daemon-reload
+#    4. sudo systemctl enable --now phantomsdr-proxy
+#    5. systemctl status phantomsdr-proxy    # should say "active (running)"
+#
+#
+#  LOG OWNERSHIP — needed for the panel's "Clear Logs" button
+#  systemd opens the StandardOutput=append: path from PID 1, before it drops to
+#  User=, so a log that does not exist yet is created root:root 0644. The panel
+#  runs as User= and then cannot truncate it: Clear Logs reports
+#  "Permission denied: .../proxy.log". Install tmpfiles/phantomsdr-logs.conf (edit
+#  the paths and user first) so the log is re-created with the right owner at
+#  every boot, and repair an existing one with
+#  'sudo chown YOUR_USER:YOUR_GROUP proxy.log' — chown, never rm: it is held open
+#  O_APPEND. setup_admin.sh does both for you.
+#
+#  The proxy needs aiohttp:  pip3 install aiohttp --break-system-packages
+#
+#  FULL MANUAL: docs/ADMIN_PANEL_SETUP.md
+# ─────────────────────────────────────────────────────────────────────────────
+
+[Unit]
+Description=PhantomSDR Reverse Proxy
+After=network.target phantomsdr-admin.service
+
+[Service]
+Type=simple
+User=YOUR_USER
+WorkingDirectory=/home/YOUR_USER/PhantomSDR-Plus
+ExecStart=/usr/bin/python3 -u /home/YOUR_USER/PhantomSDR-Plus/proxy.py
+StandardOutput=append:/home/YOUR_USER/PhantomSDR-Plus/proxy.log
+StandardError=append:/home/YOUR_USER/PhantomSDR-Plus/proxy.log
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

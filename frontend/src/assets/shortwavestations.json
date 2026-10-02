@@ -1,0 +1,3432 @@
+[
+    {
+        "frequency": 2485000,
+        "name": "Vanuatu Broadcasting and Television Corporation",
+        "mode": "AM"
+    },
+    {
+        "frequency": 3185000,
+        "name": "Blue Ridge Communications, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 3195000,
+        "name": "Blue Ridge Communications, Inc.\nWNQM, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 3215000,
+        "name": "Blue Ridge Communications, Inc.\nWNQM, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 3265000,
+        "name": "Allan H. Weiner",
+        "mode": "AM"
+    },
+    {
+        "frequency": 3325000,
+        "name": "Radio Republic of Indonesia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 3900000,
+        "name": "China National Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 3915000,
+        "name": "BBC Worldservice",
+        "mode": "AM"
+    },
+    {
+        "frequency": 3930000,
+        "name": "The Overcomer Ministry",
+        "mode": "AM"
+    },
+    {
+        "frequency": 3945000,
+        "name": "Vanuatu Broadcasting and Television Corporation",
+        "mode": "AM"
+    },
+    {
+        "frequency": 3950000,
+        "name": "China National Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 3955000,
+        "name": "BBC Worldservice\nChannel 292 (Germany)\nKorean Broadcasting System",
+        "mode": "AM"
+    },
+    {
+        "frequency": 3960000,
+        "name": "BBC Worldservice",
+        "mode": "AM"
+    },
+    {
+        "frequency": 3965000,
+        "name": "TDF (France)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 3975000,
+        "name": "Shortwave Radio Services (Germany)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 3985000,
+        "name": "China National Radio\nRadio 700",
+        "mode": "AM"
+    },
+    {
+        "frequency": 3990000,
+        "name": "China National Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 3995000,
+        "name": "Media Broadcast GmbH\nVoice of the Andes",
+        "mode": "AM"
+    },
+    {
+        "frequency": 4500000,
+        "name": "China National Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 4750000,
+        "name": "China National Radio\nRadio Republic of Indonesia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 4760000,
+        "name": "All India Radio\nTrans World Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 4800000,
+        "name": "China National Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 4820000,
+        "name": "China National Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 4830000,
+        "name": "Mongol Radio & Television",
+        "mode": "AM"
+    },
+    {
+        "frequency": 4835000,
+        "name": "All India Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 4840000,
+        "name": "WNQM, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 4850000,
+        "name": "China National Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 4870000,
+        "name": "All India Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 4895000,
+        "name": "Mongol Radio & Television",
+        "mode": "AM"
+    },
+    {
+        "frequency": 4905000,
+        "name": "China National Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 4920000,
+        "name": "China National Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 4930000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 4950000,
+        "name": "All India Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 4960000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 4965000,
+        "name": "Voice of Hope",
+        "mode": "AM"
+    },
+    {
+        "frequency": 4980000,
+        "name": "China National Radio\nRadio Miami International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 4990000,
+        "name": "China National Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5010000,
+        "name": "Radio Miami International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5020000,
+        "name": "Solomon Islands Broadcasting",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5040000,
+        "name": "All India Radio\nVanuatu Broadcasting and Television Corporation",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5050000,
+        "name": "All India Radio\nBlue Ridge Communications, Inc.\nChina National Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5060000,
+        "name": "China National Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5085000,
+        "name": "Leap of Faith, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5130000,
+        "name": "Allan H. Weiner",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5800000,
+        "name": "Radio Miami International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5820000,
+        "name": "Encompass Digital Media Services\nFor new organization",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5830000,
+        "name": "Leap of Faith, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5835000,
+        "name": "Pakistan Broadcasting Corporation",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5845000,
+        "name": "BBC Worldservice",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5850000,
+        "name": "Radio Miami International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5860000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5875000,
+        "name": "BBC Worldservice\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5880000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5885000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5890000,
+        "name": "BBC Worldservice\nPakistan Broadcasting Corporation\nUnited States Agency for Global Media (USAGM)\nWNQM, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5895000,
+        "name": "BBC Worldservice\nFor new organization\nIBRA Radio\nNippon Hoso Kyokai",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5900000,
+        "name": "For new organization",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5905000,
+        "name": "China Radio International\nDeutscher Wetterdienst",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5910000,
+        "name": "China Radio International\nHFCC, Intl. Radio for Disaster Relief project\nRadio Romania International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5915000,
+        "name": "China Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5920000,
+        "name": "Korean Broadcasting System\nLeSea Broadcasting Corporation\nRadio Romania International\nVoice of Russia\nVoice of the Andes",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5925000,
+        "name": "China National Radio\nDeutsche Welle\nIslamic Republic of Iran Broadcasting\nRadio France Internationale\nRadio Romania International\nUnited States Agency for Global Media (USAGM)\nVoice of Vietnam",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5930000,
+        "name": "BBC Worldservice\nIslamic Republic of Iran Broadcasting\nJapan International Communications\nMedia Broadcast GmbH\nRadio Romania International\nWorld Music Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5935000,
+        "name": "BBC Worldservice\nChina National Radio\nIslamic Republic of Iran Broadcasting\nJapan International Communications\nMedia Broadcast GmbH\nVoice of Russia\nWNQM, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5940000,
+        "name": "IBRA Radio\nIslamic Republic of Iran Broadcasting\nRadio Romania International\nTelediffusion d'Algerie",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5945000,
+        "name": "BBC Worldservice\nChina National Radio\nEncompass Digital Media Services\nMedia Broadcast GmbH\nTurkish Radio-TV Corp\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5950000,
+        "name": "Korean Broadcasting System\nMedia Broadcast GmbH\nRadio Miami International\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5955000,
+        "name": "Abu Dhabi Media Company\nBroccoli Trash Metal & Grunge, Netherlands\nChina Radio International\nJapan International Communications\nRadio Romania International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5960000,
+        "name": "BBC Worldservice\nChina National Radio\nChina Radio International\nMedia Broadcast GmbH\nMinistry of Information - State of Kuwait\nRadio France Internationale\nTurkish Radio-TV Corp",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5965000,
+        "name": "China National Radio\nChina Radio International\nTurkish Radio-TV Corp",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5970000,
+        "name": "China National Radio\nChina Radio International\nEternal Word Television Network, Inc.\nIslamic Republic of Iran Broadcasting\nRadio208\nTurkish Radio-TV Corp",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5975000,
+        "name": "BBC Worldservice\nChina National Radio\nChina Radio International\nKorean Broadcasting System\nRadio New Zealand\nRadio Republic of Indonesia\nVoice of Vietnam",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5980000,
+        "name": "BBC Worldservice\nChina Radio International\nMedia Broadcast GmbH\nRadio OZ-Viola\nTurkish Radio-TV Corp\nUnited States Agency for Global Media (USAGM)\nVatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5985000,
+        "name": "Abu Dhabi Media Company\nChina National Radio\nChina Radio International\nJapan International Communications\nNippon Hoso Kyokai\nRadio Miami International\nRadio Republic of Indonesia\nTelediffusion d'Algerie\nTurkish Radio-TV Corp",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5990000,
+        "name": "China National Radio\nChina Radio International\nJapan International Communications\nMedia Broadcast GmbH\nRadio Republic of Indonesia\nRadio Romania International\nStudio Denakker",
+        "mode": "AM"
+    },
+    {
+        "frequency": 5995000,
+        "name": "China National Radio\nMedia Broadcast GmbH\nTelediffusion d'Algerie",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6000000,
+        "name": "All India Radio\nChina National Radio\nFor new organization\nIslamic Republic of Iran Broadcasting\nJapan International Communications\nNippon Hoso Kyokai\nTurkish Radio-TV Corp\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6005000,
+        "name": "BBC Worldservice\nFor new organization\nRadio 700\nRadio Delta International\nTelediffusion d'Algerie",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6010000,
+        "name": "BBC Worldservice\nChina National Radio\nChina Radio International\nFor new organization\nVatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6015000,
+        "name": "China National Radio\nKorean Broadcasting System\nThe Overcomer Ministry\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6020000,
+        "name": "China Radio International\nJapan International Communications\nKorean Broadcasting System\nRadio Delta International\nRadio Romania International\nUnited States Agency for Global Media (USAGM)\nVoice of Vietnam",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6025000,
+        "name": "China National Radio\nChina Radio International\nRadio Republic of Indonesia\nRadio Romania International\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6030000,
+        "name": "All India Radio\nChina National Radio\nMedia Broadcast GmbH\nRadio Romania International\nRadio SWS (Germany)\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6035000,
+        "name": "China National Radio\nFar East Broadcasting Company",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6040000,
+        "name": "China National Radio\nChina Radio International\nIslamic Republic of Iran Broadcasting\nKorean Broadcasting System\nRadio France Internationale\nRadio Romania International\nTelediffusion d'Algerie\nUnited States Agency for Global Media (USAGM)\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6045000,
+        "name": "Encompass Digital Media Services\nJapan International Communications\nMedia Broadcast GmbH\nRadio 700",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6050000,
+        "name": "China National Radio\nMinistry of Information - State of Kuwait\nRadio Television Malaysia\nTurkish Radio-TV Corp",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6055000,
+        "name": "Adventist World Radio\nChina Radio International\nKorean Broadcasting System\nMedia Broadcast GmbH\nNihon Short-wave Broadc. Co.\nRadio OZ-Viola",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6060000,
+        "name": "China National Radio\nChina Radio International\nFor new organization\nIslamic Republic of Iran Broadcasting\nMedia Broadcast GmbH\nTelediffusion d'Algerie\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6065000,
+        "name": "Adventist World Radio\nChina National Radio\nChina Radio International\nKorean Broadcasting System\nVoice of Hope",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6070000,
+        "name": "Abu Dhabi Media Company\nChannel 292 (Germany)\nChina Radio International\nIslamic Republic of Iran Broadcasting\nJapan International Communications\nMedia Broadcast GmbH\nOesterreichischer Rundfunk\nRadio Republic of Indonesia\nTurkish Radio-TV Corp\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6075000,
+        "name": "China National Radio\nChina Radio International\nIslamic Republic of Iran Broadcasting\nJapan International Communications\nWorld Christian Broadcasting Corporation",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6080000,
+        "name": "China National Radio\nChina Radio International\nMedia Broadcast GmbH\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6085000,
+        "name": "All India Radio\nJapan International Communications\nRadio 700",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6090000,
+        "name": "Abu Dhabi Media Company\nBBC Worldservice\nChina National Radio\nChina Radio International\nKorean Broadcasting System\nNippon Hoso Kyokai\nPlummer Applications\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6095000,
+        "name": "BBC Worldservice\nChina Radio International\nJapan International Communications\nKorean Broadcasting System\nMedia Broadcast GmbH\nTelediffusion d'Algerie",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6100000,
+        "name": "All India Radio\nChina Radio International\nKorean Broadcasting System\nRadio Television Malaysia\nTrans World Radio\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6105000,
+        "name": "China National Radio\nChina Radio International\nNippon Hoso Kyokai\nTelediffusion d'Algerie",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6110000,
+        "name": "All India Radio\nChina National Radio\nChina Radio International\nIslamic Republic of Iran Broadcasting\nJapan International Communications\nVoice of Russia\nWorld Christian Broadcasting Corporation",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6115000,
+        "name": "China Radio International\nJapan International Communications\nNihon Short-wave Broadc. Co.\nRadio New Zealand\nSE-TA 2 (Germany)\nWNQM, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6120000,
+        "name": "Adventist World Radio\nChina National Radio\nMedia Broadcast GmbH\nTurkish Radio-TV Corp\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6125000,
+        "name": "China National Radio\nRadio Europe Netherlands\nRadio Republic of Indonesia\nTurkish Radio-TV Corp\nUnited States Agency for Global Media (USAGM)\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6130000,
+        "name": "Adventist World Radio\nChina National Radio\nJapan International Communications",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6135000,
+        "name": "BBC Worldservice\nChina Radio International\nJapan International Communications\nKorean Broadcasting System\nRadio Republic of Indonesia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6140000,
+        "name": "BBC Worldservice\nChina Radio International\nMedia Broadcast GmbH\nRadio Onda ASBL\nTelediffusion d'Algerie\nVatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6145000,
+        "name": "Abu Dhabi Media Company\nChina National Radio\nChina Radio International\nJapan International Communications\nMedia Broadcast GmbH\nRadio Romania International\nTelediffusion d'Algerie\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6150000,
+        "name": "Abu Dhabi Media Company\nBBC Worldservice\nChina Radio International\nEuropa 24 (Germany)\nIslamic Republic of Iran Broadcasting\nKorean Broadcasting System\nRadio Romania International\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6155000,
+        "name": "Abu Dhabi Media Company\nChina National Radio\nChina Radio International\nEncompass Digital Media Services\nFor new organization\nKorean Broadcasting System\nMedia Broadcast GmbH\nNippon Hoso Kyokai\nOesterreichischer Rundfunk",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6160000,
+        "name": "Allan H. Weiner\nChina Radio International\nShortwave Radio Services (Germany)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6165000,
+        "name": "China National Radio\nChina Radio International\nJapan International Communications\nNippon Hoso Kyokai\nTrans World Radio\nVoice of Russia\nVoice of Vietnam",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6170000,
+        "name": "Far East Broadcasting Company\nKorean Broadcasting System\nRadio Romania International\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6175000,
+        "name": "China National Radio\nChina Radio International\nJapan International Communications\nRadio Romania International\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6180000,
+        "name": "Abu Dhabi Media Company\nChina National Radio\nChina Radio International\nDeutscher Wetterdienst\nEncompass Digital Media Services\nJapan International Communications\nKoode Radio International\nRadio Romania International\nWorld Christian Broadcasting (USA)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6185000,
+        "name": "Adventist World Radio\nChina Radio International\nRadio Piepzender\nRadio Republic of Indonesia\nVatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6190000,
+        "name": "China National Radio\nChina Radio International\nNippon Hoso Kyokai\nRadio Republic of Indonesia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6195000,
+        "name": "BBC Worldservice\nUnited States Agency for Global Media (USAGM)\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6200000,
+        "name": "China National Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 6240000,
+        "name": "For new organization",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7205000,
+        "name": "China National Radio\nChina Radio International\nRadio France Internationale\nRadio Republic of Indonesia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7210000,
+        "name": "China National Radio\nChina Radio International\nVoice of Russia\nVoice of Vietnam",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7215000,
+        "name": "China National Radio\nChina Radio International\nFor new organization\nKorean Broadcasting System",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7220000,
+        "name": "China National Radio\nChina Radio International\nDeutsche Welle\nMedia Broadcast GmbH\nRadio Romania International\nRockpower\nVoice of Vietnam",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7225000,
+        "name": "Abu Dhabi Media Company\nAdventist World Radio\nChina National Radio\nChina Radio International\nFor new organization\nIslamic Republic of Iran Broadcasting\nJapan International Communications\nMedia Broadcast GmbH\nNippon Hoso Kyokai\nRadio Miami International\nVatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7230000,
+        "name": "China National Radio\nDeutsche Welle\nMedia Broadcast GmbH\nRadio Republic of Indonesia\nVatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7235000,
+        "name": "China Radio International\nDeutsche Welle\nKorean Broadcasting System\nRadio Republic of Indonesia\nRadio Romania International\nVatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7240000,
+        "name": "China National Radio\nChina Radio International\nJapan International Communications\nKorean Broadcasting System\nRadio Republic of Indonesia\nTurkish Radio-TV Corp",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7245000,
+        "name": "China National Radio\nChina Radio International\nFor new organization\nJapan International Communications\nNippon Hoso Kyokai\nRadio France Internationale\nRadio Russia\nTrans World Radio\nTurkish Radio-TV Corp",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7250000,
+        "name": "China Radio International\nJapan International Communications\nKorean Broadcasting System\nMinistry of Information - State of Kuwait\nTelediffusion d'Algerie\nVatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7255000,
+        "name": "China National Radio\nChina Radio International\nKorean Broadcasting System\nMedia Broadcast GmbH\nTurkish Radio-TV Corp\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7260000,
+        "name": "China National Radio\nChina Radio International\nJapan International Communications\nMongol Radio & Television\nVanuatu Broadcasting and Television Corporation",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7265000,
+        "name": "BBC Worldservice\nChina National Radio\nChina Radio International\nNippon Hoso Kyokai\nTDF (France)\nTurkish Radio-TV Corp",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7270000,
+        "name": "Adventist World Radio\nChina National Radio\nJapan International Communications\nRadio Republic of Indonesia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7275000,
+        "name": "China National Radio\nChina Radio International\nIslamic Republic of Iran Broadcasting\nKorean Broadcasting System\nRadio Republic of Indonesia\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7280000,
+        "name": "Japan International Communications\nTrans World Radio\nTurkish Radio-TV Corp\nVoice of Vietnam",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7285000,
+        "name": "BBC Worldservice\nChina Radio International\nJapan International Communications\nRadio New Zealand\nTurkish Radio-TV Corp\nVoice of Vietnam",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7290000,
+        "name": "ANTI, Milano\nAbu Dhabi Media Company\nChina National Radio\nChina Radio International\nEncompass Digital Media Services\nIslamic Republic of Iran Broadcasting\nRadio Romania International\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7295000,
+        "name": "All India Radio\nBBC Worldservice\nChina National Radio\nChina Radio International\nEncompass Digital Media Services\nJapan International Communications\nMedia Broadcast GmbH\nRadio France Internationale\nRadio Republic of Indonesia\nRadio Television Malaysia\nTelediffusion d'Algerie\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7300000,
+        "name": "Adventist World Radio\nBBC Worldservice\nChina National Radio\nChina Radio International\nHCJB Australia\nIslamic Republic of Iran Broadcasting",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7305000,
+        "name": "Abu Dhabi Media Company\nBBC Worldservice\nChina National Radio\nChina Radio International\nIslamic Republic of Iran Broadcasting\nJapan International Communications\nKorean Broadcasting System\nVatican Radio\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7310000,
+        "name": "China National Radio\nIslamic Republic of Iran Broadcasting\nJapan International Communications\nRadio 700\nRadio Romania International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7315000,
+        "name": "China National Radio\nChina Radio International\nEncompass Digital Media Services\nFree Press Unlimited (Amsterdam)\nLeSea Broadcasting Corporation\nMedia Broadcast GmbH\nTelediffusion d'Algerie\nVoice of Vietnam",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7320000,
+        "name": "China Radio International\nJapan International Communications\nRadio Romania International\nVatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7325000,
+        "name": "Adventist World Radio\nChina Radio International\nJapan International Communications\nMedia Broadcast GmbH\nRadio Romania International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7330000,
+        "name": "China Radio International\nJapan International Communications\nMedia Broadcast GmbH\nRadio New Zealand\nRadio Romania International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7335000,
+        "name": "BBC Worldservice\nChina National Radio\nChina Radio International\nJapan International Communications\nLeSea Broadcasting Corporation\nTelediffusion d'Algerie\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7340000,
+        "name": "China National Radio\nChina Radio International\nIslamic Republic of Iran Broadcasting\nJapan International Communications\nMedia Broadcast GmbH\nRadio Delta International\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7345000,
+        "name": "China National Radio\nChina Radio International\nFor new organization\nJapan International Communications\nRadio Romania International\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7350000,
+        "name": "Adventist World Radio\nBroadcast Belgium\nChina National Radio\nChina Radio International\nMedia Broadcast GmbH\nRadio 700\nRadio Romania International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7355000,
+        "name": "BBC Worldservice\nChina Radio International\nIslamic Republic of Iran Broadcasting\nNippon Hoso Kyokai\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7360000,
+        "name": "Broadcast Belgium\nChina National Radio\nChina Radio International\nIslamic Republic of Iran Broadcasting\nRadio Romania International\nVatican Radio\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7365000,
+        "name": "China National Radio\nChina Radio International\nMedia Broadcast GmbH\nUnited States Agency for Global Media (USAGM)\nVatican Radio\nVoice of the Andes",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7370000,
+        "name": "China National Radio\nChina Radio International\nJapan International Communications\nRadio Romania International\nWorld Christian Broadcasting Corporation",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7375000,
+        "name": "China National Radio\nJapan International Communications\nMedia Broadcast GmbH\nRadio Romania International\nTelediffusion d'Algerie\nUnited States Agency for Global Media (USAGM)\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7380000,
+        "name": "China Radio International\nIslamic Republic of Iran Broadcasting\nMedia Broadcast GmbH\nRadio France Internationale\nWorld International Broadcasters, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7385000,
+        "name": "China National Radio\nChina Radio International\nJapan International Communications\nLeSea Broadcasting Corporation\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7390000,
+        "name": "China Radio International\nRadio France Internationale\nRadio New Zealand\nWNQM, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7395000,
+        "name": "China Radio International\nWorld Christian Broadcasting Corporation",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7400000,
+        "name": "HFCC, Intl. Radio for Disaster Relief project",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7410000,
+        "name": "Adventist World Radio\nChina National Radio\nChina Radio International\nJapan International Communications\nMedia Broadcast GmbH\nRadio Romania International\nTrans World Radio\nVatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7415000,
+        "name": "China Radio International\nSPW Radio Warsaw - Transatlantic Radio Station Cultural Park Association (Poland)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7420000,
+        "name": "China National Radio\nChina Radio International\nRadio Romania International\nVatican Radio\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7425000,
+        "name": "BBC Worldservice\nChina National Radio\nChina Radio International\nEncompass Digital Media Services\nRadio Piepzender\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7430000,
+        "name": "China National Radio\nChina Radio International\nIslamic Republic of Iran Broadcasting\nSPW Radio Warsaw - Transatlantic Radio Station Cultural Park Association (Poland)\nVoice of Greece",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7435000,
+        "name": "China Radio International\nJapan International Communications\nUnited States Agency for Global Media (USAGM)\nVoice of Vietnam",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7440000,
+        "name": "China Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7445000,
+        "name": "BBC Worldservice\nChina Radio International\nKorean Broadcasting System\nNippon Hoso Kyokai\nRadio Piepzender\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7450000,
+        "name": "China National Radio\nNippon Hoso Kyokai\nVoice of Greece",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7455000,
+        "name": "Broadcast Belgium\nMedia Broadcast GmbH\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7460000,
+        "name": "Pakistan Broadcasting Corporation\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7465000,
+        "name": "BBC Worldservice\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7470000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7475000,
+        "name": "NBS of Thailand\nPakistan Broadcasting Corporation\nUnited States Agency for Global Media (USAGM)\nVoice of Greece",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7480000,
+        "name": "For new organization\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7485000,
+        "name": "BBC Worldservice\nVatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7490000,
+        "name": "Allan H. Weiner\nWNQM, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7495000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7500000,
+        "name": "Trans World Radio\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7505000,
+        "name": "For new organization\nLeSea Broadcasting Corporation\nWRNO Worldwide, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7510000,
+        "name": "IBRA Radio\nTrans World Radio\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7515000,
+        "name": "Broadcast Belgium\nTrans World Radio\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7520000,
+        "name": "LeSea Broadcasting Corporation\nUnited States Agency for Global Media (USAGM)\nWNQM, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7525000,
+        "name": "Encompass Digital Media Services\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7530000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7535000,
+        "name": "For new organization",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7540000,
+        "name": "Pakistan Broadcasting Corporation\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7545000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7550000,
+        "name": "BBC Worldservice\nEncompass Digital Media Services\nFor new organization",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7555000,
+        "name": "For new organization",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7560000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7565000,
+        "name": "Nippon Hoso Kyokai",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7570000,
+        "name": "Radio Miami International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7580000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7585000,
+        "name": "Encompass Digital Media Services\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7590000,
+        "name": "For new organization\nTrans World Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7730000,
+        "name": "Radio Miami International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 7780000,
+        "name": "Radio Miami International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9265000,
+        "name": "World International Broadcasters, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9275000,
+        "name": "Assemblies of Yahweh\nFar East Broadcasting Company",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9300000,
+        "name": "For new organization",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9305000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9315000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9325000,
+        "name": "For new organization",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9330000,
+        "name": "Allan H. Weiner",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9335000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9345000,
+        "name": "Far East Broadcasting Company",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9350000,
+        "name": "WNQM, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9355000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9370000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9380000,
+        "name": "Trans World Radio\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9385000,
+        "name": "Eternal Word Television Network, Inc.\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9390000,
+        "name": "Islamic Republic of Iran Broadcasting\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9395000,
+        "name": "Radio Miami International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9400000,
+        "name": "Far East Broadcasting Company\nFor new organization",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9405000,
+        "name": "Far East Broadcasting Company",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9410000,
+        "name": "Abu Dhabi Media Company\nBBC Worldservice\nChina National Radio\nChina Radio International\nTurkish Radio-TV Corp\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9415000,
+        "name": "China Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9420000,
+        "name": "China National Radio\nIslamic Republic of Iran Broadcasting\nVoice of Greece\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9430000,
+        "name": "HFCC, Intl. Radio for Disaster Relief project",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9440000,
+        "name": "BBC Worldservice\nChina Radio International\nEgypt Radio & TV Union\nFar East Broadcasting Company\nMedia Broadcast GmbH\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9445000,
+        "name": "Nippon Hoso Kyokai",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9450000,
+        "name": "Adventist World Radio\nChina Radio International\nMedia Broadcast GmbH\nNippon Hoso Kyokai\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9455000,
+        "name": "China Radio International\nJapan International Communications\nRadio Miami International\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9460000,
+        "name": "Adventist World Radio\nChina Radio International\nJapan International Communications\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9465000,
+        "name": "BBC Worldservice\nFor new organization\nMedia Broadcast GmbH\nWorld Christian Broadcasting Corporation",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9470000,
+        "name": "Adventist Broadcasting Service, Inc.\nChina National Radio\nChina Radio International\nEternal Word Television Network, Inc.\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9475000,
+        "name": "Islamic Republic of Iran Broadcasting\nLeap of Faith, Inc.\nMedia Broadcast GmbH\nPhilippines Broadcasting Service",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9480000,
+        "name": "Abu Dhabi Media Company\nChina National Radio\nFor new organization\nNippon Hoso Kyokai\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9485000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9490000,
+        "name": "Abu Dhabi Media Company\nChina National Radio\nChina Radio International\nFor new organization\nMedia Broadcast GmbH\nRadio Miami International\nRadio Romania International\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9495000,
+        "name": "Adventist World Radio\nTurkish Radio-TV Corp",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9500000,
+        "name": "China National Radio\nTelediffusion d'Algerie\nTrans World Radio\nVoice of Russia\nVoice of the Andes",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9505000,
+        "name": "LeSea Broadcasting Corporation\nTurkish Radio-TV Corp",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9510000,
+        "name": "ANTI, Milano\nAdventist World Radio\nBBC Worldservice\nChina National Radio\nEgypt Radio & TV Union\nIslamic Republic of Iran Broadcasting\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9515000,
+        "name": "Adventist World Radio\nChina National Radio\nChina Radio International\nKorean Broadcasting System",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9520000,
+        "name": "China National Radio\nChina Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9525000,
+        "name": "Broadcast Belgium\nChina Radio International\nKorean Broadcasting System\nRadio Republic of Indonesia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9530000,
+        "name": "China National Radio\nIslamic Republic of Iran Broadcasting\nRadio Onda ASBL\nTelediffusion d'Algerie",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9535000,
+        "name": "China Radio International\nEncompass Digital Media Services\nWorld Christian Broadcasting Corporation",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9540000,
+        "name": "BBC Worldservice\nChina Radio International\nFar East Broadcasting Company\nIBRA Radio\nMedia Broadcast GmbH\nPakistan Broadcasting Corporation\nVoice of Russia\nWorld Christian Broadcasting Corporation",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9545000,
+        "name": "BBC Worldservice\nChina National Radio\nEgypt Radio & TV Union\nRadio Republic of Indonesia\nSolomon Islands Broadcasting",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9550000,
+        "name": "Broadcast Belgium\nChina Radio International\nIslamic Republic of Iran Broadcasting\nMedia Broadcast GmbH\nRadio Republic of Indonesia\nUnited States Agency for Global Media (USAGM)\nVoice of Vietnam",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9555000,
+        "name": "Abu Dhabi Media Company\nChina National Radio\nChina Radio International\nDeutsche Welle",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9560000,
+        "name": "BBC Worldservice\nChina National Radio\nChina Radio International\nEncompass Digital Media Services\nMedia Broadcast GmbH\nNippon Hoso Kyokai",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9565000,
+        "name": "China Radio International\nRadio Republic of Indonesia\nUnited States Agency for Global Media (USAGM)\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9570000,
+        "name": "China National Radio\nChina Radio International\nDeutsche Welle\nKorean Broadcasting System\nMedia Broadcast GmbH\nWorld Christian Broadcasting Corporation",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9575000,
+        "name": "Pakistan Broadcasting Corporation\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9580000,
+        "name": "BBC Worldservice\nChina National Radio\nKorean Broadcasting System\nNippon Hoso Kyokai\nVatican Radio\nWorld Christian Broadcasting Corporation",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9585000,
+        "name": "Abu Dhabi Media Company\nBBC Worldservice\nChina Radio International\nTrans World Radio\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9590000,
+        "name": "China Radio International\nMedia Broadcast GmbH\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9595000,
+        "name": "Nihon Short-wave Broadc. Co.\nTurkish Radio-TV Corp\nVatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9600000,
+        "name": "BBC Worldservice\nChina National Radio\nChina Radio International\nRadio Romania International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9605000,
+        "name": "LeSea Broadcasting Corporation\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9610000,
+        "name": "Adventist Broadcasting Service, Inc.\nAdventist World Radio\nChina National Radio\nChina Radio International\nMedia Broadcast GmbH\nRadio Republic of Indonesia\nRadio Romania International\nTurkish Radio-TV Corp",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9615000,
+        "name": "Abu Dhabi Media Company\nChina Radio International\nRadio Republic of Indonesia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9620000,
+        "name": "All India Radio\nChina National Radio\nChina Radio International\nIslamic Republic of Iran Broadcasting\nMedia Broadcast GmbH\nRadio Romania International\nTurkish Radio-TV Corp\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9625000,
+        "name": "Nippon Hoso Kyokai\nTurkish Radio-TV Corp\nVoice of Russia\nWorld Christian Broadcasting Corporation",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9630000,
+        "name": "Abu Dhabi Media Company\nAdventist World Radio\nChina National Radio\nChina Radio International\nKorean Broadcasting System",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9635000,
+        "name": "Encompass Digital Media Services\nRadio France Internationale\nVoice of Vietnam",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9640000,
+        "name": "China Radio International\nKorean Broadcasting System\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9645000,
+        "name": "Adventist Broadcasting Service, Inc.\nChina National Radio\nChina Radio International\nKorean Broadcasting System\nVatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9650000,
+        "name": "Voice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9655000,
+        "name": "Abu Dhabi Media Company\nChina National Radio\nChina Radio International\nNippon Hoso Kyokai\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9660000,
+        "name": "China National Radio\nTurkish Radio-TV Corp",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9665000,
+        "name": "China National Radio\nChina Radio International\nRadio France Internationale\nTelediffusion d'Algerie\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9670000,
+        "name": "Channel 292 (Germany)\nNippon Hoso Kyokai\nPakistan Broadcasting Corporation\nRadio France Internationale\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9675000,
+        "name": "Broadcast Belgium\nChina National Radio\nChina Radio International\nMedia Broadcast GmbH",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9680000,
+        "name": "China National Radio\nNippon Hoso Kyokai\nRadio France Internationale\nRadio Republic of Indonesia\nVoice of Hope\nWorld Christian Broadcasting Corporation",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9685000,
+        "name": "Abu Dhabi Media Company\nChina National Radio\nChina Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9690000,
+        "name": "China Radio International\nEncompass Digital Media Services\nJapan International Communications\nKorean Broadcasting System\nRadio Exterior de Espana\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9695000,
+        "name": "China Radio International\nJapan International Communications\nMedia Broadcast GmbH",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9700000,
+        "name": "For new organization\nNippon Hoso Kyokai\nRadio New Zealand\nTurkish Radio-TV Corp\nUnited States Agency for Global Media (USAGM)\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9705000,
+        "name": "BBC Worldservice\nChina National Radio\nChina Radio International\nEncompass Digital Media Services\nVatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9710000,
+        "name": "China National Radio\nChina Radio International\nRadio France Internationale\nTelediffusion d'Algerie",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9715000,
+        "name": "Media Broadcast GmbH\nWorld Christian Broadcasting Corporation",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9720000,
+        "name": "Abu Dhabi Media Company\nAdventist Broadcasting Service, Inc.\nChina National Radio\nChina Radio International\nUnited States Agency for Global Media (USAGM)\nVatican Radio\nWorld Christian Broadcasting Corporation",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9725000,
+        "name": "Islamic Republic of Iran Broadcasting",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9730000,
+        "name": "China National Radio\nChina Radio International\nEgypt Radio & TV Union\nMinistry of Information - State of Kuwait\nVoice of Russia\nVoice of Vietnam",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9735000,
+        "name": "China National Radio\nRadio France Internationale",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9740000,
+        "name": "Adventist Broadcasting Service, Inc.\nBBC Worldservice\nDeutsche Welle\nKorean Broadcasting System\nMedia Broadcast GmbH\nNippon Hoso Kyokai\nRadio Romania International\nTelediffusion d'Algerie\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9745000,
+        "name": "BBC Worldservice\nChina National Radio\nChina Radio International\nPakistan Broadcasting Corporation\nRadio Republic of Indonesia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9750000,
+        "name": "Abu Dhabi Media Company\nBBC Worldservice\nChina National Radio\nKorean Broadcasting System\nMinistry of Information - State of Kuwait\nNippon Hoso Kyokai\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9755000,
+        "name": "China National Radio\nKorean Broadcasting System\nMedia Broadcast GmbH",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9760000,
+        "name": "China Radio International\nNihon Short-wave Broadc. Co.\nNippon Hoso Kyokai\nRadio France Internationale\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9765000,
+        "name": "Adventist World Radio\nChina Radio International\nMedia Broadcast GmbH\nRadio New Zealand\nRadio Republic of Indonesia\nUnited States Agency for Global Media (USAGM)\nWorld Christian Broadcasting (USA)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9770000,
+        "name": "Adventist World Radio\nChina Radio International\nKorean Broadcasting System",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9775000,
+        "name": "China National Radio\nIBRA Radio\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9780000,
+        "name": "China National Radio\nRadio New Zealand\nRadio Republic of Indonesia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9785000,
+        "name": "China National Radio\nChina Radio International\nKorean Broadcasting System",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9790000,
+        "name": "Radio France Internationale\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9795000,
+        "name": "China Radio International\nFar East Broadcasting Company\nNippon Hoso Kyokai\nPakistan Broadcasting Corporation\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9800000,
+        "name": "Adventist Broadcasting Service, Inc.\nAdventist World Radio\nBBC Worldservice\nChina Radio International\nEncompass Digital Media Services\nIslamic Republic of Iran Broadcasting\nMedia Broadcast GmbH\nUnited States Agency for Global Media (USAGM)\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9805000,
+        "name": "Adventist World Radio\nKorean Broadcasting System\nRadio France Internationale",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9810000,
+        "name": "China National Radio\nEgypt Radio & TV Union\nIslamic Republic of Iran Broadcasting\nKorean Broadcasting System\nMedia Broadcast GmbH\nRadio France Internationale\nRadio Romania International\nVatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9820000,
+        "name": "BBC Worldservice\nChina National Radio\nMedia Broadcast GmbH\nUnited States Agency for Global Media (USAGM)\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9825000,
+        "name": "China Radio International\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9830000,
+        "name": "China National Radio\nDeutsche Welle\nLeSea Broadcasting Corporation\nMedia Broadcast GmbH\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9835000,
+        "name": "Islamic Republic of Iran Broadcasting\nNippon Hoso Kyokai\nRadio Television Malaysia\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9840000,
+        "name": "Abu Dhabi Media Company\nLeSea Broadcasting Corporation\nTurkish Radio-TV Corp\nVoice of Vietnam",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9845000,
+        "name": "China National Radio\nVoice of Russia\nWorld Christian Broadcasting (USA)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9850000,
+        "name": "China National Radio\nMedia Broadcast GmbH\nVoice of Russia\nVoice of Vietnam",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9855000,
+        "name": "China Radio International\nNippon Hoso Kyokai",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9860000,
+        "name": "Adventist Broadcasting Service, Inc.\nAdventist World Radio\nChina National Radio\nChina Radio International\nHCJB Australia\nUnited States Agency for Global Media (USAGM)\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9865000,
+        "name": "China Radio International\nNippon Hoso Kyokai",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9870000,
+        "name": "China Radio International\nIslamic Republic of Iran Broadcasting\nKorean Broadcasting System\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9875000,
+        "name": "Adventist World Radio\nChina Radio International\nFar East Broadcasting Company\nJapan International Communications\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9880000,
+        "name": "China Radio International\nKorean Broadcasting System\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9885000,
+        "name": "Adventist World Radio\nChina National Radio\nEgypt Radio & TV Union\nUnited States Agency for Global Media (USAGM)\nWorld Christian Broadcasting (USA)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9890000,
+        "name": "China National Radio\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9895000,
+        "name": "Abu Dhabi Media Company\nUnited States Agency for Global Media (USAGM)\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9900000,
+        "name": "BBC Worldservice\nBroadcast Belgium\nChina National Radio\nEgypt Radio & TV Union\nFor new organization\nPakistan Broadcasting Corporation\nTrans World Radio\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9910000,
+        "name": "BBC Worldservice\nFor new organization\nTrans World Radio\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9915000,
+        "name": "BBC Worldservice\nFor new organization\nVoice of Greece",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9920000,
+        "name": "Far East Broadcasting Company\nFor new organization",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9925000,
+        "name": "Media Broadcast GmbH\nPhilippines Broadcasting Service",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9930000,
+        "name": "Leap of Faith, Inc.\nRepublic of Palau\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9935000,
+        "name": "Voice of Greece",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9940000,
+        "name": "Egypt Radio & TV Union\nFar East Broadcasting Company\nLeap of Faith, Inc.\nNBS of Thailand\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9950000,
+        "name": "All India Radio\nFor new organization\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9955000,
+        "name": "Radio Miami International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9965000,
+        "name": "Republic of Palau\nTrans World Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9975000,
+        "name": "Broadcast Belgium\nTrans World Radio\nUnited States Agency for Global Media (USAGM)\nVoice of Hope",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9980000,
+        "name": "WNQM, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9985000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 9990000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11510000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11520000,
+        "name": "For new organization",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11525000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11530000,
+        "name": "Broadcast Belgium\nPakistan Broadcasting Corporation\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11540000,
+        "name": "Broadcast Belgium",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11550000,
+        "name": "Pakistan Broadcasting Corporation\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11560000,
+        "name": "All India Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11570000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11590000,
+        "name": "Trans World Radio\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11600000,
+        "name": "China National Radio\nFar East Broadcasting Company\nThe Overcomer Ministry",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11610000,
+        "name": "China National Radio\nChina Radio International\nMedia Broadcast GmbH\nUnited States Agency for Global Media (USAGM)\nWorld Christian Broadcasting (USA)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11620000,
+        "name": "Adventist Broadcasting Service, Inc.\nAdventist World Radio\nChina National Radio\nMedia Broadcast GmbH\nNippon Hoso Kyokai\nVatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11630000,
+        "name": "China National Radio\nFor new organization\nMinistry of Information - State of Kuwait\nNippon Hoso Kyokai",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11635000,
+        "name": "China Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11640000,
+        "name": "Adventist World Radio\nChina Radio International\nFree Press Unlimited (Amsterdam)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11645000,
+        "name": "Voice of Greece",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11650000,
+        "name": "China Radio International\nFree Press Unlimited (Amsterdam)\nMedia Broadcast GmbH\nNippon Hoso Kyokai\nUnited States Agency for Global Media (USAGM)\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11655000,
+        "name": "Abu Dhabi Media Company\nFor new organization\nIBRA Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11660000,
+        "name": "BBC Worldservice\nChina National Radio\nEncompass Digital Media Services\nRadio Romania International\nTrans World Radio\nTurkish Radio-TV Corp\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11665000,
+        "name": "Radio Television Malaysia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11670000,
+        "name": "China National Radio\nMedia Broadcast GmbH\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11675000,
+        "name": "Radio Republic of Indonesia\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11680000,
+        "name": "China National Radio\nChina Radio International\nVoice of Hope",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11685000,
+        "name": "China National Radio\nRadio Exterior de Espana\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11690000,
+        "name": "Adventist Broadcasting Service, Inc.\nChina Radio International\nMalagasy Glabal Business S.A.\nRadio New Zealand",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11695000,
+        "name": "China National Radio\nUnited States Agency for Global Media (USAGM)\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11700000,
+        "name": "China Radio International\nFor new organization\nIslamic Republic of Iran Broadcasting\nMedia Broadcast GmbH\nRadio France Internationale",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11705000,
+        "name": "Malagasy Glabal Business S.A.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11710000,
+        "name": "China National Radio\nChina Radio International\nTurkish Radio-TV Corp",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11715000,
+        "name": "Korean Broadcasting System",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11720000,
+        "name": "Adventist World Radio\nChina National Radio\nChina Radio International\nUnited States Agency for Global Media (USAGM)\nVoice of Vietnam",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11725000,
+        "name": "Abu Dhabi Media Company\nBBC Worldservice\nChina Radio International\nKorean Broadcasting System\nNippon Hoso Kyokai\nRadio New Zealand\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11730000,
+        "name": "China Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11735000,
+        "name": "Nippon Hoso Kyokai",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11740000,
+        "name": "China National Radio\nChina Radio International\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11750000,
+        "name": "BBC Worldservice\nChina National Radio\nChina Radio International\nFar East Broadcasting Company\nPakistan Broadcasting Corporation\nRadio Republic of Indonesia\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11755000,
+        "name": "Adventist World Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11760000,
+        "name": "China National Radio\nChina Radio International\nRadio France Internationale\nRadio Republic of Indonesia\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11765000,
+        "name": "Radio France Internationale\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11770000,
+        "name": "China National Radio\nChina Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11775000,
+        "name": "Abu Dhabi Media Company\nChina National Radio\nPlummer Applications\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11780000,
+        "name": "China Radio International\nIslamic Republic of Iran Broadcasting\nRadio France Internationale\nRadio Romania International\nTrans World Radio\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11785000,
+        "name": "China Radio International\nKorean Broadcasting System\nRadio Republic of Indonesia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11790000,
+        "name": "China Radio International\nMedia Broadcast GmbH\nNippon Hoso Kyokai\nRadio Romania International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11795000,
+        "name": "China Radio International\nKorean Broadcasting System\nTurkish Radio-TV Corp\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11800000,
+        "name": "China National Radio\nDeutsche Welle\nMedia Broadcast GmbH\nRadio Republic of Indonesia\nRadio Romania International\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11805000,
+        "name": "China Radio International\nPakistan Broadcasting Corporation\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11810000,
+        "name": "BBC Worldservice\nChina National Radio\nKorean Broadcasting System",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11815000,
+        "name": "Nippon Hoso Kyokai\nTurkish Radio-TV Corp\nVatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11820000,
+        "name": "China Radio International\nRadio Romania International\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11825000,
+        "name": "BBC Worldservice\nHCJB Australia\nLeSea Broadcasting Corporation\nNippon Hoso Kyokai\nRadio Romania International\nWorld Christian Broadcasting (USA)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11830000,
+        "name": "Deutsche Welle\nEncompass Digital Media Services",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11840000,
+        "name": "HFCC, Intl. Radio for Disaster Relief project",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11850000,
+        "name": "Abu Dhabi Media Company\nBBC Worldservice\nChina National Radio\nKorean Broadcasting System\nUnited States Agency for Global Media (USAGM)\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11855000,
+        "name": "China Radio International\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11860000,
+        "name": "China National Radio\nChina Radio International\nRadio Republic of Indonesia\nTrans World Radio\nUnited States Agency for Global Media (USAGM)\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11865000,
+        "name": "HCJB Australia\nPakistan Broadcasting Corporation",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11870000,
+        "name": "Adventist Broadcasting Service, Inc.\nAdventist World Radio\nBBC Worldservice\nChina Radio International\nKorean Broadcasting System\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11875000,
+        "name": "China Radio International\nHCJB Australia\nIslamic Republic of Iran Broadcasting\nMedia Broadcast GmbH\nNippon Hoso Kyokai\nRadio France Internationale\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11880000,
+        "name": "Adventist World Radio\nChina Radio International\nIslamic Republic of Iran Broadcasting\nKorean Broadcasting System",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11885000,
+        "name": "China National Radio\nChina Radio International\nRadio Republic of Indonesia\nRadio Television Malaysia\nUnited States Agency for Global Media (USAGM)\nVoice of Vietnam",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11890000,
+        "name": "United States Agency for Global Media (USAGM)\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11895000,
+        "name": "China Radio International\nKorean Broadcasting System\nNippon Hoso Kyokai\nUnited States Agency for Global Media (USAGM)\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11900000,
+        "name": "China Radio International\nMedia Broadcast GmbH\nUnited States Agency for Global Media (USAGM)\nVoice of the Andes",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11905000,
+        "name": "BBC Worldservice\nChina National Radio\nHCJB Australia\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11910000,
+        "name": "Abu Dhabi Media Company\nChina Radio International\nNippon Hoso Kyokai\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11915000,
+        "name": "China National Radio\nMedia Broadcast GmbH\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11920000,
+        "name": "China Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11925000,
+        "name": "All India Radio\nChina National Radio\nChina Radio International\nNippon Hoso Kyokai\nTurkish Radio-TV Corp",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11930000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11935000,
+        "name": "China National Radio\nUnited States Agency for Global Media (USAGM)\nVatican Radio\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11940000,
+        "name": "Radio Exterior de Espana\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11945000,
+        "name": "BBC Worldservice\nChina Radio International\nHCJB Australia\nMedia Broadcast GmbH\nNippon Hoso Kyokai\nRadio Romania International\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11950000,
+        "name": "China National Radio\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11955000,
+        "name": "Adventist Broadcasting Service, Inc.\nAdventist World Radio\nChina Radio International\nMedia Broadcast GmbH\nRadio Russia\nTurkish Radio-TV Corp",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11960000,
+        "name": "China National Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11965000,
+        "name": "IBRA Radio\nTrans World Radio\nTurkish Radio-TV Corp\nUnited States Agency for Global Media (USAGM)\nWorld Christian Broadcasting (USA)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11970000,
+        "name": "China National Radio\nMinistry of Information - State of Kuwait",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11975000,
+        "name": "China Radio International\nRadio Romania International\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11980000,
+        "name": "Adventist Broadcasting Service, Inc.\nAdventist World Radio\nChina Radio International\nDeutsche Welle\nMedia Broadcast GmbH\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11985000,
+        "name": "Adventist World Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11990000,
+        "name": "China National Radio\nChina Radio International\nDeutsche Welle",
+        "mode": "AM"
+    },
+    {
+        "frequency": 11995000,
+        "name": "Abu Dhabi Media Company\nBBC Worldservice\nChina Radio International\nDeutsche Welle\nRadio France Internationale\nTelediffusion d'Algerie\nTrans World Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12000000,
+        "name": "Voice of Vietnam",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12005000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12010000,
+        "name": "China National Radio\nEncompass Digital Media Services\nNippon Hoso Kyokai",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12015000,
+        "name": "China Radio International\nMongol Radio & Television\nRadio Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12020000,
+        "name": "Adventist World Radio\nFor new organization\nNippon Hoso Kyokai\nVoice of Vietnam",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12030000,
+        "name": "China Radio International\nRadio Exterior de Espana\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12035000,
+        "name": "China Radio International\nTurkish Radio-TV Corp\nUnited States Agency for Global Media (USAGM)\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12040000,
+        "name": "Adventist Broadcasting Service, Inc.\nAdventist World Radio\nTrans World Radio\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12045000,
+        "name": "China National Radio\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12050000,
+        "name": "Encompass Digital Media Services\nEternal Word Television Network, Inc.\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12055000,
+        "name": "China National Radio\nFar East Broadcasting Company\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12060000,
+        "name": "Voice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12065000,
+        "name": "BBC Worldservice\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12070000,
+        "name": "China Radio International\nFar East Broadcasting Company\nUnited States Agency for Global Media (USAGM)\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12075000,
+        "name": "Trans World Radio\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12080000,
+        "name": "Adventist Broadcasting Service, Inc.\nChina National Radio\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12085000,
+        "name": "Adventist Broadcasting Service, Inc.\nFor new organization\nMongol Radio & Television",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12095000,
+        "name": "Abu Dhabi Media Company\nBBC Worldservice\nFar East Broadcasting Company",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12100000,
+        "name": "The Overcomer Ministry",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12110000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12120000,
+        "name": "Far East Broadcasting Company\nPhilippines Broadcasting Service\nTrans World Radio\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12125000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12140000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12160000,
+        "name": "For new organization\nWNQM, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 12180000,
+        "name": "WNQM, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13570000,
+        "name": "China Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13580000,
+        "name": "Abu Dhabi Media Company\nChina Radio International\nTrans World Radio\nUnited States Agency for Global Media (USAGM)\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13590000,
+        "name": "Abu Dhabi Media Company\nChina Radio International\nMedia Broadcast GmbH\nTurkish Radio-TV Corp\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13600000,
+        "name": "China Radio International\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13605000,
+        "name": "Telediffusion d'Algerie",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13610000,
+        "name": "China National Radio\nChina Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13620000,
+        "name": "HFCC, Intl. Radio for Disaster Relief project",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13630000,
+        "name": "Abu Dhabi Media Company\nChina National Radio\nChina Radio International\nPakistan Broadcasting Corporation\nRadio Romania International\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13640000,
+        "name": "China Radio International\nTelediffusion d'Algerie",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13645000,
+        "name": "China Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13650000,
+        "name": "China Radio International\nMinistry of Information - State of Kuwait\nNippon Hoso Kyokai\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13655000,
+        "name": "China Radio International\nTurkish Radio-TV Corp",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13660000,
+        "name": "Abu Dhabi Media Company\nChina Radio International\nMedia Broadcast GmbH\nRadio Miami International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13665000,
+        "name": "China Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13670000,
+        "name": "China National Radio\nChina Radio International\nKorean Broadcasting System\nWorld Christian Broadcasting (USA)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13675000,
+        "name": "Media Broadcast GmbH",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13685000,
+        "name": "China Radio International\nRadio France Internationale\nTurkish Radio-TV Corp\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13690000,
+        "name": "Islamic Republic of Iran Broadcasting",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13695000,
+        "name": "Radio France Internationale",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13700000,
+        "name": "China National Radio\nFor new organization",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13705000,
+        "name": "Korean Broadcasting System",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13710000,
+        "name": "All India Radio\nBroadcast Belgium\nChina National Radio\nIslamic Republic of Iran Broadcasting\nMedia Broadcast GmbH\nRadio Miami International\nWorld Christian Broadcasting (USA)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13715000,
+        "name": "China Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13720000,
+        "name": "China Radio International\nRadio Romania International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13725000,
+        "name": "Nippon Hoso Kyokai",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13730000,
+        "name": "Broadcast Belgium\nChina Radio International\nNippon Hoso Kyokai\nRadio New Zealand\nRadio Romania International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13740000,
+        "name": "BBC Worldservice\nChina Radio International\nPakistan Broadcasting Corporation\nRadio France Internationale\nVoice of the Andes",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13750000,
+        "name": "Abu Dhabi Media Company\nBBC Worldservice\nChina Radio International\nNBS of Thailand\nRadio Romania International\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13755000,
+        "name": "Radio Republic of Indonesia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13760000,
+        "name": "World Christian Broadcasting (USA)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13765000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13770000,
+        "name": "Abu Dhabi Media Company\nChina National Radio\nChina Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13775000,
+        "name": "Deutsche Welle",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13780000,
+        "name": "China Radio International\nMedia Broadcast GmbH\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13790000,
+        "name": "BBC Worldservice\nChina Radio International\nIslamic Republic of Iran Broadcasting",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13795000,
+        "name": "All India Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13800000,
+        "name": "China Radio International\nMedia Broadcast GmbH\nThe Overcomer Ministry\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13810000,
+        "name": "China Radio International\nDeutsche Welle\nTrans World Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13820000,
+        "name": "Islamic Republic of Iran Broadcasting\nMedia Broadcast GmbH\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13825000,
+        "name": "China National Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13830000,
+        "name": "United States Agency for Global Media (USAGM)\nVatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13840000,
+        "name": "Allan H. Weiner\nNippon Hoso Kyokai\nRadio New Zealand\nTDF (France)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13845000,
+        "name": "WNQM, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13850000,
+        "name": "BBC Worldservice\nChina National Radio\nChina Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13855000,
+        "name": "China Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13860000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13865000,
+        "name": "BBC Worldservice\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 13870000,
+        "name": "Far East Broadcasting Company",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15030000,
+        "name": "All India Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15100000,
+        "name": "Media Broadcast GmbH",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15105000,
+        "name": "Trans World Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15110000,
+        "name": "China Radio International\nMinistry of Information - State of Kuwait\nRadio Exterior de Espana\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15115000,
+        "name": "The Overcomer Ministry",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15120000,
+        "name": "China Radio International\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15125000,
+        "name": "China Radio International\nRadio Republic of Indonesia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15130000,
+        "name": "China Radio International\nNippon Hoso Kyokai",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15135000,
+        "name": "China Radio International\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15140000,
+        "name": "Islamic Republic of Iran Broadcasting",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15145000,
+        "name": "Adventist World Radio\nChina Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15150000,
+        "name": "Free Press Unlimited (Amsterdam)\nMedia Broadcast GmbH\nRadio Republic of Indonesia\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15155000,
+        "name": "Korean Broadcasting System\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15160000,
+        "name": "China Radio International\nKorean Broadcasting System",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15170000,
+        "name": "ANTI, Milano\nBroadcast Belgium\nChina Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15175000,
+        "name": "Broadcast Belgium",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15180000,
+        "name": "China National Radio\nChina Radio International\nMedia Broadcast GmbH\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15185000,
+        "name": "All India Radio\nChina Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15190000,
+        "name": "China Radio International\nPhilippines Broadcasting Service",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15195000,
+        "name": "Deutsche Welle\nNippon Hoso Kyokai",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15200000,
+        "name": "Radio Romania International\nTrans World Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15205000,
+        "name": "Media Broadcast GmbH",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15210000,
+        "name": "Adventist Broadcasting Service, Inc.\nAdventist World Radio\nChina Radio International\nKorean Broadcasting System\nMedia Broadcast GmbH",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15215000,
+        "name": "Abu Dhabi Media Company\nAdventist Broadcasting Service, Inc.\nDeutsche Welle\nFar East Broadcasting Company\nMedia Broadcast GmbH",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15220000,
+        "name": "China Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15225000,
+        "name": "China Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15230000,
+        "name": "Deutsche Welle",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15235000,
+        "name": "Media Broadcast GmbH\nTurkish Radio-TV Corp\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15240000,
+        "name": "Islamic Republic of Iran Broadcasting",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15245000,
+        "name": "China National Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15250000,
+        "name": "China Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15255000,
+        "name": "Adventist Broadcasting Service, Inc.\nRadio Romania International\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15260000,
+        "name": "China Radio International\nIBRA Radio\nMedia Broadcast GmbH\nRadio Romania International\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15265000,
+        "name": "Radio Miami International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15270000,
+        "name": "China National Radio\nTurkish Radio-TV Corp\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15275000,
+        "name": "Deutsche Welle",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15280000,
+        "name": "Nippon Hoso Kyokai",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15285000,
+        "name": "Media Broadcast GmbH\nRadio Miami International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15290000,
+        "name": "Nippon Hoso Kyokai",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15295000,
+        "name": "Radio Television Malaysia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15300000,
+        "name": "Media Broadcast GmbH\nRadio France Internationale",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15310000,
+        "name": "Adventist World Radio\nBBC Worldservice",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15320000,
+        "name": "China National Radio\nMedia Broadcast GmbH",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15325000,
+        "name": "Adventist Broadcasting Service, Inc.\nNippon Hoso Kyokai\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15330000,
+        "name": "Far East Broadcasting Company\nRadio Miami International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15335000,
+        "name": "BBC Worldservice\nChina Radio International\nThe Overcomer Ministry",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15340000,
+        "name": "China Radio International\nRadio Miami International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15350000,
+        "name": "China Radio International\nDeutsche Welle\nTurkish Radio-TV Corp",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15355000,
+        "name": "Adventist World Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15360000,
+        "name": "Abu Dhabi Media Company\nAdventist World Radio\nTurkish Radio-TV Corp",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15365000,
+        "name": "Adventist Broadcasting Service, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15370000,
+        "name": "China National Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15375000,
+        "name": "Telediffusion d'Algerie",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15380000,
+        "name": "China National Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15390000,
+        "name": "China National Radio\nDeutsche Welle\nRadio Exterior de Espana\nTurkish Radio-TV Corp",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15400000,
+        "name": "Abu Dhabi Media Company\nBBC Worldservice",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15410000,
+        "name": "Adventist World Radio\nHCJB Australia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15415000,
+        "name": "China Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15420000,
+        "name": "Abu Dhabi Media Company\nAdventist Broadcasting Service, Inc.\nAdventist World Radio\nBBC Worldservice\nFar East Broadcasting Company\nMedia Broadcast GmbH",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15425000,
+        "name": "China Radio International\nMedia Broadcast GmbH\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15430000,
+        "name": "Adventist World Radio\nChina Radio International\nRadio Romania International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15435000,
+        "name": "China Radio International\nFar East Broadcasting Company",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15440000,
+        "name": "Adventist World Radio\nChina Radio International\nIslamic Republic of Iran Broadcasting",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15445000,
+        "name": "Adventist World Radio\nChina Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15450000,
+        "name": "Adventist Broadcasting Service, Inc.\nFar East Broadcasting Company\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15455000,
+        "name": "Radio France Internationale\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15460000,
+        "name": "Radio Romania International\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15465000,
+        "name": "China National Radio\nChina Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15470000,
+        "name": "Media Broadcast GmbH",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15480000,
+        "name": "China National Radio\nEncompass Digital Media Services\nTurkish Radio-TV Corp",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15485000,
+        "name": "TDF (France)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15490000,
+        "name": "Abu Dhabi Media Company\nAdventist World Radio\nBBC Worldservice\nIBRA Radio\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15500000,
+        "name": "Adventist Broadcasting Service, Inc.\nChina National Radio\nRadio Exterior de Espana",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15505000,
+        "name": "TDF (France)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15515000,
+        "name": "Adventist World Radio\nFor new organization\nMinistry of Information - State of Kuwait",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15520000,
+        "name": "Adventist World Radio\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15525000,
+        "name": "China Radio International\nMedia Broadcast GmbH",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15530000,
+        "name": "Adventist Broadcasting Service, Inc.\nAdventist World Radio\nLeSea Broadcasting Corporation\nMinistry of Information - State of Kuwait",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15540000,
+        "name": "China National Radio\nMinistry of Information - State of Kuwait",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15550000,
+        "name": "Adventist Broadcasting Service, Inc.\nAdventist World Radio\nChina National Radio\nChina Radio International\nFree Press Unlimited (Amsterdam)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15555000,
+        "name": "Hill Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15560000,
+        "name": "China Radio International\nFar East Broadcasting Company\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15565000,
+        "name": "Encompass Digital Media Services\nNippon Hoso Kyokai",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15570000,
+        "name": "China National Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15575000,
+        "name": "Korean Broadcasting System\nVatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15580000,
+        "name": "Adventist Broadcasting Service, Inc.\nFar East Broadcasting Company\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15590000,
+        "name": "Nippon Hoso Kyokai\nWRNO Worldwide, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15595000,
+        "name": "Vatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15600000,
+        "name": "For new organization\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15605000,
+        "name": "Adventist World Radio\nVatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15610000,
+        "name": "Adventist Broadcasting Service, Inc.\nAdventist World Radio\nEternal Word Television Network, Inc.\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15615000,
+        "name": "Adventist Broadcasting Service, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15620000,
+        "name": "BBC Worldservice\nChina Radio International\nFar East Broadcasting Company\nMedia Broadcast GmbH\nMinistry of Information - State of Kuwait",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15625000,
+        "name": "Adventist Broadcasting Service, Inc.\nAdventist World Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15630000,
+        "name": "Pakistan Broadcasting Corporation",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15640000,
+        "name": "Far East Broadcasting Company\nPhilippines Broadcasting Service\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15650000,
+        "name": "HFCC, Intl. Radio for Disaster Relief project",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15665000,
+        "name": "Adventist Broadcasting Service, Inc.\nChina Radio International\nUnited States Agency for Global Media (USAGM)\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15680000,
+        "name": "Adventist World Radio\nRepublic of Palau",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15685000,
+        "name": "BBC Worldservice",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15690000,
+        "name": "Encompass Digital Media Services\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15700000,
+        "name": "The Overcomer Ministry",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15705000,
+        "name": "Adventist World Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15710000,
+        "name": "China National Radio\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15715000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15720000,
+        "name": "Nippon Hoso Kyokai\nRadio New Zealand",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15730000,
+        "name": "Pakistan Broadcasting Corporation\nTelediffusion d'Algerie\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15735000,
+        "name": "For new organization",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15745000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15750000,
+        "name": "World International Broadcasters, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15755000,
+        "name": "For new organization\nNippon Hoso Kyokai",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15765000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15770000,
+        "name": "Media Broadcast GmbH\nRadio Miami International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15780000,
+        "name": "Allan H. Weiner",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15785000,
+        "name": "BitExpress (Germany)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15790000,
+        "name": "World Music Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15795000,
+        "name": "WNQM, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15810000,
+        "name": "Leap of Faith, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 15825000,
+        "name": "WNQM, Inc.",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17485000,
+        "name": "China Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17490000,
+        "name": "China Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17500000,
+        "name": "HFCC, Intl. Radio for Disaster Relief project",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17510000,
+        "name": "China Radio International\nThe Overcomer Ministry",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17520000,
+        "name": "Allan H. Weiner\nChina Radio International\nVatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17525000,
+        "name": "Adventist Broadcasting Service, Inc.\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17530000,
+        "name": "Media Broadcast GmbH\nTelediffusion d'Algerie\nTurkish Radio-TV Corp\nUnited States Agency for Global Media (USAGM)\nWorld Christian Broadcasting (USA)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17540000,
+        "name": "China Radio International\nVatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17545000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17550000,
+        "name": "China National Radio\nMinistry of Information - State of Kuwait",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17560000,
+        "name": "Nippon Hoso Kyokai",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17565000,
+        "name": "China National Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17570000,
+        "name": "Adventist World Radio\nChina Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17580000,
+        "name": "China National Radio\nMedia Broadcast GmbH\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17585000,
+        "name": "Nippon Hoso Kyokai\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17595000,
+        "name": "China National Radio\nIslamic Republic of Iran Broadcasting",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17600000,
+        "name": "Media Broadcast GmbH",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17605000,
+        "name": "China National Radio\nMedia Broadcast GmbH",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17615000,
+        "name": "China Radio International\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17620000,
+        "name": "Radio France Internationale",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17625000,
+        "name": "China National Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17630000,
+        "name": "China Radio International\nMedia Broadcast GmbH\nNBS of Thailand",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17640000,
+        "name": "BBC Worldservice\nChina Radio International\nNBS of Thailand\nRadio Romania International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17645000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17650000,
+        "name": "Adventist Broadcasting Service, Inc.\nChina Radio International\nMedia Broadcast GmbH",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17655000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17660000,
+        "name": "Radio France Internationale\nTDF (France)\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17670000,
+        "name": "China Radio International\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17675000,
+        "name": "Radio New Zealand\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17680000,
+        "name": "Abu Dhabi Media Company\nChina Radio International\nTrans World Radio\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17690000,
+        "name": "China Radio International\nRadio France Internationale\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17700000,
+        "name": "For new organization\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17710000,
+        "name": "All India Radio\nChina Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17715000,
+        "name": "Radio Exterior de Espana",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17720000,
+        "name": "China Radio International\nTurkish Radio-TV Corp\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17730000,
+        "name": "Adventist World Radio\nChina Radio International\nEncompass Digital Media Services\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17735000,
+        "name": "China Radio International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17740000,
+        "name": "China Radio International\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17745000,
+        "name": "Abu Dhabi Media Company\nBBC Worldservice",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17750000,
+        "name": "China Radio International\nRadio Romania International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17755000,
+        "name": "Radio Exterior de Espana",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17760000,
+        "name": "Ministry of Information - State of Kuwait",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17770000,
+        "name": "Adventist World Radio\nChina National Radio\nPakistan Broadcasting Corporation",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17775000,
+        "name": "Voice of Hope",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17780000,
+        "name": "BBC Worldservice\nRadio Romania International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17790000,
+        "name": "Vatican Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17800000,
+        "name": "Abu Dhabi Media Company\nBBC Worldservice\nChina National Radio\nDeutsche Welle\nEncompass Digital Media Services\nRadio Republic of Indonesia\nRadio Romania International\nTDF (France)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17810000,
+        "name": "Nippon Hoso Kyokai\nRadio Romania International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17815000,
+        "name": "BBC Worldservice\nChina Radio International\nRadio France Internationale\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17820000,
+        "name": "Adventist Broadcasting Service, Inc.\nPakistan Broadcasting Corporation\nPhilippines Broadcasting Service\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17830000,
+        "name": "BBC Worldservice\nChina National Radio\nNippon Hoso Kyokai\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17840000,
+        "name": "Deutsche Welle\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17845000,
+        "name": "Abu Dhabi Media Company\nEncompass Digital Media Services",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17850000,
+        "name": "Radio France Internationale\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17855000,
+        "name": "China Radio International\nRadio Exterior de Espana",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17860000,
+        "name": "Broadcast Belgium",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17865000,
+        "name": "Telediffusion d'Algerie\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17870000,
+        "name": "Broadcast Belgium\nMedia Broadcast GmbH",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17880000,
+        "name": "China Radio International\nUnited States Agency for Global Media (USAGM)\nVoice of Russia",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17885000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17890000,
+        "name": "China National Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17895000,
+        "name": "Pakistan Broadcasting Corporation\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 17900000,
+        "name": "For new organization",
+        "mode": "AM"
+    },
+    {
+        "frequency": 18950000,
+        "name": "HFCC, Intl. Radio for Disaster Relief project",
+        "mode": "AM"
+    },
+    {
+        "frequency": 21455000,
+        "name": "Media Broadcast GmbH",
+        "mode": "AM"
+    },
+    {
+        "frequency": 21470000,
+        "name": "Abu Dhabi Media Company\nBBC Worldservice\nRadio Romania International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 21480000,
+        "name": "Media Broadcast GmbH\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 21485000,
+        "name": "Radio France Internationale",
+        "mode": "AM"
+    },
+    {
+        "frequency": 21490000,
+        "name": "BBC Worldservice",
+        "mode": "AM"
+    },
+    {
+        "frequency": 21525000,
+        "name": "Radio Miami International",
+        "mode": "AM"
+    },
+    {
+        "frequency": 21580000,
+        "name": "Radio France Internationale",
+        "mode": "AM"
+    },
+    {
+        "frequency": 21600000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 21610000,
+        "name": "LeSea Broadcasting Corporation",
+        "mode": "AM"
+    },
+    {
+        "frequency": 21620000,
+        "name": "Radio Exterior de Espana\nUnited States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 21630000,
+        "name": "Abu Dhabi Media Company\nBBC Worldservice\nTrans World Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 21690000,
+        "name": "Abu Dhabi Media Company\nRadio France Internationale",
+        "mode": "AM"
+    },
+    {
+        "frequency": 21700000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 21760000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 21785000,
+        "name": "United States Agency for Global Media (USAGM)",
+        "mode": "AM"
+    },
+    {
+        "frequency": 21800000,
+        "name": "For new organization",
+        "mode": "AM"
+    },
+    {
+        "frequency": 21840000,
+        "name": "HFCC, Intl. Radio for Disaster Relief project",
+        "mode": "AM"
+    },
+    {
+        "frequency": 25795000,
+        "name": "World Music Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 25800000,
+        "name": "World Music Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 25805000,
+        "name": "World Music Radio",
+        "mode": "AM"
+    },
+    {
+        "frequency": 26000000,
+        "name": "For new organization",
+        "mode": "AM"
+    },
+    {
+        "frequency": 26010000,
+        "name": "HFCC, Intl. Radio for Disaster Relief project",
+        "mode": "AM"
+    },
+    {
+        "frequency": 26040000,
+        "name": "For new organization",
+        "mode": "AM"
+    }
+]

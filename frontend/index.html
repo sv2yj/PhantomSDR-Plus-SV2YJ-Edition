@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PhantomSDR+</title>
+
+    <!-- ===== "Full desktop view" (?desktop=1) =====
+         Reached from the /mobile page's view switcher.
+
+         App.svelte chooses its mobile vs desktop markup from Device.isMobile
+         (svelte-device-info), which is USER-AGENT based, not viewport based.
+         So on a phone the desktop layout is otherwise unreachable no matter how
+         wide the viewport is made.
+
+         This runs before the module bundle and does two things:
+           1. Widens the viewport to a desktop width, so the desktop layout has
+              room to lay out and the browser scales it to fit the screen.
+           2. Makes the two properties svelte-device-info reads report a
+              non-mobile device.
+
+         Deliberately scoped to this one query parameter — without ?desktop=1
+         nothing below executes and detection is completely untouched. -->
+    <script>
+    (function () {
+      try {
+        if (!/(^|[?&])desktop=1(&|$)/.test(window.location.search)) return;
+
+        var vp = document.querySelector('meta[name="viewport"]');
+        if (vp) vp.setAttribute('content', 'width=1280');
+
+        // svelte-device-info checks navigator.userAgentData.mobile first and
+        // falls back to a regex over navigator.userAgent.
+        Object.defineProperty(navigator, 'userAgentData', {
+          configurable: true,
+          get: function () {
+            return { mobile: false, brands: [], platform: 'Windows' };
+          }
+        });
+        Object.defineProperty(navigator, 'userAgent', {
+          configurable: true,
+          get: function () {
+            return 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) ' +
+                   'AppleWebKit/537.36 (KHTML, like Gecko) ' +
+                   'Chrome/126.0.0.0 Safari/537.36';
+          }
+        });
+      } catch (e) {
+        // A browser that refuses the redefinition simply keeps its mobile
+        // layout — the wider viewport above still applies.
+      }
+    })();
+    </script>
+    <!-- Twemoji: renders flag emojis as images on Chrome/Edge/Opera/Windows
+         (those browsers ship no flag glyphs and would show bare letters, e.g. "GR").
+         Same fix already used in public/users.html. -->
+    <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@15.1.0/dist/twemoji.min.js" crossorigin="anonymous"></script>
+    <style>
+      img.emoji {
+        height: 1.1em;
+        width: 1.1em;
+        margin: 0 .05em 0 .1em;
+        vertical-align: -0.15em;
+        display: inline-block;
+      }
+      /* Raised 3D effect on all text EXCEPT button text.
+         Light highlight on top edge + dark shadow below = letters lift off the surface. */
+      body {
+        text-shadow:
+          0 -1px 0 rgba(255, 255, 255, 0.35),
+          0 1px 1px rgba(0, 0, 0, 0.75),
+          1px 2px 3px rgba(0, 0, 0, 0.45);
+      }
+      button, button * {
+        text-shadow: none;
+      }
+
+      /* ===== Initial loading screen =====
+         Shown instantly (before the JS bundle downloads) and removed once the
+         Svelte app has connected to the backend and is ready to display. */
+      #websdr-loading {
+        position: fixed;
+        inset: 0;
+        z-index: 999999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+        background: #0b1016;
+        color: #cfe3ff;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        text-shadow: none;
+        transition: opacity 0.45s ease;
+      }
+      #websdr-loading.hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+      #websdr-loading .wl-spinner {
+        width: 54px;
+        height: 54px;
+        border: 5px solid rgba(120, 170, 255, 0.18);
+        border-top-color: #58a6ff;
+        border-radius: 50%;
+        /* clockwise rotation */
+        animation: wl-spin 0.9s linear infinite;
+      }
+      #websdr-loading .wl-text {
+        font-size: 1.25rem;
+        letter-spacing: 0.02em;
+        font-weight: 500;
+      }
+      #websdr-loading .wl-sub {
+        font-size: 0.85rem;
+        opacity: 0.55;
+      }
+      @keyframes wl-spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Initial loading overlay — removed by the script at the bottom of <body> -->
+    <div id="websdr-loading">
+      <div class="wl-spinner"></div>
+      <div class="wl-text">WebSDR is loading&nbsp;&hellip;</div>
+      <div class="wl-sub">connecting to receiver</div>
+    </div>
+
+    <div id="app"></div>
+
+    <!-- ===== CATsync / KiwiSDR emulation shim ===== -->
+
+    <!-- Detection element — CATsync looks for this -->
+    <div id="id-kiwi-container" style="display:none"></div>
+
+    <!-- Kiwi frequency box, as on a real KiwiSDR: form "form_freq" holding
+         input "id-freq-input".  CATsync writes the rig's frequency here and
+         calls freqset_complete(), and reads the receiver's frequency back
+         from it, so App.svelte keeps its value at the receiver's frequency
+         in kHz ("7074.00") whenever the receiver moves. -->
+    <form id="id-freq-form" name="form_freq" style="display:none" onsubmit="freqset_complete(0); return false;">
+      <input type="text" id="id-freq-input" value="" />
+    </form>
+
+    <script>
+    (function () {
+
+      // -------------------------------------------------
+      // Global CATsync / Kiwi state
+      // Runs BEFORE Svelte loads — queues commands until
+      // the real implementations are installed by onMount.
+      // -------------------------------------------------
+      window.__catsync_q     = window.__catsync_q     || [];
+      window.__catsync_state = window.__catsync_state || { hz: null, mode: null };
+
+      // The tool re-sends the rig's frequency on every poll.  A repeat of its
+      // last command is ignored inside __catsync_setfreq_impl, so that the
+      // listener's own tuning is not pulled back to the rig on the next poll.
+
+      // Before the app has loaded, keep only the latest frequency command.
+      function queueFreq(hz) {
+        window.__catsync_q = window.__catsync_q.filter(function (c) { return c.t !== "freq"; });
+        window.__catsync_q.push({ t: "freq", hz: hz });
+      }
+
+      // -------------------------------------------------
+      // freqset_complete() — KiwiSDR-style frequency set
+      // CATsync writes a kHz value into form_freq and
+      // then calls this function.
+      // -------------------------------------------------
+      window.freqset_complete = function () {
+        try {
+          var f = document.forms["form_freq"].elements[0].value;
+          var x = Number(f);
+          if (!isFinite(x)) return false;
+
+          // Kiwi uses kHz; accept raw Hz too (large numbers)
+          var hz = (x < 1e6) ? Math.round(x * 1000) : Math.round(x);
+
+          window.__catsync_state.hz = hz;
+
+          if (typeof window.__catsync_setfreq_impl === "function") {
+            return window.__catsync_setfreq_impl(hz);
+          }
+          queueFreq(hz);
+          return true;
+        } catch (e) {
+          return false;
+        }
+      };
+
+      // -------------------------------------------------
+      // setfreq() — WebSDR / Twente-style frequency set
+      // -------------------------------------------------
+      window.setfreq = function (f) {
+        var x = Number(f);
+        if (!isFinite(x)) return false;
+
+        var hz = (x < 1e6) ? Math.round(x * 1000) : Math.round(x);
+
+        window.__catsync_state.hz = hz;
+
+        if (typeof window.__catsync_setfreq_impl === "function") {
+          return window.__catsync_setfreq_impl(hz);
+        }
+        queueFreq(hz);
+        return true;
+      };
+
+      // -------------------------------------------------
+      // Getters — read back current state
+      // These are only the stand-ins for the first seconds: once the app has
+      // loaded, App.svelte replaces ext_get_freq_kHz, nominalfreq and
+      // ext_get_mode with versions that read the receiver itself.
+      // -------------------------------------------------
+      window.ext_get_freq_kHz = function () {
+        return (window.__catsync_state.hz == null)
+          ? null
+          : window.__catsync_state.hz / 1000;
+      };
+
+      // Kiwi globals an injected script may read instead of calling the
+      // getters: the current mode (lower case) and the displayed frequency.
+      try {
+        Object.defineProperty(window, "cur_mode", {
+          configurable: true,
+          get: function () { return window.ext_get_mode(); }
+        });
+        Object.defineProperty(window, "freq_displayed_Hz", {
+          configurable: true,
+          get: function () { var k = window.ext_get_freq_kHz(); return k == null ? 0 : Math.round(k * 1000); }
+        });
+        Object.defineProperty(window, "freq_displayed_kHz_str", {
+          configurable: true,
+          get: function () { var k = window.ext_get_freq_kHz(); return k == null ? "" : Number(k).toFixed(2); }
+        });
+      } catch (e) {}
+
+      window.nominalfreq = function () {
+        return (window.__catsync_state.hz == null)
+          ? null
+          : window.__catsync_state.hz / 1000;
+      };
+
+      window.ext_get_mode = function () {
+        var m = (window.__catsync_state && window.__catsync_state.mode)
+          ? String(window.__catsync_state.mode).toUpperCase().trim()
+          : "USB";
+
+        // Map PhantomSDR mode names -> Kiwi names
+        if (m === "FM")  return "nbfm";
+        if (m === "USB") return "usb";
+        if (m === "LSB") return "lsb";
+        if (m === "AM")  return "am";
+        if (m === "CW")  return "cw";
+        return "usb";   // safe fallback
+      };
+
+      // -------------------------------------------------
+      // ext_set_mode() — KiwiSDR-style mode set
+      // -------------------------------------------------
+      window.ext_set_mode = function (m) {
+        var mode = String(m || "").toUpperCase().trim();
+
+        // Kiwi names are mapped to this receiver's modes by
+        // __catsync_setmode_impl (NBFM -> FM, SAM -> AM, CWN -> CW ...).
+        if (!mode) return false;
+
+        window.__catsync_state.mode = mode;
+
+        if (typeof window.__catsync_setmode_impl === "function") {
+          return window.__catsync_setmode_impl(mode);
+        }
+        window.__catsync_q.push({ t: "mode", mode: mode });
+        return true;
+      };
+
+      // set_mode() alias (WebSDR style)
+      window.set_mode = function (m) {
+        return window.ext_set_mode(m);
+      };
+
+    })();
+    </script>
+
+    <!-- ===== Svelte / Vite bundle ===== -->
+    <script type="module" src="/src/main.js"></script>
+
+    <!-- ===== Remove the loading overlay once the app is ready =====
+         Every App variant sets window.spectrumWaterfall inside onMount only
+         after the backend connection is established, so we poll for it.
+         A hard fallback timeout hides the overlay even if the backend never
+         connects, so the UI is never left stuck behind the spinner. -->
+    <script>
+    (function () {
+      var overlay = document.getElementById("websdr-loading");
+      if (!overlay) return;
+
+      var done = false;
+      function hide() {
+        if (done) return;
+        done = true;
+        overlay.classList.add("hide");
+        // Remove from DOM after the fade-out transition completes
+        setTimeout(function () {
+          if (overlay && overlay.parentNode) {
+            overlay.parentNode.removeChild(overlay);
+          }
+        }, 500);
+      }
+
+      // Poll until the app signals it is ready
+      var poll = setInterval(function () {
+        if (window.spectrumWaterfall) {
+          clearInterval(poll);
+          hide();
+        }
+      }, 100);
+
+      // Fallback: never keep the spinner up longer than 30s
+      setTimeout(function () {
+        clearInterval(poll);
+        hide();
+      }, 30000);
+    })();
+    </script>
+
+  </body>
+</html>

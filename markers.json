@@ -1,0 +1,2444 @@
+{
+  "markers": [
+    {
+      "frequency": 77500,
+      "name": "DCF77",
+      "mode": "CW"
+    },
+    {
+      "frequency": 100000,
+      "name": "LORAN",
+      "mode": "AM"
+    },
+    {
+      "frequency": 129100,
+      "name": "DCF42 (DE)",
+      "mode": "CW"
+    },
+    {
+      "frequency": 135800,
+      "name": "SXV",
+      "mode": "CW"
+    },
+    {
+      "frequency": 136000,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 139000,
+      "name": "DCF42 (DE)",
+      "mode": "CW"
+    },
+    {
+      "frequency": 153000,
+      "name": "R. Romania",
+      "mode": "AM"
+    },
+    {
+      "frequency": 171000,
+      "name": "Medi 1 (Morocco)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 198000,
+      "name": "BBC",
+      "mode": "AM"
+    },
+    {
+      "frequency": 225000,
+      "name": "Polskie R.RP1",
+      "mode": "AM"
+    },
+    {
+      "frequency": 252000,
+      "name": "RTA Algeria",
+      "mode": "AM"
+    },
+    {
+      "frequency": 472000,
+      "name": "Ham LF>",
+      "mode": "USB"
+    },
+    {
+      "frequency": 474200,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 479000,
+      "name": "<Ham LF",
+      "mode": "USB"
+    },
+    {
+      "frequency": 490000,
+      "name": "NAVTEXT",
+      "mode": "USB"
+    },
+    {
+      "frequency": 518000,
+      "name": "NAVTEXT",
+      "mode": "USB"
+    },
+    {
+      "frequency": 531000,
+      "name": "R.Yavne (ISR)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 540000,
+      "name": "R.Kossuth (HU)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 549000,
+      "name": "R.Ukrainian",
+      "mode": "AM"
+    },
+    {
+      "frequency": 558000,
+      "name": "R.Slovenija",
+      "mode": "AM"
+    },
+    {
+      "frequency": 576000,
+      "name": "BNRHorizont (BG)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 603000,
+      "name": "R.Actualite (RO)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 612000,
+      "name": "Al-Quran al-Karim (Bahrain)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 630000,
+      "name": "R.Timisoara (RO)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 639000,
+      "name": "Ceska Rozhlas Dvojka",
+      "mode": "AM"
+    },
+    {
+      "frequency": 666000,
+      "name": "R. Barcelona (ESP)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 729000.0,
+      "name": "ERA1",
+      "mode": "AM"
+    },
+    {
+      "frequency": 738000,
+      "name": "RNE R.Nacional (ESP)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 756000,
+      "name": "R.Actualite (RO)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 783000,
+      "name": "R. Barcelona (ESP)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 801000,
+      "name": "Studio 1 Athens",
+      "mode": "AM"
+    },
+    {
+      "frequency": 828000,
+      "name": "Studio 54 Athens",
+      "mode": "AM"
+    },
+    {
+      "frequency": 855000,
+      "name": "R.Romania",
+      "mode": "AM"
+    },
+    {
+      "frequency": 864000,
+      "name": "ERTU Al-Quran (EGY)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 882000,
+      "name": "HB Athens",
+      "mode": "AM"
+    },
+    {
+      "frequency": 945000,
+      "name": "Musical Visitor Athens",
+      "mode": "AM"
+    },
+    {
+      "frequency": 999000,
+      "name": "Voice of Russia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 1044000,
+      "name": "Radio Daffy (GR)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 1152000,
+      "name": "R.Romania Actualite",
+      "mode": "AM"
+    },
+    {
+      "frequency": 1179000,
+      "name": "R. Romania Cluj",
+      "mode": "AM"
+    },
+    {
+      "frequency": 1197000,
+      "name": "R. Targu Mure (RO)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 1287000,
+      "name": "W.Attica University",
+      "mode": "AM"
+    },
+    {
+      "frequency": 1350000,
+      "name": "Test C-QUAM",
+      "mode": "AM"
+    },
+    {
+      "frequency": 1404000,
+      "name": "Romania Sighet",
+      "mode": "AM"
+    },
+    {
+      "frequency": 1413000,
+      "name": "R.Svoboda Moscow",
+      "mode": "AM"
+    },
+    {
+      "frequency": 1458000,
+      "name": "R. Romania Cluj",
+      "mode": "AM"
+    },
+    {
+      "frequency": 1530000,
+      "name": "R.Romania Actualite",
+      "mode": "AM"
+    },
+    {
+      "frequency": 1557000,
+      "name": "A44 (GR)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 1820000,
+      "name": "SKCC",
+      "mode": "CW"
+    },
+    {
+      "frequency": 1836600,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 1840000,
+      "name": "FT8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 1846000,
+      "name": "JS8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 1843000,
+      "name": "FT2",
+      "mode": "USB"
+    },
+    {
+      "frequency": 1850000,
+      "name": "1850",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 1854000,
+      "name": "1854",
+      "mode": "CW"
+    },
+    {
+      "frequency": 1870000,
+      "name": "FreeDV",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 1876000,
+      "name": "Volmet",
+      "mode": "USB"
+    },
+    {
+      "frequency": 1910000,
+      "name": "1910",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 1930000,
+      "name": "1930",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 1950000,
+      "name": "1950",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 2182000,
+      "name": "Int Rescue",
+      "mode": "USB"
+    },
+    {
+      "frequency": 2680000,
+      "name": "4XZ (ISR)",
+      "mode": "CW"
+    },
+    {
+      "frequency": 2730000,
+      "name": "Olympia Radio",
+      "mode": "USB"
+    },
+    {
+      "frequency": 2789000,
+      "name": "Messina (IT)",
+      "mode": "USB"
+    },
+    {
+      "frequency": 2789000,
+      "name": "Hellas Radio",
+      "mode": "USB"
+    },
+    {
+      "frequency": 2799000,
+      "name": "Hellas Radio",
+      "mode": "USB"
+    },
+    {
+      "frequency": 2830000,
+      "name": "Olympia Radio",
+      "mode": "USB"
+    },
+    {
+      "frequency": 2941000,
+      "name": "Rostov VOLMET (RU)",
+      "mode": "USB"
+    },
+    {
+      "frequency": 3550000,
+      "name": "SKCC",
+      "mode": "CW"
+    },
+    {
+      "frequency": 3568600,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 3578000,
+      "name": "JS8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 3573000,
+      "name": "FT8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 3578000,
+      "name": "FT2",
+      "mode": "USB"
+    },
+    {
+      "frequency": 3575000,
+      "name": "FT4",
+      "mode": "USB"
+    },
+    {
+      "frequency": 3625000,
+      "name": "FreeDV",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 3685000,
+      "name": "3685",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 3695000,
+      "name": "3695",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 3715000,
+      "name": "3715",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 3730000,
+      "name": "3730",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 3740000,
+      "name": "3740",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 3750000,
+      "name": "3750",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 3767000,
+      "name": "FreeDV",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 3770000,
+      "name": "3770",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 3785000,
+      "name": "3785",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 4209500,
+      "name": "NAVTEX Heraklion",
+      "mode": "CW"
+    },
+    {
+      "frequency": 4280000,
+      "name": "PBB RTTY (Holland)",
+      "mode": "USB"
+    },
+    {
+      "frequency": 4310000,
+      "name": "The Goose",
+      "mode": "USB"
+    },
+    {
+      "frequency": 4331000,
+      "name": "4XZ (ISR)",
+      "mode": "CW"
+    },
+    {
+      "frequency": 4361500,
+      "name": "(TU)",
+      "mode": "USB"
+    },
+    {
+      "frequency": 4405000,
+      "name": "Instambul Marine Weather",
+      "mode": "USB"
+    },
+    {
+      "frequency": 4557700,
+      "name": "D beacon Rostov",
+      "mode": "CW"
+    },
+    {
+      "frequency": 4582000,
+      "name": "DDK2",
+      "mode": "USB"
+    },
+    {
+      "frequency": 4625000,
+      "name": "The Buzzer",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5357000,
+      "name": "JS8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5360000,
+      "name": "FT2",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5363000,
+      "name": "5363",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5364700,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5366500,
+      "name": "FreeDV",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5450000,
+      "name": "RAF Volmet (UK)",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5505000,
+      "name": "RAF Volmet (UK)",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5583000,
+      "name": "HFDL/HFACARS",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5616000,
+      "name": "Int. Air Traffic ctr.",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5649000,
+      "name": "Int. Air Traffic ctr.",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5670000,
+      "name": "Int. Air Traffic ctr.",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5680500,
+      "name": "Int. Air Traffic ctr.",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5680000,
+      "name": "Int Rescue",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5715000,
+      "name": "NATO RTTY",
+      "mode": "USB"
+    },
+    {
+      "frequency": 5830000,
+      "name": "Radio Mystery (Pirate)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 5895000,
+      "name": "The Ferry (Pirate)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 6250000,
+      "name": "Japanese Slot Machine",
+      "mode": "USB"
+    },
+    {
+      "frequency": 6417000,
+      "name": "Japanese Slot Machine",
+      "mode": "USB"
+    },
+    {
+      "frequency": 6445000,
+      "name": "Japanese Slot Machine",
+      "mode": "USB"
+    },
+    {
+      "frequency": 6607000,
+      "name": "4XZ (ISR)",
+      "mode": "CW"
+    },
+    {
+      "frequency": 6617000,
+      "name": "Rostov Volmet",
+      "mode": "USB"
+    },
+    {
+      "frequency": 6675000,
+      "name": "6675",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 6720000,
+      "name": "6720",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 6825000,
+      "name": "M51",
+      "mode": "CW"
+    },
+    {
+      "frequency": 6832000,
+      "name": "SINPO",
+      "mode": "USB"
+    },
+    {
+      "frequency": 6911000,
+      "name": "Russian Ticking Clock",
+      "mode": "USB"
+    },
+    {
+      "frequency": 7038600,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 7047500,
+      "name": "FT4",
+      "mode": "USB"
+    },
+    {
+      "frequency": 7055000,
+      "name": "SKCC",
+      "mode": "CW"
+    },
+    {
+      "frequency": 7062000,
+      "name": "FT2",
+      "mode": "USB"
+    },
+    {
+      "frequency": 7074000,
+      "name": "FT8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 7078000,
+      "name": "JS8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 7087000,
+      "name": "FreeDV",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 7120000,
+      "name": "7120",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 7150000,
+      "name": "7150",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 7170000,
+      "name": "7170",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 7177000,
+      "name": "FreeDV",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 7185000,
+      "name": "7185",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 7190000,
+      "name": "7190",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 7197000,
+      "name": "7197",
+      "mode": "LSB"
+    },
+    {
+      "frequency": 8039000,
+      "name": "MeteoFax Northwood, U.K GYA",
+      "mode": "USB"
+    },
+    {
+      "frequency": 8888000,
+      "name": "Volmet",
+      "mode": "USB"
+    },
+    {
+      "frequency": 9996000,
+      "name": "RWM",
+      "mode": "CW"
+    },
+    {
+      "frequency": 10000000,
+      "name": "WWV",
+      "mode": "CW"
+    },
+    {
+      "frequency": 8424000,
+      "name": "De SV0 (Pirgos, GR)",
+      "mode": "CW"
+    },
+    {
+      "frequency": 8430000,
+      "name": "TAH Instambul",
+      "mode": "USB"
+    },
+    {
+      "frequency": 8566600,
+      "name": "Weather RTTY (FR)",
+      "mode": "USB"
+    },
+    {
+      "frequency": 8588000,
+      "name": "Japanese Slot Machine",
+      "mode": "USB"
+    },
+    {
+      "frequency": 8812000,
+      "name": "Marine Ch. 832",
+      "mode": "USB"
+    },
+    {
+      "frequency": 10130000,
+      "name": "JS8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 10136000,
+      "name": "FT8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 10140000,
+      "name": "FT4",
+      "mode": "USB"
+    },
+    {
+      "frequency": 10138700,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 10144000,
+      "name": "FT2",
+      "mode": "USB"
+    },
+    {
+      "frequency": 12654000,
+      "name": "TAH (TR)",
+      "mode": "CW"
+    },
+    {
+      "frequency": 13128000,
+      "name": "Marine Ch. 1218",
+      "mode": "USB"
+    },
+    {
+      "frequency": 13264000,
+      "name": "Shannon Volmet (IRL)",
+      "mode": "USB"
+    },
+    {
+      "frequency": 13419000,
+      "name": "Russian RTTY Mazielka (X06)",
+      "mode": "USB"
+    },
+    {
+      "frequency": 14050000,
+      "name": "SKCC",
+      "mode": "CW"
+    },
+    {
+      "frequency": 14074000,
+      "name": "FT8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 14078000,
+      "name": "JS8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 14080000,
+      "name": "FT4",
+      "mode": "USB"
+    },
+    {
+      "frequency": 14084000,
+      "name": "FT2",
+      "mode": "USB"
+    },
+    {
+      "frequency": 14095600,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 14114000,
+      "name": "SKCC",
+      "mode": "CW"
+    },
+    {
+      "frequency": 14230000,
+      "name": "SSTV",
+      "mode": "USB"
+    },
+    {
+      "frequency": 14236000,
+      "name": "FreeDV",
+      "mode": "USB"
+    },
+    {
+      "frequency": 14280000,
+      "name": "14280",
+      "mode": "USB"
+    },
+    {
+      "frequency": 15777000,
+      "name": "Russian RTTY Mazielka (X06)",
+      "mode": "USB"
+    },
+    {
+      "frequency": 18100000,
+      "name": "FT8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 18104000,
+      "name": "FT4",
+      "mode": "USB"
+    },
+    {
+      "frequency": 18104000,
+      "name": "JS8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 18104600,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 10108000,
+      "name": "FT2",
+      "mode": "USB"
+    },
+    {
+      "frequency": 18118000,
+      "name": "FreeDV",
+      "mode": "USB"
+    },
+    {
+      "frequency": 21050000,
+      "name": "SKCC",
+      "mode": "CW"
+    },
+    {
+      "frequency": 21074000,
+      "name": "FT8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 21078000,
+      "name": "JS8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 21094600,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 21114000,
+      "name": "SKCC",
+      "mode": "CW"
+    },
+    {
+      "frequency": 21140000,
+      "name": "FT4",
+      "mode": "USB"
+    },
+    {
+      "frequency": 21144000,
+      "name": "FT2",
+      "mode": "USB"
+    },
+    {
+      "frequency": 21313000,
+      "name": "FreeDV",
+      "mode": "USB"
+    },
+    {
+      "frequency": 21385000,
+      "name": "21385",
+      "mode": "USB"
+    },
+    {
+      "frequency": 24915000,
+      "name": "FT8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 24919000,
+      "name": "FT4",
+      "mode": "USB"
+    },
+    {
+      "frequency": 24922000,
+      "name": "JS8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 24923000,
+      "name": "FT2",
+      "mode": "USB"
+    },
+    {
+      "frequency": 24924600,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 24933000,
+      "name": "FreeDV",
+      "mode": "USB"
+    },
+    {
+      "frequency": 26965000,
+      "name": "1",
+      "mode": "FM"
+    },
+    {
+      "frequency": 26975000,
+      "name": "2",
+      "mode": "FM"
+    },
+    {
+      "frequency": 26985000,
+      "name": "3",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27005000,
+      "name": "4",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27015000,
+      "name": "5",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27025000,
+      "name": "6",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27035000,
+      "name": "7",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27055000,
+      "name": "8",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27065000,
+      "name": "9",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27075000,
+      "name": "10",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27085000,
+      "name": "11",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27105000,
+      "name": "12",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27115000,
+      "name": "13",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27125000,
+      "name": "14",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27135000,
+      "name": "15",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27155000,
+      "name": "16",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27165000,
+      "name": "17",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27175000,
+      "name": "18",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27185000,
+      "name": "19",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27205000,
+      "name": "20",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27215000,
+      "name": "21",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27225000,
+      "name": "22",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27235000,
+      "name": "23",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27245000,
+      "name": "24",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27255000,
+      "name": "25",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27265000,
+      "name": "26",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27275000,
+      "name": "27",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27285000,
+      "name": "28",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27295000,
+      "name": "29",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27305000,
+      "name": "30",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27315000,
+      "name": "31",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27325000,
+      "name": "32",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27335000,
+      "name": "33",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27345000,
+      "name": "34",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27355000,
+      "name": "35",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27365000,
+      "name": "36",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27375000,
+      "name": "37",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27385000,
+      "name": "38",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27395000,
+      "name": "39",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27405000,
+      "name": "40",
+      "mode": "FM"
+    },
+    {
+      "frequency": 27665000,
+      "name": "27665",
+      "mode": "USB"
+    },
+    {
+      "frequency": 28050000,
+      "name": "SKCC",
+      "mode": "CW"
+    },
+    {
+      "frequency": 28074000,
+      "name": "FT8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 28078000,
+      "name": "JS8",
+      "mode": "USB"
+    },
+    {
+      "frequency": 28114000,
+      "name": "SKCC",
+      "mode": "CW"
+    },
+    {
+      "frequency": 28124600,
+      "name": "WSPR",
+      "mode": "USB"
+    },
+    {
+      "frequency": 28180000,
+      "name": "FT4",
+      "mode": "USB"
+    },
+    {
+      "frequency": 28184000,
+      "name": "FT2",
+      "mode": "USB"
+    },
+    {
+      "frequency": 28330000,
+      "name": "FreeDV",
+      "mode": "USB"
+    },
+    {
+      "frequency": 28585000,
+      "name": "28585",
+      "mode": "USB"
+    },
+    {
+      "frequency": 29620000,
+      "name": "Repeater",
+      "mode": "FM"
+    },
+    {
+      "frequency": 29640000,
+      "name": "Repeater",
+      "mode": "FM"
+    },
+    {
+      "frequency": 29650000,
+      "name": "Repeater",
+      "mode": "FM"
+    },
+    {
+      "frequency": 29660000,
+      "name": "Repeater",
+      "mode": "FM"
+    },
+    {
+      "frequency": 2485000,
+      "name": "Vanuatu Broadcasting and Television Corporation",
+      "mode": "AM"
+    },
+    {
+      "frequency": 3265000,
+      "name": "Allan H. Weiner",
+      "mode": "AM"
+    },
+    {
+      "frequency": 3325000,
+      "name": "Radio Republic of Indonesia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 3930000,
+      "name": "The Overcomer Ministry",
+      "mode": "AM"
+    },
+    {
+      "frequency": 3955000,
+      "name": "Channel 292 (Germany)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 3965000,
+      "name": "World Music Radio",
+      "mode": "AM"
+    },
+    {
+      "frequency": 3975000,
+      "name": "Shortwave Radio Services (Germany)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 3985000,
+      "name": "Radio Delta International\nRadio Horizon",
+      "mode": "AM"
+    },
+    {
+      "frequency": 3995000,
+      "name": "Voice of the Andes",
+      "mode": "AM"
+    },
+    {
+      "frequency": 4755000,
+      "name": "Radio Republic of Indonesia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 5020000,
+      "name": "Solomon Islands Broadcasting",
+      "mode": "AM"
+    },
+    {
+      "frequency": 5130000,
+      "name": "Allan H. Weiner",
+      "mode": "AM"
+    },
+    {
+      "frequency": 5860000,
+      "name": "United States Agency for Global Media (USAGM)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 5900000,
+      "name": "For new organization",
+      "mode": "AM"
+    },
+    {
+      "frequency": 5910000,
+      "name": "HFCC, Intl. Radio for Disaster Relief project\nRadio Romania International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 5920000,
+      "name": "Korean Broadcasting System\nRadio Russia\nVoice of the Andes",
+      "mode": "AM"
+    },
+    {
+      "frequency": 5930000,
+      "name": "Radio Russia\nWorld Music Radio",
+      "mode": "AM"
+    },
+    {
+      "frequency": 5945000,
+      "name": "Radio Russia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 5960000,
+      "name": "Turkish Radio-TV Corp",
+      "mode": "AM"
+    },
+    {
+      "frequency": 5970000,
+      "name": "Radio Delta International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 5975000,
+      "name": "Korean Broadcasting System\nRadio Delta International\nRadio New Zealand",
+      "mode": "AM"
+    },
+    {
+      "frequency": 5990000,
+      "name": "Islamic Republic of Iran Broadcasting",
+      "mode": "AM"
+    },
+    {
+      "frequency": 6000000,
+      "name": "For new organization",
+      "mode": "AM"
+    },
+    {
+      "frequency": 6010000,
+      "name": "For new organization",
+      "mode": "AM"
+    },
+    {
+      "frequency": 6015000,
+      "name": "Korean Broadcasting System",
+      "mode": "AM"
+    },
+    {
+      "frequency": 6020000,
+      "name": "Korean Broadcasting System",
+      "mode": "AM"
+    },
+    {
+      "frequency": 6040000,
+      "name": "Radio Delta International\nRadio Horizon",
+      "mode": "AM"
+    },
+    {
+      "frequency": 6050000,
+      "name": "Ministry of Information - State of Kuwait",
+      "mode": "AM"
+    },
+    {
+      "frequency": 6055000,
+      "name": "Nihon Short-wave Broadc. Co.",
+      "mode": "AM"
+    },
+    {
+      "frequency": 6060000,
+      "name": "For new organization",
+      "mode": "AM"
+    },
+    {
+      "frequency": 6070000,
+      "name": "Channel 292 (Germany)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 6095000,
+      "name": "Radio New Zealand",
+      "mode": "AM"
+    },
+    {
+      "frequency": 6100000,
+      "name": "Broadcasting Serv. of the Kingdom of Saudi Arabia\nKorean Broadcasting System",
+      "mode": "AM"
+    },
+    {
+      "frequency": 6115000,
+      "name": "WNQM, Inc.",
+      "mode": "AM"
+    },
+    {
+      "frequency": 6130000,
+      "name": "Radio Europe Netherlands",
+      "mode": "AM"
+    },
+    {
+      "frequency": 6135000,
+      "name": "Korean Broadcasting System\nRadio New Zealand",
+      "mode": "AM"
+    },
+    {
+      "frequency": 6140000,
+      "name": "Radio Onda ASBL\nRadio Russia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 6150000,
+      "name": "BBC Worldservice",
+      "mode": "AM"
+    },
+    {
+      "frequency": 6160000,
+      "name": "Allan H. Weiner\nShortwave Radio Services (Germany)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7205000,
+      "name": "Radio Republic of Indonesia\nSudan National Broadcasting Corporation",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7210000,
+      "name": "China Radio International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7215000,
+      "name": "SunDance",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7220000,
+      "name": "SunDance",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7225000,
+      "name": "SunDance",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7255000,
+      "name": "Islamic Republic of Iran Broadcasting",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7265000,
+      "name": "China Radio International\nRadio Europe Netherlands",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7275000,
+      "name": "Korean Broadcasting System",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7285000,
+      "name": "Radio New Zealand",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7290000,
+      "name": "ANTI, Milano",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7310000,
+      "name": "Islamic Republic of Iran Broadcasting",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7315000,
+      "name": "Sudan National Broadcasting Corporation",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7325000,
+      "name": "Islamic Republic of Iran Broadcasting",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7330000,
+      "name": "Radio New Zealand",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7340000,
+      "name": "China Radio International\nRadio Europe Netherlands",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7355000,
+      "name": "Radio Russia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7365000,
+      "name": "Voice of the Andes",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7375000,
+      "name": "Nippon Hoso Kyokai",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7390000,
+      "name": "WNQM, Inc.",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7400000,
+      "name": "HFCC, Intl. Radio for Disaster Relief project\nRadio Piepzender",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7405000,
+      "name": "Radio Piepzender",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7410000,
+      "name": "Trans World Radio",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7415000,
+      "name": "China Radio International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7425000,
+      "name": "Radio New Zealand\nRadio Russia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7435000,
+      "name": "China Radio International\nJapan International Communications\nRadio Russia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7445000,
+      "name": "Radio Russia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7460000,
+      "name": "United States Agency for Global Media (USAGM)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7490000,
+      "name": "Allan H. Weiner",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7555000,
+      "name": "For new organization",
+      "mode": "AM"
+    },
+    {
+      "frequency": 7730000,
+      "name": "Radio Miami International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9265000,
+      "name": "World International Broadcasters, Inc.",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9310000,
+      "name": "United States Agency for Global Media (USAGM)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9330000,
+      "name": "Allan H. Weiner",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9360000,
+      "name": "United States Agency for Global Media (USAGM)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9370000,
+      "name": "United States Agency for Global Media (USAGM)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9395000,
+      "name": "Radio Miami International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9400000,
+      "name": "For new organization",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9410000,
+      "name": "Abu Dhabi Media Company",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9420000,
+      "name": "Radio Russia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9430000,
+      "name": "HFCC, Intl. Radio for Disaster Relief project",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9450000,
+      "name": "Radio Russia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9455000,
+      "name": "Japan International Communications",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9460000,
+      "name": "Turkish Radio-TV Corp",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9470000,
+      "name": "Egypt Radio & TV Union",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9475000,
+      "name": "Leap of Faith, Inc.",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9480000,
+      "name": "China Radio International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9490000,
+      "name": "For new organization",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9500000,
+      "name": "Radio Romania International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9505000,
+      "name": "Sudan National Broadcasting Corporation",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9515000,
+      "name": "Korean Broadcasting System",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9525000,
+      "name": "BBC Worldservice",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9530000,
+      "name": "Radio Onda ASBL\nSudan National Broadcasting Corporation",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9545000,
+      "name": "Radio Russia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9550000,
+      "name": "Adventist Broadcasting Service, Inc.",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9555000,
+      "name": "Broadcasting Serv. of the Kingdom of Saudi Arabia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9560000,
+      "name": "China Radio International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9570000,
+      "name": "Radio Romania International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9580000,
+      "name": "Broadcasting Serv. of the Kingdom of Saudi Arabia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9585000,
+      "name": "Abu Dhabi Media Company",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9595000,
+      "name": "Nihon Short-wave Broadc. Co.",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9600000,
+      "name": "China Radio International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9610000,
+      "name": "Media Broadcast GmbH",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9615000,
+      "name": "Radio New Zealand",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9620000,
+      "name": "All India Radio",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9630000,
+      "name": "Korean Broadcasting System",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9645000,
+      "name": "China Radio International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9655000,
+      "name": "Radio New Zealand",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9670000,
+      "name": "Channel 292 (Germany)\nChina Radio International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9675000,
+      "name": "Broadcasting Serv. of the Kingdom of Saudi Arabia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9680000,
+      "name": "Adventist Broadcasting Service, Inc.\nMedia Broadcast GmbH",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9690000,
+      "name": "Radio Exterior de Espana",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9700000,
+      "name": "Radio New Zealand",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9710000,
+      "name": "Media Broadcast GmbH",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9740000,
+      "name": "Islamic Republic of Iran Broadcasting\nKorean Broadcasting System",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9750000,
+      "name": "Turkish Radio-TV Corp",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9760000,
+      "name": "Radio New Zealand",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9765000,
+      "name": "China Radio International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9780000,
+      "name": "BBC Worldservice\nRadio New Zealand",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9790000,
+      "name": "Radio Russia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9795000,
+      "name": "Nippon Hoso Kyokai",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9800000,
+      "name": "Radio Horizon\nRadio Russia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9820000,
+      "name": "Radio Russia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9840000,
+      "name": "Broadcasting Serv. of the Kingdom of Saudi Arabia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9850000,
+      "name": "Radio Russia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9870000,
+      "name": "Broadcasting Serv. of the Kingdom of Saudi Arabia\nIslamic Republic of Iran Broadcasting",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9885000,
+      "name": "World Christian Broadcasting (USA)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9895000,
+      "name": "Radio Russia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9900000,
+      "name": "Egypt Radio & TV Union",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9910000,
+      "name": "For new organization",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9920000,
+      "name": "Philippines Broadcasting Service",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9930000,
+      "name": "Leap of Faith, Inc.\nRepublic of Palau",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9940000,
+      "name": "United States Agency for Global Media (USAGM)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9950000,
+      "name": "United States Agency for Global Media (USAGM)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9965000,
+      "name": "Republic of Palau",
+      "mode": "AM"
+    },
+    {
+      "frequency": 9980000,
+      "name": "WNQM, Inc.",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11580000,
+      "name": "For new organization",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11600000,
+      "name": "For new organization",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11640000,
+      "name": "China Radio International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11650000,
+      "name": "China Radio International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11670000,
+      "name": "Radio Exterior de Espana",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11680000,
+      "name": "Malagasy Glabal Business S.A.",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11690000,
+      "name": "Radio New Zealand",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11695000,
+      "name": "China Radio International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11710000,
+      "name": "Media Broadcast GmbH",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11720000,
+      "name": "Islamic Republic of Iran Broadcasting",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11730000,
+      "name": "SunDance",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11740000,
+      "name": "Islamic Republic of Iran Broadcasting",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11750000,
+      "name": "Radio Romania International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11775000,
+      "name": "WNQM, Inc.",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11800000,
+      "name": "Nippon Hoso Kyokai",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11820000,
+      "name": "Broadcasting Serv. of the Kingdom of Saudi Arabia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11840000,
+      "name": "HFCC, Intl. Radio for Disaster Relief project\nRadio Piepzender",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11850000,
+      "name": "Media Broadcast GmbH",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11860000,
+      "name": "United States Agency for Global Media (USAGM)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11865000,
+      "name": "Radio Russia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11895000,
+      "name": "China Radio International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11915000,
+      "name": "Broadcasting Serv. of the Kingdom of Saudi Arabia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11930000,
+      "name": "Broadcasting Serv. of the Kingdom of Saudi Arabia\nUnited States Agency for Global Media (USAGM)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11940000,
+      "name": "Radio Exterior de Espana",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11950000,
+      "name": "Islamic Republic of Iran Broadcasting",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11965000,
+      "name": "Radio Russia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 11975000,
+      "name": "Radio Romania International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 12005000,
+      "name": "Radio Russia",
+      "mode": "AM"
+    },
+    {
+      "frequency": 12015000,
+      "name": "Media Broadcast GmbH",
+      "mode": "AM"
+    },
+    {
+      "frequency": 12030000,
+      "name": "Radio Exterior de Espana",
+      "mode": "AM"
+    },
+    {
+      "frequency": 12040000,
+      "name": "Encompass Digital Media Services",
+      "mode": "AM"
+    },
+    {
+      "frequency": 12050000,
+      "name": "Eternal Word Television Network, Inc.\nSunDance",
+      "mode": "AM"
+    },
+    {
+      "frequency": 12060000,
+      "name": "Nippon Hoso Kyokai",
+      "mode": "AM"
+    },
+    {
+      "frequency": 12085000,
+      "name": "For new organization",
+      "mode": "AM"
+    },
+    {
+      "frequency": 12100000,
+      "name": "SunDance",
+      "mode": "AM"
+    },
+    {
+      "frequency": 12105000,
+      "name": "Leap of Faith, Inc.",
+      "mode": "AM"
+    },
+    {
+      "frequency": 12120000,
+      "name": "Philippines Broadcasting Service",
+      "mode": "AM"
+    },
+    {
+      "frequency": 12160000,
+      "name": "WNQM, Inc.",
+      "mode": "AM"
+    },
+    {
+      "frequency": 12180000,
+      "name": "WNQM, Inc.",
+      "mode": "AM"
+    },
+    {
+      "frequency": 13570000,
+      "name": "United States Agency for Global Media (USAGM)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 13585000,
+      "name": "Radio Piepzender",
+      "mode": "AM"
+    },
+    {
+      "frequency": 13620000,
+      "name": "HFCC, Intl. Radio for Disaster Relief project",
+      "mode": "AM"
+    },
+    {
+      "frequency": 13630000,
+      "name": "Abu Dhabi Media Company",
+      "mode": "AM"
+    },
+    {
+      "frequency": 13650000,
+      "name": "Ministry of Information - State of Kuwait",
+      "mode": "AM"
+    },
+    {
+      "frequency": 13660000,
+      "name": "China Radio International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 13670000,
+      "name": "World Christian Broadcasting (USA)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 13685000,
+      "name": "China Radio International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 13700000,
+      "name": "China Radio International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 13710000,
+      "name": "China Radio International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 13720000,
+      "name": "Broadcasting Serv. of the Kingdom of Saudi Arabia\nUnited States Agency for Global Media (USAGM)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 13730000,
+      "name": "Media Broadcast GmbH",
+      "mode": "AM"
+    },
+    {
+      "frequency": 13750000,
+      "name": "Media Broadcast GmbH",
+      "mode": "AM"
+    },
+    {
+      "frequency": 13760000,
+      "name": "China Radio International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 13800000,
+      "name": "Trans World Radio",
+      "mode": "AM"
+    },
+    {
+      "frequency": 13810000,
+      "name": "China Radio International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 13840000,
+      "name": "Radio New Zealand",
+      "mode": "AM"
+    },
+    {
+      "frequency": 13845000,
+      "name": "WNQM, Inc.",
+      "mode": "AM"
+    },
+    {
+      "frequency": 13865000,
+      "name": "Radio Piepzender",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15140000,
+      "name": "Telediffusion d'Algerie",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15190000,
+      "name": "Philippines Broadcasting Service\nRadio Onda ASBL",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15215000,
+      "name": "Media Broadcast GmbH",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15265000,
+      "name": "Korean Broadcasting System",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15290000,
+      "name": "The Overcomer Ministry",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15300000,
+      "name": "Radio France Internationale",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15315000,
+      "name": "Media Broadcast GmbH",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15330000,
+      "name": "The Overcomer Ministry",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15350000,
+      "name": "Radio Exterior de Espana",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15360000,
+      "name": "Radio Exterior de Espana",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15385000,
+      "name": "Radio Exterior de Espana",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15390000,
+      "name": "Radio Exterior de Espana",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15400000,
+      "name": "BBC Worldservice",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15420000,
+      "name": "Encompass Digital Media Services",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15440000,
+      "name": "Adventist World Radio",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15500000,
+      "name": "Radio Exterior de Espana",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15515000,
+      "name": "For new organization",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15520000,
+      "name": "Radio Exterior de Espana",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15540000,
+      "name": "Ministry of Information - State of Kuwait",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15555000,
+      "name": "Hill Radio International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15575000,
+      "name": "Korean Broadcasting System",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15590000,
+      "name": "WRNO Worldwide, Inc.",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15600000,
+      "name": "For new organization",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15615000,
+      "name": "Encompass Digital Media Services",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15650000,
+      "name": "HFCC, Intl. Radio for Disaster Relief project",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15700000,
+      "name": "For new organization\nWorld Music Radio",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15770000,
+      "name": "Radio Miami International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15785000,
+      "name": "BitExpress (Germany)",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15795000,
+      "name": "WNQM, Inc.",
+      "mode": "AM"
+    },
+    {
+      "frequency": 15825000,
+      "name": "WNQM, Inc.",
+      "mode": "AM"
+    },
+    {
+      "frequency": 17500000,
+      "name": "HFCC, Intl. Radio for Disaster Relief project",
+      "mode": "AM"
+    },
+    {
+      "frequency": 17510000,
+      "name": "For new organization",
+      "mode": "AM"
+    },
+    {
+      "frequency": 17525000,
+      "name": "Assemblies of Yahweh\nRadio Piepzender",
+      "mode": "AM"
+    },
+    {
+      "frequency": 17600000,
+      "name": "Telediffusion d'Algerie",
+      "mode": "AM"
+    },
+    {
+      "frequency": 17620000,
+      "name": "Radio France Internationale",
+      "mode": "AM"
+    },
+    {
+      "frequency": 17640000,
+      "name": "BBC Worldservice",
+      "mode": "AM"
+    },
+    {
+      "frequency": 17670000,
+      "name": "IBRA Radio",
+      "mode": "AM"
+    },
+    {
+      "frequency": 17715000,
+      "name": "Radio Exterior de Espana",
+      "mode": "AM"
+    },
+    {
+      "frequency": 17790000,
+      "name": "Radio Miami International",
+      "mode": "AM"
+    },
+    {
+      "frequency": 17800000,
+      "name": "Media Broadcast GmbH",
+      "mode": "AM"
+    },
+    {
+      "frequency": 17820000,
+      "name": "China National Radio",
+      "mode": "AM"
+    },
+    {
+      "frequency": 17830000,
+      "name": "BBC Worldservice",
+      "mode": "AM"
+    },
+    {
+      "frequency": 17850000,
+      "name": "Radio France Internationale",
+      "mode": "AM"
+    },
+    {
+      "frequency": 17855000,
+      "name": "Radio Exterior de Espana",
+      "mode": "AM"
+    },
+    {
+      "frequency": 17900000,
+      "name": "For new organization",
+      "mode": "AM"
+    },
+    {
+      "frequency": 18925000,
+      "name": "Radio Europe Netherlands",
+      "mode": "AM"
+    },
+    {
+      "frequency": 18950000,
+      "name": "HFCC, Intl. Radio for Disaster Relief project",
+      "mode": "AM"
+    },
+    {
+      "frequency": 18965000,
+      "name": "SunDance",
+      "mode": "AM"
+    },
+    {
+      "frequency": 21615000,
+      "name": "SunDance",
+      "mode": "AM"
+    },
+    {
+      "frequency": 21680000,
+      "name": "Radio France Internationale",
+      "mode": "AM"
+    },
+    {
+      "frequency": 21800000,
+      "name": "For new organization",
+      "mode": "AM"
+    },
+    {
+      "frequency": 21840000,
+      "name": "HFCC, Intl. Radio for Disaster Relief project",
+      "mode": "AM"
+    },
+    {
+      "frequency": 25795000,
+      "name": "World Music Radio",
+      "mode": "AM"
+    },
+    {
+      "frequency": 25800000,
+      "name": "World Music Radio",
+      "mode": "AM"
+    },
+    {
+      "frequency": 25805000,
+      "name": "World Music Radio",
+      "mode": "AM"
+    },
+    {
+      "frequency": 25850000,
+      "name": "Radio Onda ASBL",
+      "mode": "AM"
+    },
+    {
+      "frequency": 26000000,
+      "name": "For new organization",
+      "mode": "AM"
+    },
+    {
+      "frequency": 26010000,
+      "name": "HFCC, Intl. Radio for Disaster Relief project",
+      "mode": "AM"
+    },
+    {
+      "frequency": 26040000,
+      "name": "For new organization",
+      "mode": "AM"
+    }
+  ]
+}

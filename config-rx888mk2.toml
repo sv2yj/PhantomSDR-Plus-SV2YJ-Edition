@@ -1,0 +1,158 @@
+############################################
+#           PHANTOM SDR CONFIG
+#        RX888mk2 – OpenCL Setup
+#        Your Callsign - Your Location
+############################################
+
+[server]
+port=9002                     # Θύρα server (default 9002)
+html_root="frontend/dist/"    # Path του web interface
+otherusers=true               # Εμφάνιση άλλων χρηστών (clickable markers)
+threads=3                     # Ιδανικό για i5-7400T + OpenCL + cloudflared
+# Refuse pages older than this build on /audio (0 = off). A tab opened before a
+# frontend change keeps running the old JavaScript until someone reloads it;
+# this is what ends those sessions, so they come back current. Matches
+# CLIENT_VERSION in frontend/src/clientVersion.js. Set it back to 0 once the
+# old pages are gone — it also turns away other stations' diversity clients,
+# which do not send the marker.
+min_client_version=2
+
+############################################
+
+[websdr]
+register_online=true          # Καταχώρηση σε SDR lists
+register_urls=[
+  "https://sdr-list.xyz/api/update_websdr",
+  "https://sdr.shbrg.nl/api/update_websdr"
+  ] # One or more directory endpoints that accept the same JSON payload
+name="Your Callsign - Your Location"    # Όνομα server
+antenna="Long-Wire"           # Τύπος κεραίας
+grid_locator="AA00AA"         # Locator (distance calc + lists)
+hostname="your-sdr.example.com" # Domain / DDNS
+#hostname="your-sdr.example.com" # Domain / DDNS
+
+############################################
+
+# In case you want to register to websdr.org, please uncomment and fill with your data
+[websdr.org]
+ enabled     = true
+ public_host = "your-sdr.example.com"
+ public_port = 9002
+ qth         = "AA00AA"
+ description = "PhantomSDR+ Station"
+ email       = "your@email.address"
+ logo        = "logo.jpg" #located in frontend public. Use the same or change it
+
+############################################
+
+[limits]
+audio=20                      # Μέγιστοι χρήστες ήχου
+waterfall=20                  # Μέγιστοι χρήστες waterfall
+events=30                     # Όριο ενεργειών (πιο “μαζεμένο” από default)
+
+# Per-IP limits. A listener is one /audio connection — or, where
+# [kiwi_emulation] is on, one Kiwi sound connection, which counts exactly the
+# same. That is also the unit the user count and users.json use. Besides its
+# /audio a desktop tab opens /waterfall, /events and /chat as well, four
+# sockets in all, while a phone on /mobile opens /audio and /chat and nothing
+# else. That is why the socket ceiling is several times the listener limit.
+#
+# The two keys set below are the only two that differ from the built-in
+# defaults. The rest of the feature is listed here with the value it is
+# actually running at — add a key only to change it. What each one does is in
+# docs/CONNECTION_LIMITS.md.
+#   per_ip_sockets  16    any path, per address; derived as per_ip * 4 + 4, so
+#                         it follows per_ip unless you set it yourself
+#   per_ip_ban_s    600   seconds an address is refused after breaking per_ip_rate
+#   idle_per_ip     8     idle, pre-request connections per address
+#   idle_total      512   idle connections across all addresses
+#
+# There is deliberately no deadline on an idle connection. One was tried and
+# removed: websdr.org's callback host connects back and then sits silent for
+# well over 30 s before it speaks, so any deadline short enough to bother an
+# attacker cut the station's own registration every time. The same reasoning
+# is why websocketpp's open_handshake_timeout must stay at ten minutes.
+#
+# Everyone behind one NAT (a club, a school, a mobile carrier) shares a single
+# address and therefore a single per_ip allowance.
+#per_ip=3
+#per_ip_rate=40
+
+############################################
+
+[input]
+
+# ===== ΡΥΘΜΙΣΕΙΣ ΣΗΜΑΤΟΣ / ΦΑΣΜΑΤΟΣ =====
+
+sps=56000000                  # 30 MHz span → καλύπτει σχεδόν όλο HF
+fft_size=1048576              # Καλή ισορροπία ποιότητας / CPU
+# 2097152 μπορείς να δοκιμάσεις αν δεις ότι “σηκώνει”
+
+fft_threads=1                 # Με OpenCL δεν χρειάζονται πολλά CPU threads
+
+brightness_offset=-7          # Waterfall brightness tuning
+frequency=0                   # Base frequency (0 για full span)
+signal="real"                 # RX888 → real signal
+
+accelerator="opencl"          # GPU acceleration (Intel HD 630)
+# ΧΩΡΙΣ αυτό → CPU 100%
+# ΜΕ αυτό → τεράστια διαφορά απόδοσης
+
+############################################
+
+# ===== ΡΥΘΜΙΣΕΙΣ ΠΟΙΟΤΗΤΑΣ =====
+
+#audio_sps=12000               # Καθαρός ήχος 24000 (μπορείς και 16000 και 12000 για λιγότερο load)
+audio_sps=12000
+
+audio_compression="flac"      # Σταθερό μέσω Cloudflare
+# Opus μπορεί να κάνει glitches σε web χρήση
+
+waterfall_size=1024           # Ποιότητα waterfall
+# 512 = πιο ελαφρύ, 1024 = πιο όμορφο
+
+waterfall_fps=10              # Frames/sec → καλή ισορροπία
+
+waterfall_compression="zstd"  # Γρήγορη και αποδοτική συμπίεση
+zstd_level=1                  # Χαμηλό CPU load
+
+############################################
+
+# ===== S-METER =====
+
+smeter_offset=7               # Ψηφιακό S-meter calibration
+analog_smeter_offset=7        # Αναλογικό S-meter calibration
+
+############################################
+
+[input.driver]
+name="stdin"                  # Είσοδος από pipe (rx888_stream)
+format="s16"                  # RX888 output format
+
+############################################
+
+[input.defaults]
+frequency=7120000             # Εκκίνηση στη 40m μπάντα
+modulation="LSB"              # Default mode
+
+############################################
+
+# OPTIONAL – DIGITAL MODES (future use)
+[sidecar]
+port=8074
+url="wss://sidecar.example.com"
+
+############################################
+# NOTES:
+# - OpenCL = game changer για τον 7400T
+# - Μην τρέχεις μαζί service + go.sh
+# - Αν δεις “undefined” → έλεγξε RX888 (lsusb)
+# - Αν κολλήσει → restart service
+############################################
+
+[kiwi_emulation]
+enabled       = true
+audio_gain    = 60.0    # dB, Kiwi clients only. 0 = untouched.
+wf_cal        = 0.0   # dB, display taste. 0 = agrees with the S-meter.
+wf_fps_max    = 23      # frames/s. 23 is the protocol maximum.
+# smeter_offset = 5.0   # dB. Defaults to input.analog_smeter_offset.
