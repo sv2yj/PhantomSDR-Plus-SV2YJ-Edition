@@ -8,6 +8,8 @@ This edition preserves the original PhantomSDR-Plus project while adding experim
 
 Individual modifications are documented so that radio amateurs and developers may study, reuse, improve, and continue them independently.
 
+**SV2YJ Edition changes and enhancements: [SV2YJ-CHANGES.md](SV2YJ-CHANGES.md)**
+
 Licensed under the GNU General Public License v3.0.
 
 ---
